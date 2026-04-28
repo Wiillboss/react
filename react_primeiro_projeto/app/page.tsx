@@ -6,21 +6,27 @@ import Square, {Quadrado} from "./components/Square";
 
 import Square from "./components/Square";
 import { Quadrado } from "./components/Quadrado";
+import { Geo_Form } from "./components/Geo_Form";
 
-function Page(){
-  return(
+function Page() {
+  return (
     <div>
       <h1 className="font-bold text-2xl">Ola mundo!</h1>
       <h3>Seja bem vindo</h3>
       <Square />
       <Quadrado />
+
+      {/* Abaixo está sendo usando varios componentes dentro de um componente (Geo_Form)  */}
+      <div className="flex gap-2 border-2 p-3">
+        <Geo_Form />
+      </div>
     </div>
   );
 }
 
 //criando uma arrow function
 const Page_dois = () => {
-  return(
+  return (
     <div>
       <h1 className="font-bold text-2xl">Ola mundo, de novo!</h1>
       <h3>Seja bem vindo, novamente.</h3>
