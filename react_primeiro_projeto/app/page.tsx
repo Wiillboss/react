@@ -7,6 +7,7 @@ import Square, {Quadrado} from "./components/Square";
 import Square from "./components/Square";
 import { Quadrado } from "./components/Quadrado";
 import { Geo_Form } from "./components/Geo_Form";
+import { Person } from "./components/Person";
 
 function Page() {
   return (
@@ -20,6 +21,8 @@ function Page() {
       <div className="flex gap-2 border-2 p-3">
         <Geo_Form />
       </div>
+
+      <Person />
     </div>
   );
 }
