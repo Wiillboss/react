@@ -7,13 +7,16 @@
 //a tag img por natureza é uma tag auto fechada, ou seja, ela não tem um fechamento explícito, e isso causaria um erro de sintaxe se fosse usada dentro de uma tag sem nomeada. Para evitar esse erro, é necessário usar a tag img como uma tag normal, ou seja, com um fechamento explícito, como por exemplo: <img src="caminho/para/imagem.jpg" alt="Descrição da imagem"></img>.
 
 export const Person = () => {
+    const name: string = "Willian";
+    const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
+    
     return (
         <>
-            <h1 className="font-bold text-2xl">Pessoa</h1>
+            <h1>Nome: {name}</h1>
             <p>Nome: João</p>
             <p>Idade: 30 anos</p>
             <p>Profissão: Desenvolvedor</p>
-            <img src="caminho/para/imagem.jpg" alt="Descrição da imagem" />
+            <img src={avatar} alt="Descrição da imagem" className="w-60 h-60"/>
 
             <ul className="font-bold">
                 <li>Palmeiras</li>
