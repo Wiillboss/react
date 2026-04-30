@@ -6,22 +6,35 @@
 
 //a tag img por natureza é uma tag auto fechada, ou seja, ela não tem um fechamento explícito, e isso causaria um erro de sintaxe se fosse usada dentro de uma tag sem nomeada. Para evitar esse erro, é necessário usar a tag img como uma tag normal, ou seja, com um fechamento explícito, como por exemplo: <img src="caminho/para/imagem.jpg" alt="Descrição da imagem"></img>.
 
+const getWeekDay = (day: number): string => {
+    const weekDays: string[] = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+    return weekDays[day];
+}
+
 export const Person = () => {
     const name: string = "Willian";
     const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
-    
+
+    //criando um objeto para representar a esposa do personagem, com as propriedades nome e profissao, e usando esse objeto para exibir as informações da esposa na tela.
+    const esposa = {
+        nome: "Roberta",
+        profissao: "Professora",
+        ocupacoes: ['Dona de casa', 'Mãe', 'Esposa']
+    };
     return (
         <>
-            <h1>Nome: {name}</h1>
+            <h1 style={{ color: 'red', fontSize: '1.5rem' }}> Nome: {name} - {getWeekDay(new Date().getDay())} </h1>
             <p>Nome: João</p>
             <p>Idade: 30 anos</p>
             <p>Profissão: Desenvolvedor</p>
-            <img src={avatar} alt="Descrição da imagem" className="w-60 h-60"/>
-
+            <img src={avatar} alt="Descrição da imagem" className="w-60 h-60" />
+            <p>Nome: {esposa.nome}</p>
+            <p>Profissão: {esposa.profissao}</p>
+            <p>Ocupações:</p>
             <ul className="font-bold">
-                <li>Palmeiras</li>
-                <li>Real Madri</li>
-                <li>Roma</li>
+                {esposa.ocupacoes.map((ocupacao, index) => (
+                    <li key={index}>{ocupacao}</li>
+                ))}
             </ul>
         </>
     );
