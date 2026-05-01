@@ -7,7 +7,7 @@ import Square, {Quadrado} from "./components/Square";
 import Square from "./components/Square";
 import { Quadrado } from "./components/Quadrado";
 import { Geo_Form } from "./components/Geo_Form";
-import { Person } from "./components/Person";
+import { Person, Person2, Person3 } from "./components/Person";
 
 function Page() {
   return (
@@ -22,7 +22,33 @@ function Page() {
         <Geo_Form />
       </div>
 
-      <Person />
+      <Person
+        name="Willian"
+        avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
+        esposa={{
+          nome: "Roberta",
+          profissao: "Professora",
+          ocupacoes: ['Dona de casa', 'Mãe', 'Esposa']
+        }}
+      />
+      <Person2
+        name="Jose"
+        avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
+        esposa={{
+          nome: "Elpidia",
+          profissao: "Diarista",
+          ocupacoes: ['Mãe', 'Avó', 'Diarista']
+        }}
+      />
+      <Person3
+        name="Edson"
+        avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
+        esposa={{
+          nome: "Amanda",
+          profissao: "Protética",
+          ocupacoes: ['Mãe', 'Tia', 'Doceira']
+        }}
+      />
     </div>
   );
 }

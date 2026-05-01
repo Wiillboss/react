@@ -11,10 +11,54 @@ const getWeekDay = (day: number): string => {
     return weekDays[day];
 }
 
-export const Person = () => {
+type Prosp = {
+    name: string;
+    avatar: string;
+    esposa: {
+        nome: string;
+        profissao: string;
+        ocupacoes: string[];
+    };
+};
+
+export const Person = (props: Prosp) => {
+
+    const { name, avatar, esposa } = props;
+
+    return (
+        <>
+            <h1>{name}</h1>
+            <img src={avatar} alt={name} className="w-40" />
+            <ul>
+                <li>Nome: {esposa.nome}</li>
+                <li>Profissão: {esposa.profissao}</li>
+                <li>Ocupações:</li>
+            </ul>
+        </>
+
+    )
+}
+
+export const Person2 = ({ name, avatar, esposa }: Prosp) => {
+
+    return (
+        <>
+            <h1>{name}</h1>
+            <img src={avatar} alt={name} className="w-40" />
+            <ul>
+                <li>Nome: {esposa.nome}</li>
+                <li>Profissão: {esposa.profissao}</li>
+                <li>Ocupações:</li>
+            </ul>
+        </>
+
+    )
+}
+
+export const Person3 = (props: Prosp) => {
     const name: string = "Willian";
     const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
-
+ 
     //criando um objeto para representar a esposa do personagem, com as propriedades nome e profissao, e usando esse objeto para exibir as informações da esposa na tela.
     const esposa = {
         nome: "Roberta",
