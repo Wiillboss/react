@@ -2,19 +2,24 @@
 //importação do React para usar JSX
 //jsx é uma extensão de sintaxe para JavaScript que permite escrever código HTML dentro do JavaScript, facilitando a criação de componentes de interface do usuário.
 
+// COMPONENTE SQUARE: Renderiza um quadrado azul com texto
+// Componente simples sem props
 const Square = () => {
     return (
+        // Div com estilo Tailwind: largura 160, altura 16, fundo azul e texto branco
         <div className="w-160 h-16 bg-blue-500 text-white">
             Texto qualquer inspirador
         </div>
     );
 }
 
-//existe duas formas de exportar um componente, a primeira é usando a palavra-chave export antes da declaração do componente, e a segunda é usando a palavra-chave export default depois da declaração do componente. A diferença entre as duas formas é que a primeira permite exportar múltiplos componentes do mesmo arquivo, enquanto a segunda permite exportar apenas um componente por arquivo.
+// EXPORTAÇÃO: Existem duas formas de exportar componentes
+// Forma 1 (named export): export { Square }
+//   - Permite exportar múltiplos componentes
+//   - Importação: import { Square } from "..."
+// Forma 2 (default export): export default Square
+//   - Permite apenas um componente por arquivo
+//   - Importação: import Square from "..."
 
-//exportando o componente usando a primeira forma
-//export { Square };
-
-//exportando o componente usando a segunda forma
-//componente auxiliar para exportar o componente usando a segunda forma, e evitar problemas de importação em outros arquivos
+// Usando a forma 2 (export default) para exportar este componente
 export default Square;

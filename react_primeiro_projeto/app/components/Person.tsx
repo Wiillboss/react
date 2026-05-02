@@ -6,11 +6,18 @@
 
 //a tag img por natureza é uma tag auto fechada, ou seja, ela não tem um fechamento explícito, e isso causaria um erro de sintaxe se fosse usada dentro de uma tag sem nomeada. Para evitar esse erro, é necessário usar a tag img como uma tag normal, ou seja, com um fechamento explícito, como por exemplo: <img src="caminho/para/imagem.jpg" alt="Descrição da imagem"></img>.
 
+// FUNÇÃO AUXILIAR: Converte número do dia da semana para nome em português
+// Recebe: number (0-6, onde 0 é domingo)
+// Retorna: string com o nome do dia da semana
 const getWeekDay = (day: number): string => {
     const weekDays: string[] = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
     return weekDays[day];
 }
 
+// TIPO DE DADOS: Define a estrutura de props para os componentes Person
+// - name: nome da pessoa (obrigatório)
+// - avatar: caminho da imagem (opcional, com "?")
+// - esposa: objeto contendo dados da esposa com nome, profissão e array de ocupações
 type Prosp = {
     name: string;
     avatar?: string;
@@ -21,18 +28,33 @@ type Prosp = {
     };
 };
 
+// COMPONENTE PERSON: Exibe informações da pessoa e sua esposa
+// Forma de recebimento de props: destructuring completo na função
 export const Person = (props: Prosp) => {
 
+    // Desestruturando as props para extrair name, avatar e esposa
     const { name, avatar, esposa } = props;
 
     return (
         <>
+            {/* Nome da pessoa principal */}
             <h1>{name}</h1>
+            
+            {/* Avatar/foto da pessoa */}
             <img src={avatar} alt={name} className="w-40" />
+            
+            {/* Lista de informações da esposa */}
             <ul>
+                {/* Nome da esposa */}
                 <li>Nome: {esposa.nome}</li>
+                
+                {/* Profissão da esposa */}
                 <li>Profissão: {esposa.profissao}</li>
+                
+                {/* Título da seção de ocupações */}
                 <li>Ocupações:</li>
+                
+                {/* Itera sobre o array de ocupações e renderiza cada uma em um <li> */}
                 {esposa.ocupacoes.map((ocupacao, index) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
@@ -42,19 +64,35 @@ export const Person = (props: Prosp) => {
     )
 }
 
+// COMPONENTE PERSON2: Versão melhorada do Person com avatar padrão
+// Forma de recebimento de props: desestruturação direta com valor padrão
 export const Person2 = ({ 
     name,
+    // Avatar padrão: se não for fornecido, usa imagem genérica do pngtree
     avatar = 'https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-black-default-avatar-image_2237212.jpg',
-     esposa }: Prosp) => {
+    esposa 
+}: Prosp) => {
 
     return (
         <>
+            {/* Nome da pessoa principal */}
             <h1>{name}</h1>
+            
+            {/* Avatar/foto da pessoa (padrão se não fornecido) */}
             <img src={avatar} alt={name} className="w-40" />
+            
+            {/* Lista de informações da esposa */}
             <ul>
+                {/* Nome da esposa */}
                 <li>Nome: {esposa.nome}</li>
+                
+                {/* Profissão da esposa */}
                 <li>Profissão: {esposa.profissao}</li>
+                
+                {/* Título da seção de ocupações */}
                 <li>Ocupações:</li>
+                
+                {/* Itera sobre o array de ocupações e renderiza cada uma em um <li> */}
                 {esposa.ocupacoes.map((ocupacao, index) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
@@ -64,27 +102,41 @@ export const Person2 = ({
     )
 }
 
+// COMPONENTE PERSON3: Versão customizada com dados hardcoded e estilos inline
+// Props são recebidas mas não são utilizadas (dados estão fixos no componente)
 export const Person3 = (props: Prosp) => {
+    // DADOS FIXOS PERSON3: Willian
     const name: string = "Willian";
     const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
  
-    //criando um objeto para representar a esposa do personagem, com as propriedades nome e profissao, e usando esse objeto para exibir as informações da esposa na tela.
+    // DADOS FIXOS ESPOSA: Roberta (nome, profissão e ocupações definidas no componente)
     const esposa = {
         nome: "Roberta",
         profissao: "Professora",
         ocupacoes: ['Dona de casa', 'Mãe', 'Esposa']
     };
+    
     return (
         <>
+            {/* Título com estilo inline - exibe nome e dia da semana atual em vermelho */}
             <h1 style={{ color: 'red', fontSize: '1.5rem' }}> Nome: {name} - {getWeekDay(new Date().getDay())} </h1>
+            
+            {/* Informações adicionais fixas sobre João (dados hardcoded) */}
             <p>Nome: João</p>
             <p>Idade: 30 anos</p>
             <p>Profissão: Desenvolvedor</p>
+            
+            {/* Avatar/foto da pessoa com dimensões maiores (w-60 h-60) */}
             <img src={avatar} alt="Descrição da imagem" className="w-60 h-60" />
+            
+            {/* Informações da esposa Roberta */}
             <p>Nome: {esposa.nome}</p>
             <p>Profissão: {esposa.profissao}</p>
             <p>Ocupações:</p>
+            
+            {/* Lista em negrito com as ocupações de Roberta */}
             <ul className="font-bold">
+                {/* Itera sobre cada ocupação e renderiza em <li> */}
                 {esposa.ocupacoes.map((ocupacao, index) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
