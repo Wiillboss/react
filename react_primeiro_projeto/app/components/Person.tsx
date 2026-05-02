@@ -13,7 +13,7 @@ const getWeekDay = (day: number): string => {
 
 type Prosp = {
     name: string;
-    avatar: string;
+    avatar?: string;
     esposa: {
         nome: string;
         profissao: string;
@@ -33,13 +33,19 @@ export const Person = (props: Prosp) => {
                 <li>Nome: {esposa.nome}</li>
                 <li>Profissão: {esposa.profissao}</li>
                 <li>Ocupações:</li>
+                {esposa.ocupacoes.map((ocupacao, index) => (
+                    <li key={index}>{ocupacao}</li>
+                ))}
             </ul>
         </>
 
     )
 }
 
-export const Person2 = ({ name, avatar, esposa }: Prosp) => {
+export const Person2 = ({ 
+    name,
+    avatar = 'https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-black-default-avatar-image_2237212.jpg',
+     esposa }: Prosp) => {
 
     return (
         <>
@@ -49,6 +55,9 @@ export const Person2 = ({ name, avatar, esposa }: Prosp) => {
                 <li>Nome: {esposa.nome}</li>
                 <li>Profissão: {esposa.profissao}</li>
                 <li>Ocupações:</li>
+                {esposa.ocupacoes.map((ocupacao, index) => (
+                    <li key={index}>{ocupacao}</li>
+                ))}
             </ul>
         </>
 

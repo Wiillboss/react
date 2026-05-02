@@ -40,6 +40,14 @@ function Page() {
           ocupacoes: ['Mãe', 'Avó', 'Diarista']
         }}
       />
+      <Person2
+        name="Maradona"
+        esposa={{
+          nome: "Manoela",
+          profissao: "Frentista",
+          ocupacoes: ['Abastecedora', 'Tia', 'Honesta']
+        }}
+      />
       <Person3
         name="Edson"
         avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
