@@ -8,17 +8,19 @@ import Square from "./components/Square";
 import { Quadrado } from "./components/Quadrado";
 import { Geo_Form } from "./components/Geo_Form";
 import { Person, Person2, Person3 } from "./components/Person";
+import { Card } from "./components/Card";
 
 function Page() {
   return (
+
     <div>
       <h1 className="font-bold text-2xl">Ola mundo!</h1>
       <h3>Seja bem vindo</h3>
-      
+
       {/* Renderização dos componentes de formas geométricas */}
       <Square />
       <Quadrado />
-    
+
       {/* Container que agrupa os componentes de formas geométricas dentro do Geo_Form */}
       <div className="flex gap-2 border-2 p-3">
         <Geo_Form />
@@ -36,7 +38,7 @@ function Page() {
           ocupacoes: ['Dona de casa', 'Mãe', 'Esposa']
         }}
       />
-      
+
       {/* PESSOA 2 - Jose e sua esposa Elpidia */}
       {/* Componente Person2 utiliza desestruturação com valor padrão para avatar */}
       {/* Props: name (Jose), avatar (imagem), esposa (objeto com dados de Elpidia) */}
@@ -49,7 +51,7 @@ function Page() {
           ocupacoes: ['Mãe', 'Avó', 'Diarista']
         }}
       />
-      
+
       {/* PESSOA 3 - Maradona e sua esposa Manoela */}
       {/* Person2 reutilizado: sem avatar definido, usa avatar padrão */}
       {/* Props: name (Maradona), esposa (objeto com dados de Manoela) */}
@@ -61,7 +63,7 @@ function Page() {
           ocupacoes: ['Abastecedora', 'Tia', 'Honesta']
         }}
       />
-      
+
       {/* PESSOA 4 - Edson (usando Person3 com dados diferentes) */}
       {/* Person3: componente customizado com dados fixos no componente (Willian + Roberta) */}
       {/* Props fornecidas sao IGNORADAS - o componente usa dados hardcoded */}
@@ -87,14 +89,37 @@ const Page_dois = () => {
       {/* Titulo e subtitulo alternativos */}
       <h1 className="font-bold text-2xl">Ola mundo, de novo!</h1>
       <h3>Seja bem vindo, novamente.</h3>
-      
+
       {/* Renderizacao do componente Square */}
       <Square />
     </div>
   );
 }
 
+// COMPONENTE ALTERNATIVO: Page_tres
+// Demonstra outra alternativa de renderizacao com estrutura similar
+// Nota: Este componente nao esta sendo exportado (comentado no final do arquivo) - pode ser usado para testar diferentes renderizacoes 
+const Page_tres = () => {
+  return (
+    <div>
+      {/* Titulo e subtitulo alternativos */}
+      <h1 className="font-bold text-2xl">Ola mundo, de novo!</h1>
+      <h3>Seja bem vindo, novamente.</h3>
+
+      {/* Renderizacao do componente card */}
+      <Card>
+        <>
+          <h3 className="text-3xl font-bold italic" >"Frase de efeito!"</h3>
+          <p className="text-right text-sm">Este é um exemplo de uso do componente Card.</p>
+        </>
+      </Card>
+      
+    </div>
+  );
+}
+
 // EXPORTACAO: Exporting o componente principal (Page)
 // O componente Page_dois estah comentado e nao eh exportado
-export default Page;
+//export default Page;
+export default Page_tres;  // Alternativa: descomentar para usar Page_tres em vez de Page
 //export default Page_dois;  // Alternativa: descomentar para usar Page_dois em vez de Page
