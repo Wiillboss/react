@@ -9,7 +9,7 @@ type Props = {
 // Exportação do componente Card usando named export, permitindo que seja importado em outros arquivos usando import { Card } from "./components/Card"
 export const Card = ({ children }: Props) => {
     return (
-        <div className="w-96 h-20 bg-green-600 text-black p-3 text-3xl text-center">
+        <div className="w-96 h-40 bg-green-600 text-black p-3 text-3xl text-center">
             {children}
         </div>
     );
