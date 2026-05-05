@@ -11,6 +11,7 @@ import { Person, Person2, Person3 } from "./components/Person";
 import { Card } from "./components/Card";
 import { Card2 } from "./components/Card_2";
 import { Card_2_sem_if_ternario } from "./components/Card_2_sem_if_ternario";
+import { Card_3 } from "./components/Card_3_and";
 
 function Page() {
   return (
@@ -124,9 +125,21 @@ const Page_card2_sem_if_ternario = () => {
   );
 }
 
+const Page_card3 = () => {
+  return (
+    <div>
+      <h1 className="font-bold text-2xl">Olá mundo, de novo, e de novo!</h1>
+      <h3>Seja bem-vindo, novamente hahaha.</h3>
+      <Card_3 phrase="A vida é bela!" autor="Pavel Nedved" />
+      <Card_3 phrase="O conhecimento é poder!" />
+    </div>
+  );
+}
+
 // Exportação: Descomente a desejada para alterar a página renderizada
 // export default Page;
 // export default Page_tres;
 // export default Page_dois;
 // export default Page_card2;
-export default Page_card2_sem_if_ternario;
+// export default Page_card2_sem_if_ternario;
+export default Page_card3;
