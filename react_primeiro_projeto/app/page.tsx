@@ -4,7 +4,11 @@
 // Exemplo de importação se os componentes estivessem no mesmo arquivo:
 // import Square, { Quadrado } from "./components/Square";
 
+// Importação de componentes de outros arquivos. O caminho é relativo ao arquivo atual (page.tsx).
+// A importação pode usar chaves {} para componentes nomeados, ou sem chaves para o componente exportado como padrão (default).
 import Square from "./components/Square";
+
+// Importação de componentes de outros arquivos. O caminho é relativo ao arquivo atual (page.tsx).
 import { Quadrado } from "./components/Quadrado";
 import { Geo_Form } from "./components/Geo_Form";
 import { Person, Person2, Person3 } from "./components/Person";
@@ -12,6 +16,7 @@ import { Card } from "./components/Card";
 import { Card2 } from "./components/Card_2";
 import { Card_2_sem_if_ternario } from "./components/Card_2_sem_if_ternario";
 import { Card_3 } from "./components/Card_3_and";
+import { people_list } from "./data/people_list";
 
 function Page() {
   return (
@@ -136,10 +141,27 @@ const Page_card3 = () => {
   );
 }
 
+const Page_renderizando_listas = () => {
+
+
+  return (
+    <div>
+      <h1 className="font-bold text-2xl">Olá Mundo!</h1>
+      <h3>Renderizando listas com map</h3>
+      <ul>
+        {people_list.map((person) => (
+          <li key={person.id}>{person.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 // Exportação: Descomente a desejada para alterar a página renderizada
 // export default Page;
 // export default Page_tres;
 // export default Page_dois;
 // export default Page_card2;
 // export default Page_card2_sem_if_ternario;
-export default Page_card3;
+//export default Page_card3;
+export default Page_renderizando_listas;
