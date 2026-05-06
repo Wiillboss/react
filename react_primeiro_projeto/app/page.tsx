@@ -145,18 +145,78 @@ const Page_card3 = () => {
 //o map serve para iterar sobre arrays e renderizar um componente para cada item. O key é importante para ajudar o React a identificar quais itens mudaram, foram adicionados ou removidos, melhorando a performance. O key deve ser único entre os irmãos, e o id do item é uma escolha comum para isso. Evite usar índices do array como key, pois isso pode causar problemas de performance e bugs em casos de reordenação ou remoção de itens.
 const Page_renderizando_listas = () => {
 
-
+  // Filtro 1: Usa a função filter() para criar um novo array contendo apenas as pessoas cuja profissão é "Programador"
+  // filter() retorna um novo array com apenas os elementos que atendem a condição especificada na arrow function
+  const programador = people_list.filter((person) => person.profession === "Programador");
+  
+  // Filtro 2: Usa a função filter() para criar um novo array contendo apenas as pessoas cuja profissão é "Protético"
+  // Cada person é verificado: se person.profession === "Protético", o elemento é incluído no novo array
+  const protetico = people_list.filter((person) => person.profession === "Protético");
   return (
+
+
     <div>
       <h1 className="font-bold text-2xl">Olá Mundo!</h1>
       <h3>Renderizando listas com map</h3>
+      {/* Renderiza a lista completa de pessoas se houver elementos */}
+      {/* people_list.length > 0 verifica se há itens; && renderiza o bloco à direita apenas se a condição for verdadeira */}
       {people_list.length > 0 && (
         <ul>
           {people_list.map((person) => (
-            <li key={person.id}>{person.name} - {person.profession}</li>
+            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          ))}
+        </ul>  
+      )}
+      <br />
+      <h3>Renderizando apenas programadores</h3>
+      {/* Usa ternário (? :) para exibir a lista filtrada de programadores se houver, ou mensagem de vazio */}
+      {/* programador.length > 0 ? renderiza lista : renderiza mensagem */}
+      {programador.length > 0 ? (
+        <ul>
+          {programador.map((person) => (
+            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>Nenhum programador encontrado.</p>
+      )}
+      <br />
+      <h3>Renderizando apenas protéticos usando operador lógico &&</h3>
+      {/* Usa o operador lógico && para renderizar a lista filtrada de protéticos apenas se houver elementos */}
+      {/* Se protetico.length for > 0 (true), renderiza a lista; se for 0 (false), não renderiza nada */}
+      {protetico.length > 0 && (
+        <ul>
+          {protetico.map((person) => (
+            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
           ))}
         </ul>
       )}
+      <br />
+      <h3>Renderizando apenas mulheres</h3>
+      {/* Filtro inline: people_list.filter() filtra pessoas no momento do render */}
+      {/* (person) => person.sexo === "Feminino" retorna true apenas para mulheres */}
+      {/* .length > 0 && verifica se há mulheres; se sim, renderiza a lista */}
+      {people_list.filter((person) => person.sexo === "Feminino").length > 0 && (
+        <ul>
+          {/* Mesmo filtro é aplicado novamente para renderizar os elementos filtrados com map */}
+          {people_list.filter((person) => person.sexo === "Feminino").map((person) => (
+            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          ))}
+        </ul>
+      )}
+      <br />
+      <h3>Renderizando apenas proteticas</h3>
+      {/* Filtro inline para mulheres cuja profissão é "Protética" */}
+      {/* Primeiro filter: verifica se person.profession === "Protética" */}
+      {/* .length > 0 && renderiza a lista apenas se houver protéticas */}
+      {people_list.filter((person) => person.profession === "Protética").length > 0 && (
+        <ul>
+          {/* Mesmo filtro é aplicado novamente para renderizar os elementos com map */}
+          {people_list.filter((person) => person.profession === "Protética").map((person) => (
+            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          ))}
+        </ul>
+      )}      
     </div>
   );
 }
