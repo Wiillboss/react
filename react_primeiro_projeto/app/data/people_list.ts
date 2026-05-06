@@ -8,4 +8,5 @@ export const people_list: Person[] = [
     { id: 5, name: "Roberta", profession: "Professora" },
     { id: 6, name: "Adeilda", profession: "Enfermeira" },
     { id: 7, name: "Edson", profession: "Protético" },
+    { id: 8, name: "Cicero", profession: "Aposentado" },
   ];

@@ -141,6 +141,8 @@ const Page_card3 = () => {
   );
 }
 
+
+//o map serve para iterar sobre arrays e renderizar um componente para cada item. O key é importante para ajudar o React a identificar quais itens mudaram, foram adicionados ou removidos, melhorando a performance. O key deve ser único entre os irmãos, e o id do item é uma escolha comum para isso. Evite usar índices do array como key, pois isso pode causar problemas de performance e bugs em casos de reordenação ou remoção de itens.
 const Page_renderizando_listas = () => {
 
 
@@ -148,11 +150,13 @@ const Page_renderizando_listas = () => {
     <div>
       <h1 className="font-bold text-2xl">Olá Mundo!</h1>
       <h3>Renderizando listas com map</h3>
-      <ul>
-        {people_list.map((person) => (
-          <li key={person.id}>{person.name}</li>
-        ))}
-      </ul>
+      {people_list.length > 0 && (
+        <ul>
+          {people_list.map((person) => (
+            <li key={person.id}>{person.name} - {person.profession}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
