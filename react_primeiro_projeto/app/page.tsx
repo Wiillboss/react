@@ -227,19 +227,22 @@ const Page_exercicio = () => {
   const hour = new Date().getHours();
   let greeting = "";
   
-  if (hour >= 0 && hour < 12) { 
-    greeting = "Bom dia!";
-  } else if (hour >= 12 && hour < 18) { 
-    greeting = "Boa tarde!";
-  } else if (hour >= 18 && hour <= 23){ 
-    greeting = "Boa noite!";
-  } 
+  // if (hour >= 0 && hour < 12) { 
+  //   greeting = "Bom dia!";
+  // } else if (hour >= 12 && hour < 18) { 
+  //   greeting = "Boa tarde!";
+  // } else if (hour >= 18 && hour <= 23){ 
+  //   greeting = "Boa noite!";
+  // } 
   
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center
-     text-white bg-linear-to-r from-sky-500 to-indigo-500">
-      <div className="text-9x1">{Full_Time}</div>
-      <div className="text-5x1 font-bold">{greeting}</div>
+     text-white bg-linear-to-r from-sky-200 to-indigo-800 text-6xl">
+      <div className="text-8xl">{Full_Time}</div>
+      {/* <div className="text-5x1 font-bold">{greeting}</div> */}
+      {hour >= 0 && hour < 12 && "Bom dia!"}
+      {hour >= 12 && hour < 18 && "Boa tarde!"}
+      {hour >= 18 && hour <= 23 && "Boa noite!"}
     </div>
   );
 }
