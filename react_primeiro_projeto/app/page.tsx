@@ -148,7 +148,7 @@ const Page_renderizando_listas = () => {
   // Filtro 1: Usa a função filter() para criar um novo array contendo apenas as pessoas cuja profissão é "Programador"
   // filter() retorna um novo array com apenas os elementos que atendem a condição especificada na arrow function
   const programador = people_list.filter((person) => person.profession === "Programador");
-  
+
   // Filtro 2: Usa a função filter() para criar um novo array contendo apenas as pessoas cuja profissão é "Protético"
   // Cada person é verificado: se person.profession === "Protético", o elemento é incluído no novo array
   const protetico = people_list.filter((person) => person.profession === "Protético");
@@ -165,7 +165,7 @@ const Page_renderizando_listas = () => {
           {people_list.map((person) => (
             <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
           ))}
-        </ul>  
+        </ul>
       )}
       <br />
       <h3>Renderizando apenas programadores</h3>
@@ -216,7 +216,30 @@ const Page_renderizando_listas = () => {
             <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
           ))}
         </ul>
-      )}      
+      )}
+    </div>
+  );
+}
+
+const Page_exercicio = () => {
+  const Full_Time = new Date().toLocaleTimeString();
+
+  const hour = new Date().getHours();
+  let greeting = "";
+  
+  if (hour >= 0 && hour < 12) { 
+    greeting = "Bom dia!";
+  } else if (hour >= 12 && hour < 18) { 
+    greeting = "Boa tarde!";
+  } else if (hour >= 18 && hour <= 23){ 
+    greeting = "Boa noite!";
+  } 
+  
+  return (
+    <div className="w-screen h-screen flex flex-col justify-center items-center
+     text-white bg-linear-to-r from-sky-500 to-indigo-500">
+      <div className="text-9x1">{Full_Time}</div>
+      <div className="text-5x1 font-bold">{greeting}</div>
     </div>
   );
 }
@@ -228,4 +251,5 @@ const Page_renderizando_listas = () => {
 // export default Page_card2;
 // export default Page_card2_sem_if_ternario;
 //export default Page_card3;
-export default Page_renderizando_listas;
+//export default Page_renderizando_listas;
+export default Page_exercicio;
