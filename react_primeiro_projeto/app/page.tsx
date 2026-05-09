@@ -253,7 +253,7 @@ const Exercicio_Rating_emoji = () => {
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center
      text-white bg-linear-to-r from-sky-200 to-indigo-800 text-6xl">
-      <Emoji_Rating rating={5} />
+      <Emoji_Rating rating={3} />
     </div>
   );
 }
