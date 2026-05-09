@@ -17,6 +17,7 @@ import { Card2 } from "./components/Card_2";
 import { Card_2_sem_if_ternario } from "./components/Card_2_sem_if_ternario";
 import { Card_3 } from "./components/Card_3_and";
 import { people_list } from "./data/people_list";
+import { Emoji_Rating } from "./components/Emoji_Rating";
 
 function Page() {
   return (
@@ -247,6 +248,17 @@ const Page_exercicio = () => {
   );
 }
 
+const Exercicio_Rating_emoji = () => { 
+  
+  return (
+    <div className="w-screen h-screen flex flex-col justify-center items-center
+     text-white bg-linear-to-r from-sky-200 to-indigo-800 text-6xl">
+      <Emoji_Rating rating={5} />
+    </div>
+  );
+}
+
+
 // Exportação: Descomente a desejada para alterar a página renderizada
 // export default Page;
 // export default Page_tres;
@@ -255,4 +267,5 @@ const Page_exercicio = () => {
 // export default Page_card2_sem_if_ternario;
 //export default Page_card3;
 //export default Page_renderizando_listas;
-export default Page_exercicio;
+//export default Page_exercicio;
+export default Exercicio_Rating_emoji;
