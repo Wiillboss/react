@@ -9,9 +9,9 @@ export const Emoji_Rating = ({ rating }: Props) => {
     const rateInt = Math.floor(rating);
     const rateDecimal = rating - rateInt;
 
-    const fullstars = '⭐'.repeat(rateInt);
+    const fullstars = '0'.repeat(rateInt);
     const halfStar = rateDecimal >= 0.5 ? '⭐' : '';
-    const emptyStars = '☆'.repeat(5 - rateInt - (halfStar ? 1 : 0));
+    const emptyStars = 'feliz'.repeat(5 - rateInt - (halfStar ? 1 : 0));
  
 
     return (
