@@ -11,7 +11,7 @@ export const Emoji_Rating = ({ rating }: Props) => {
 
     const fullstars = '⭐'.repeat(rateInt);
     const halfStar = rateDecimal >= 0.5 ? '⭐' : '';
-    const emptyStars = '0'.repeat(5 - rateInt - (halfStar ? 1 : 0));
+    const emptyStars = ''.repeat(5 - rateInt - (halfStar ? 1 : 0));
  
 
     return (
