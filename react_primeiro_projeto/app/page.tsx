@@ -18,6 +18,8 @@ import { Card_2_sem_if_ternario } from "./components/Card_2_sem_if_ternario";
 import { Card_3 } from "./components/Card_3_and";
 import { people_list } from "./data/people_list";
 import { Emoji_Rating } from "./components/Emoji_Rating";
+import { Student_Table } from "./components/Student_Table";
+import { students } from "./data/students";
 
 function Page() {
   return (
@@ -258,6 +260,15 @@ const Exercicio_Rating_emoji = () => {
   );
 }
 
+const Tabela_de_notas = () => {
+  return (
+      <div className="container mx-auto w-full h-full bg-black text-white">
+        <h1 className="text-5xl ml-5">Lista de estudantes</h1>
+      <Student_Table students={students} />
+      </div>
+  );
+}
+
 
 // Exportação: Descomente a desejada para alterar a página renderizada
 // export default Page;
@@ -268,4 +279,5 @@ const Exercicio_Rating_emoji = () => {
 //export default Page_card3;
 //export default Page_renderizando_listas;
 //export default Page_exercicio;
-export default Exercicio_Rating_emoji;
+//export default Exercicio_Rating_emoji;
+export default Tabela_de_notas;
