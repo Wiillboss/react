@@ -10,13 +10,13 @@ const Page_estados_eventos_click = () => {
     }
 
     return (
-        <div className="w-screen h-screen flex justify-center items-center">     
+        <div className="w-screen h-screen flex justify-center items-center">
             <button
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 m-3"
                 onClick={handleClick}>
                 Clique aqui - Botão 1
             </button>
-            
+
             <button
                 className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 m-3"
                 onClick={function click() {
@@ -41,4 +41,26 @@ const Page_estados_eventos_click = () => {
 }
 
 
-export default Page_estados_eventos_click;
+const Page_avisar = () => {
+    const avisar = (msg: string) => {
+        alert(msg);
+    }
+
+    return (
+        <div className="w-screen h-screen flex justify-center items-center">
+            <button
+                onClick={() => avisar("Botão clicado 1!")}
+                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 m-3">
+                Clique aqui - Botão 1
+            </button>
+            <button
+                onClick={() => avisar("Botão clicado 2!")}
+                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 m-3">
+                Clique aqui - Botão 2
+            </button>
+        </div>
+    );
+}
+
+//export default Page_estados_eventos_click;
+export default Page_avisar;
