@@ -1,5 +1,7 @@
 "use client";
 
+import { Custom_Button } from "../components/Custom_Button";
+
 const Page_estados_eventos_click = () => {
     function handleClick() {
         alert("Botão clicado 1!");
@@ -40,6 +42,7 @@ const Page_estados_eventos_click = () => {
     );
 }
 
+//exercicio 2 - criar uma função avisar(msg: string) e passar ela para os botões, para mostrar mensagens diferentes em cada um deles
 
 const Page_avisar = () => {
     const avisar = (msg: string) => {
@@ -62,5 +65,21 @@ const Page_avisar = () => {
     );
 }
 
+const Page_Botao_Customizado = () => {
+
+    const handle_Button_1 = () => alert("Botão 1 clicado !");
+    const handle_Button_2 = () => alert("Botão 2 clicado !");
+    const handle_Button_3 = () => alert("Botão 3 clicado !");
+
+    return (
+        <div className="w-screen h-screen flex justify-center items-center">
+            <Custom_Button label="Botão Customizado 1" onclick={handle_Button_1} />
+            <Custom_Button label="Botão Customizado 2" onclick={handle_Button_2} />
+            <Custom_Button label="Botão Customizado 3" onclick={handle_Button_3} />
+        </div>
+    );
+}
+
 //export default Page_estados_eventos_click;
-export default Page_avisar;
+//export default Page_avisar;
+export default Page_Botao_Customizado;
