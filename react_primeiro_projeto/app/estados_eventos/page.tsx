@@ -80,6 +80,39 @@ const Page_Botao_Customizado = () => {
     );
 }
 
+const Page_formulario = () => {
+
+    const handle_Form_Submit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault(); //evita que a página seja recarregada ao enviar o formulário
+        alert("Formulário 1 enviado !");
+    }
+
+    return (
+        <div className="w-screen h-screen flex justify-center items-center bg-black">
+            
+            <h1 className="text-5xl mb-3 m-3 text-white">Formario de Login 1</h1>
+            <form onSubmit={handle_Form_Submit} action="">
+                <input type="text" className="bg-gray-200 m-3" />
+                <input type="submit" value="Enviar"
+                    className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700" />
+            </form>
+
+            <h1 className="text-5xl mb-3 m-3 text-white">Formario de Login 2</h1>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                alert("Formulário 2 enviado !");
+            }} action="">
+                <input type="text" className="bg-gray-200 m-3" />
+                <input type="submit" value="Enviar"
+                    className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700" />
+            </form>
+
+        </div>
+    );
+}
+
+
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
-export default Page_Botao_Customizado;
+//export default Page_Botao_Customizado;
+export default Page_formulario;
