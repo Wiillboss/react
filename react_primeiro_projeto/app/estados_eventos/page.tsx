@@ -112,7 +112,16 @@ const Page_formulario = () => {
 }
 
 
+const Page_State = () =>{
+
+    return (
+
+        
+    );
+
+}
+
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
-export default Page_formulario;
+//export default Page_formulario;
