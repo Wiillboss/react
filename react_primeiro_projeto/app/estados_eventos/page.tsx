@@ -89,7 +89,7 @@ const Page_formulario = () => {
 
     return (
         <div className="w-screen h-screen flex justify-center items-center bg-black">
-            
+
             <h1 className="text-5xl mb-3 m-3 text-white">Formario de Login 1</h1>
             <form onSubmit={handle_Form_Submit} action="">
                 <input type="text" className="bg-gray-200 m-3" />
@@ -112,11 +112,24 @@ const Page_formulario = () => {
 }
 
 
-const Page_State = () =>{
+const Page_State = () => {
+
+    let count = 0;
+
+    const handle_Click_Button = () => {
+        count++;
+        console.log(count);
+    }
 
     return (
+        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+            <p>{count}</p>
+            <button onClick={handle_Click_Button}
+                className="bg-amber-px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700 p-3">
+                +1
+            </button>
+        </div>
 
-        
     );
 
 }
@@ -125,3 +138,4 @@ const Page_State = () =>{
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
 //export default Page_formulario;
+export default Page_State;
