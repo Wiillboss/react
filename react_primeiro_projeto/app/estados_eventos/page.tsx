@@ -115,6 +115,9 @@ const Page_formulario = () => {
 
 const Page_State = () => {
 
+    //o setShow_Secret é a função que altera o valor de show_Secret, e o useState é um hook do React que permite criar variáveis de estado em componentes funcionais, foi criado uma arrow function para alterar o valor de show_Secret, e essa função é chamada quando o botão "Mostrar Área Secreta" é clicado, e o valor de show_Secret é usado para mostrar ou esconder a área secreta.
+    const [show_Secret, setShow_Secret] = useState(false);
+
     //let count = 0;
 
     const [count, setCount] = useState(0);
@@ -131,6 +134,15 @@ const Page_State = () => {
                 className="bg-amber-px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700 p-3">
                 +1
             </button>
+            <button onClick={() => setShow_Secret(!show_Secret)}
+                className="bg-amber-px-4 py-2 bg-green-500 text-black font-bold rounded-md hover:bg-green-700 p-3 m-3">
+                {show_Secret ? "Esconder Área Secreta" : "Mostrar Área Secreta"}
+            </button>
+            {show_Secret && (
+                <div className="bg-green-400 p-4 m-3 rounded-md">
+                    Área secreta
+                </div>
+            )}
         </div>
 
     );
