@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Custom_Button } from "../components/Custom_Button";
 
 const Page_estados_eventos_click = () => {
@@ -114,11 +115,13 @@ const Page_formulario = () => {
 
 const Page_State = () => {
 
-    let count = 0;
+    //let count = 0;
 
+    const [count, setCount] = useState(0);
     const handle_Click_Button = () => {
-        count++;
-        console.log(count);
+        setCount(count + 1);
+        //count++;
+        //console.log(count);
     }
 
     return (
