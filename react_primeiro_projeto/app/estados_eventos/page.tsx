@@ -149,8 +149,35 @@ const Page_State = () => {
 
 }
 
+const Page_Manipulando_campo_texto = () => {
+    //o useState é usado para criar uma variável de estado chamada nameInput, que é inicializada com uma string vazia, e a função setNameInput é usada para atualizar o valor de nameInput quando o usuário digita algo no campo de texto, e o valor de nameInput é mostrado em tempo real abaixo do campo de texto, e quando o botão "Mostrar valor do campo" é clicado, o valor atual de nameInput é exibido em um alerta.
+    const [nameInput, setNameInput] = useState("");
+
+    const handleBtnClick = () => {
+        alert(nameInput);
+    }
+
+    //abaixo temos um campo de texto controlado, onde o valor do campo é controlado pelo estado do componente, e a função onChange é usada para atualizar o estado com o valor digitado pelo usuário, e o valor do estado é mostrado em tempo real abaixo do campo de texto, e quando o botão é clicado, o valor atual do estado é exibido em um alerta.
+    return (
+        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+            <input type="text"
+                className="border border-white bg-gray-50 p-3 text-xl text-black rounded"
+                placeholder="Digite seu nome"
+                value={nameInput}
+                onChange={(e) => setNameInput(e.target.value)} />
+            <p>Seu nome é: {nameInput}</p>
+            <button onClick={handleBtnClick}
+                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
+                Mostrar valor do campo
+            </button>
+        </div>
+    );
+}
+
+
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
 //export default Page_formulario;
-export default Page_State;
+//export default Page_State;
+export default Page_Manipulando_campo_texto;
