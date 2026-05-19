@@ -180,11 +180,12 @@ const Page_States_Mudando_Tempo = () => {
     //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 2, e não 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, mas como as atualizações são agrupadas, o valor final é 2.
     const [count, setCount] = useState(0);
 
-    //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 2, e não 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, mas como as atualizações são agrupadas, o valor final é 2.
+    //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, e como as atualizações são agrupadas, o valor final é 6.
     const handleBtnClick = () => {
         setCount(count + 2);
-        setCount(count + 2);
-        setCount(count + 2);
+        setCount(c => c + 2);
+        setCount(c => c + 2);
+        
     }
 
     return (
