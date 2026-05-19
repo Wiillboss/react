@@ -175,9 +175,35 @@ const Page_Manipulando_campo_texto = () => {
 }
 
 
+const Page_States_Mudando_Tempo = () => {
+
+    //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 2, e não 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, mas como as atualizações são agrupadas, o valor final é 2.
+    const [count, setCount] = useState(0);
+
+    //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 2, e não 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, mas como as atualizações são agrupadas, o valor final é 2.
+    const handleBtnClick = () => {
+        setCount(count + 2);
+        setCount(count + 2);
+        setCount(count + 2);
+    }
+
+    return (
+        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+            <p>{count}</p>
+            <button onClick={handleBtnClick}
+                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
+                +2
+            </button>
+        </div>
+    );
+
+
+}
+
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
 //export default Page_formulario;
 //export default Page_State;
-export default Page_Manipulando_campo_texto;
+//export default Page_Manipulando_campo_texto;
+export default Page_States_Mudando_Tempo;
