@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Custom_Button } from "../components/Custom_Button";
+import { Person_2 } from "../types/Person_2";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -185,7 +186,7 @@ const Page_States_Mudando_Tempo = () => {
         setCount(count + 2);
         setCount(c => c + 2);
         setCount(c => c + 2);
-        
+
     }
 
     return (
@@ -201,10 +202,81 @@ const Page_States_Mudando_Tempo = () => {
 
 }
 
+const Page_atualizando_objetos_states = () => {
+
+    const [fullName, setFullName] = useState<Person_2>({
+        firstName: "",
+        lastName: ""
+    });
+
+    const handle_Clear_button_FullName = () => {
+        setFullName({
+            firstName: "",
+            lastName: ""
+        });
+    }
+
+    const handle_Clear_button_FirstName = () => {
+        setFullName({
+            ...fullName,
+            firstName: ""
+        });
+    }
+
+    const handle_Clear_button_LastName = () => {
+        setFullName({
+            ...fullName,
+            lastName: ""
+        });
+    }
+
+
+    //abaixo temos um exemplo de como atualizar um objeto no estado do React, onde o estado é um objeto com as propriedades firstName e lastName, e a função setFullName é usada para atualizar o estado, e quando o usuário digita algo no campo de texto, a função onChange é chamada, e o estado é atualizado com o valor digitado pelo usuário, e o valor do estado é mostrado em tempo real abaixo dos campos de texto.
+
+    //value está recebendo o valor do estado fullName.firstName, e quando o usuário digita algo no campo de texto, a função onChange é chamada, e o estado é atualizado com o valor digitado pelo usuário, usando a sintaxe de spread operator para manter as outras propriedades do estado inalteradas, e o valor do estado é mostrado em tempo real abaixo dos campos de texto.
+
+    //o onChange do segundo campo de texto está atualizando a propriedade lastName do estado fullName, usando a mesma sintaxe de spread operator para manter as outras propriedades do estado inalteradas, e o valor do estado é mostrado em tempo real abaixo dos campos de texto.
+    return (
+        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
+            <input
+                type="text"
+                placeholder="Nome"
+                className="border border-white p-3 text-2xl text-white rouded-md mb-3"
+                value={fullName.firstName}
+                onChange={(e) => setFullName({ ...fullName, firstName: e.target.value })}
+            />
+            <input
+                type="text"
+                placeholder="Sobrenome"
+                className="border border-white p-3 text-2xl text-white rouded-md mb-3"
+                value={fullName.lastName}
+                onChange={(e) => setFullName({ ...fullName, lastName: e.target.value })}
+            />
+            <p>Meu nome completo é: </p>
+            <p>{fullName.firstName} {fullName.lastName}</p>
+
+            <button onClick={handle_Clear_button_FullName}
+                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
+                Limpar Nome e Sobrenome
+            </button>
+            <button onClick={handle_Clear_button_FirstName}
+                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
+                Limpar Nome
+            </button>
+            <button onClick={handle_Clear_button_LastName}
+                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
+                Limpar Sobrenome
+            </button>
+        </div>
+    );
+}
+
+
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
 //export default Page_formulario;
 //export default Page_State;
 //export default Page_Manipulando_campo_texto;
-export default Page_States_Mudando_Tempo;
+//export default Page_States_Mudando_Tempo;
+export default Page_atualizando_objetos_states;
