@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Custom_Button } from "../components/Custom_Button";
 import { Person_2 } from "../types/Person_2";
+import { TodoItem } from "../types/TodolItem";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -271,7 +272,40 @@ const Page_atualizando_objetos_states = () => {
     );
 }
 
+const Page_Array_States = () => {
 
+    const [list, setList] = useState<TodoItem[]>([
+        { label: "Fazer dever de casa.", checked: false },
+        { label: "Comprar bolo.", checked: false },
+    ]);
+
+    return (
+        <div className="w-screen h-screen flex flex-col justify-center items-center text-2xl">
+            <h1 className="text-4xl mt-5">Lista de Tarefas</h1>
+
+            <div className="flex w-full max-w-lg my-3 p-4 rounded-md bg-gray-700 border-2 border-gray-200">
+                <input
+                    type="text"
+                    placeholder="O que deseja fazer? "
+                    className="flex-1 border border-black p-3 text-2xl text-blue-900 rounded-md mr-3 bg-white"
+                />
+
+                <button className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3">
+                    Adicionar
+                </button>
+            </div>
+
+            <ul className="w-full max-w-lg list-disc pl-5">
+                {list.map((item, index) => (
+                    <li key={index}>
+                        {item.label} - <button className="hover:underline">[Deletar]</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+
+}
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
@@ -279,4 +313,5 @@ const Page_atualizando_objetos_states = () => {
 //export default Page_State;
 //export default Page_Manipulando_campo_texto;
 //export default Page_States_Mudando_Tempo;
-export default Page_atualizando_objetos_states;
+//export default Page_atualizando_objetos_states;
+export default Page_Array_States;
