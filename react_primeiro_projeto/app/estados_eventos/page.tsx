@@ -272,6 +272,7 @@ const Page_atualizando_objetos_states = () => {
     );
 }
 
+
 const Page_Array_States = () => {
     const [itemInput, setItemInput] = useState("");
     const [list, setList] = useState<TodoItem[]>([
@@ -289,6 +290,12 @@ const Page_Array_States = () => {
         setItemInput("");
     }
 
+    const deleteItem = (index: number) => {
+        const newList = list.filter(( _ , i) => i !== index);
+        setList(newList);
+        alert(`Item "${list[index].label}" deletado!`);
+    }
+
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center text-2xl">
             <h1 className="text-4xl mt-5">Lista de Tarefas</h1>
@@ -302,7 +309,9 @@ const Page_Array_States = () => {
                     onChange={(e) => setItemInput(e.target.value)}
                 />
 
-                <button className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3" onClick={handle_Add_Button}>
+                <button
+                    className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3"
+                    onClick={handle_Add_Button}>
                     Adicionar
                 </button>
             </div>
@@ -312,7 +321,11 @@ const Page_Array_States = () => {
             <ul className="w-full max-w-lg list-disc pl-5">
                 {list.map((item, index) => (
                     <li key={index}>
-                        {item.label} - <button className="hover:underline">[Deletar]</button>
+                        {item.label} -  
+                        <button
+                            onClick={() => deleteItem(index)}
+                            className="hover:underline">[Deletar]
+                        </button>
                     </li>
                 ))}
             </ul>
