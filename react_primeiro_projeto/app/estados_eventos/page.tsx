@@ -276,7 +276,7 @@ const Page_atualizando_objetos_states = () => {
 const Page_Array_States = () => {
     const [itemInput, setItemInput] = useState("");
     const [list, setList] = useState<TodoItem[]>([
-        { label: "Fazer dever de casa.", checked: false },
+        { label: "Fazer dever de casa.", checked: true },
         { label: "Comprar bolo.", checked: false },
     ]);
 
@@ -290,8 +290,14 @@ const Page_Array_States = () => {
         setItemInput("");
     }
 
+    const toggleItem = (index: number) => {
+        let newList = [...list];
+        newList[index].checked = !newList[index].checked;
+        setList(newList);
+    }
+
     const deleteItem = (index: number) => {
-        const newList = list.filter(( _ , i) => i !== index);
+        const newList = list.filter((_, i) => i !== index);
         setList(newList);
         alert(`Item "${list[index].label}" deletado!`);
     }
@@ -321,7 +327,15 @@ const Page_Array_States = () => {
             <ul className="w-full max-w-lg list-disc pl-5">
                 {list.map((item, index) => (
                     <li key={index}>
-                        {item.label} -  
+                        <input
+                            type="checkbox"
+                            className="w-6 h-6 mr-3"
+                            checked={item.checked} onChange={() => { }}
+                            onClick={() => {
+                                toggleItem(index);
+                            }}
+                        />
+                        {item.label} -
                         <button
                             onClick={() => deleteItem(index)}
                             className="hover:underline">[Deletar]
