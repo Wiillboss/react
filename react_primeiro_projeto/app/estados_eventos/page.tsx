@@ -273,11 +273,21 @@ const Page_atualizando_objetos_states = () => {
 }
 
 const Page_Array_States = () => {
-
+    const [itemInput, setItemInput] = useState("");
     const [list, setList] = useState<TodoItem[]>([
         { label: "Fazer dever de casa.", checked: false },
         { label: "Comprar bolo.", checked: false },
     ]);
+
+    const handle_Add_Button = () => {
+        if (itemInput.trim() === "") {
+            alert("O campo de tarefa não pode estar vazio.");
+            return;
+        }
+        const newItem: TodoItem = { label: itemInput, checked: false };
+        setList([...list, newItem]);
+        setItemInput("");
+    }
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center text-2xl">
@@ -288,12 +298,16 @@ const Page_Array_States = () => {
                     type="text"
                     placeholder="O que deseja fazer? "
                     className="flex-1 border border-black p-3 text-2xl text-blue-900 rounded-md mr-3 bg-white"
+                    value={itemInput}
+                    onChange={(e) => setItemInput(e.target.value)}
                 />
 
-                <button className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3">
+                <button className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3" onClick={handle_Add_Button}>
                     Adicionar
                 </button>
             </div>
+
+            <p className="my-4">{list.length} Itens na lista</p>
 
             <ul className="w-full max-w-lg list-disc pl-5">
                 {list.map((item, index) => (
