@@ -276,8 +276,8 @@ const Page_atualizando_objetos_states = () => {
 const Page_Array_States = () => {
     const [itemInput, setItemInput] = useState("");
     const [list, setList] = useState<TodoItem[]>([
-        { label: "Fazer dever de casa.", checked: true },
-        { label: "Comprar bolo.", checked: false },
+        { id: 1, label: "Fazer dever de casa.", checked: true },
+        { id: 2, label: "Comprar bolo.", checked: false },
     ]);
 
     const handle_Add_Button = () => {
@@ -285,7 +285,7 @@ const Page_Array_States = () => {
             alert("O campo de tarefa não pode estar vazio.");
             return;
         }
-        const newItem: TodoItem = { label: itemInput, checked: false };
+        const newItem: TodoItem = { id: Date.now(), label: itemInput, checked: false };
         setList([...list, newItem]);
         setItemInput("");
     }
@@ -326,7 +326,7 @@ const Page_Array_States = () => {
 
             <ul className="w-full max-w-lg list-disc pl-5">
                 {list.map((item, index) => (
-                    <li key={index}>
+                    <li key={item.id} className={`flex items-center mb-2 ${item.checked ? "line-through text-gray-500" : ""}`}>
                         <input
                             type="checkbox"
                             className="w-6 h-6 mr-3"
