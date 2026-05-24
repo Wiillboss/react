@@ -5,6 +5,8 @@ import { Custom_Button } from "../components/Custom_Button";
 import { Person_2 } from "../types/Person_2";
 import { TodoItem } from "../types/TodolItem";
 import { photoList } from "../data/photo_List";
+import { Photo_Item } from "../components/Photo_Item";
+import { Modal } from "../components/Modal";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -351,6 +353,18 @@ const Page_Array_States = () => {
 
 const Page_Galeria_Imagens = () => {
 
+    const [showModal, setShowModal] = useState(false);
+    const [selectedPhoto, setSelectedPhoto] = useState(photoList[0]);
+
+    const openModal = (photo: typeof photoList[0]) => {
+        setSelectedPhoto(photo);
+        setShowModal(true);
+    }
+
+    const closeModal = () => {
+        setShowModal(false);
+    }
+
     return (
         <div className="mx-2">
             <h1 className="text-3xl  font-bold my-10 mt-5 text-center">Fotos Intergalacticas</h1>
@@ -359,14 +373,28 @@ const Page_Galeria_Imagens = () => {
                 className="container  max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {/* Imagens da galeria */}
                 {photoList.map((photo) => (
-                    <img
+                    <Photo_Item
                         key={photo.id}
-                        src={photo.url}
-                        alt={`Foto ${photo.id}`}
-                        className="w-full h-auto object-cover mb-4"
-                    />
+                        photo={photo}
+                        onClick={() => openModal(photo)} />
                 ))}
             </section>
+
+            {/* Modal para exibir a foto selecionada */}
+            {showModal && (
+                <Modal>
+                    <div className="flex flex-col items-center">
+                        <img src={selectedPhoto.url} alt={`Foto ${selectedPhoto.id}`} className="w-full h-auto object-cover mb-4" />
+                        <button
+                            className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3"
+                            onClick={() => closeModal()}
+                        >
+                            Fechar
+                        </button>
+                    </div>
+                </Modal>
+            )}
+
         </div>
     )
 }
