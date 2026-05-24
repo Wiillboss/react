@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Custom_Button } from "../components/Custom_Button";
 import { Person_2 } from "../types/Person_2";
 import { TodoItem } from "../types/TodolItem";
+import { photoList } from "../data/photo_List";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -347,6 +348,30 @@ const Page_Array_States = () => {
     )
 
 }
+
+const Page_Galeria_Imagens = () => {
+
+    return (
+        <div className="mx-2">
+            <h1 className="text-3xl  font-bold my-10 mt-5 text-center">Fotos Intergalacticas</h1>
+
+            <section
+                className="container  max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                {/* Imagens da galeria */}
+                {photoList.map((photo) => (
+                    <img
+                        key={photo.id}
+                        src={photo.url}
+                        alt={`Foto ${photo.id}`}
+                        className="w-full h-auto object-cover mb-4"
+                    />
+                ))}
+            </section>
+        </div>
+    )
+}
+
+
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
 //export default Page_Botao_Customizado;
@@ -355,4 +380,5 @@ const Page_Array_States = () => {
 //export default Page_Manipulando_campo_texto;
 //export default Page_States_Mudando_Tempo;
 //export default Page_atualizando_objetos_states;
-export default Page_Array_States;
+//export default Page_Array_States;
+export default Page_Galeria_Imagens;
