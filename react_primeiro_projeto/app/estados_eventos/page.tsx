@@ -381,19 +381,7 @@ const Page_Galeria_Imagens = () => {
             </section>
 
             {/* Modal para exibir a foto selecionada */}
-            {showModal && (
-                <Modal>
-                    <div className="flex flex-col items-center">
-                        <img src={selectedPhoto.url} alt={`Foto ${selectedPhoto.id}`} className="w-full h-auto object-cover mb-4" />
-                        <button
-                            className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3"
-                            onClick={() => closeModal()}
-                        >
-                            Fechar
-                        </button>
-                    </div>
-                </Modal>
-            )}
+            {showModal && <Modal image={selectedPhoto.url} closeModal={closeModal} />}
 
         </div>
     )
