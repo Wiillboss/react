@@ -7,6 +7,7 @@ import { TodoItem } from "../types/TodolItem";
 import { photoList } from "../data/photo_List";
 import { Photo_Item } from "../components/Photo_Item";
 import { Modal } from "../components/Modal";
+import { questions } from "../data/questions";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -387,6 +388,26 @@ const Page_Galeria_Imagens = () => {
     )
 }
 
+const Page_Questions = () => {
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const title = "Quiz de Culinária";
+
+    return (
+        <div
+            className="w-screen h-screen flex flex-col justify-center items-center text-3xl bg-blue-600 text-white"
+        >
+            <div className="w-full max-w-xl rouded-md bg-white text-black shadow shadow-black">
+                <div className="p-5 font-bold text-2xl border-b border-gray-300">{title}</div>
+                <div className="p-5">
+                    ...
+                </div>
+                <div className="p-5 text-center border-t border-gray-300">
+                    {currentQuestion + 1} de {questions.length} pergunta {questions.length > 1 ? "respondidas" : "respondida"}
+                </div>
+            </div>
+        </div>
+    );
+}
 
 //export default Page_estados_eventos_click;
 //export default Page_avisar;
@@ -397,4 +418,5 @@ const Page_Galeria_Imagens = () => {
 //export default Page_States_Mudando_Tempo;
 //export default Page_atualizando_objetos_states;
 //export default Page_Array_States;
-export default Page_Galeria_Imagens;
+//export default Page_Galeria_Imagens;
+export default Page_Questions;
