@@ -8,6 +8,7 @@ import { photoList } from "../data/photo_List";
 import { Photo_Item } from "../components/Photo_Item";
 import { Modal } from "../components/Modal";
 import { questions } from "../data/questions";
+import { Question_Item } from "../components/Question_Item";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -389,9 +390,22 @@ const Page_Galeria_Imagens = () => {
 }
 
 const Page_Questions = () => {
+    // index da pergunta atual (0-based)
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const title = "Quiz de Culinária";
 
+    // handleAnswer recebe o payload do `Question_Item` com:
+    // - correct: boolean indicando se a resposta foi correta
+    // - questionIndex: índice da pergunta respondida (0-based)
+    // Aqui apenas avançamos para a próxima pergunta; o payload pode ser
+    // usado para contabilizar pontuação ou exibir feedback ao usuário.
+    const handleAnswer = (payload: { correct: boolean; questionIndex: number }) => {
+        if (currentQuestion < questions.length - 1) {
+            setCurrentQuestion(currentQuestion + 1);
+        } else {
+            alert("Quiz finalizado!");
+        }
+    }
     return (
         <div
             className="w-screen h-screen flex flex-col justify-center items-center text-3xl bg-blue-600 text-white"
@@ -399,7 +413,15 @@ const Page_Questions = () => {
             <div className="w-full max-w-xl rouded-md bg-white text-black shadow shadow-black">
                 <div className="p-5 font-bold text-2xl border-b border-gray-300">{title}</div>
                 <div className="p-5">
-                    ...
+                    {/* componente que renderiza a pergunta atual
+                        - question: dados da pergunta
+                        - count: número (1-based) mostrado para o usuário
+                        - onAnswer: callback que recebe um payload com o resultado */}
+                    <Question_Item
+                        question={questions[currentQuestion]}
+                        count={currentQuestion + 1}
+                        onAnswer={handleAnswer}
+                    />
                 </div>
                 <div className="p-5 text-center border-t border-gray-300">
                     {currentQuestion + 1} de {questions.length} pergunta {questions.length > 1 ? "respondidas" : "respondida"}
