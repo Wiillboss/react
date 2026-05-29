@@ -25,8 +25,11 @@ export const Question_Item = ({ question, count, onAnswer }: Props) => {
 
         const isCorrect = index === question.answer; // compara índices
         setSelectedOption(index); // marca a opção escolhida
-        // envia o resultado para o componente pai (questionIndex é 0-based)
-        onAnswer({ correct: isCorrect, questionIndex: count - 1 });
+ 
+        setTimeout(() => {
+            onAnswer({ correct: isCorrect, questionIndex: count - 1 }); // envia resultado para pai
+            setSelectedOption(null); // reseta seleção para próxima pergunta
+        }, 2000); // tempo para mostrar feedback antes de resetar
     };
 
     return (

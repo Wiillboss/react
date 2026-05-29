@@ -9,6 +9,7 @@ import { Photo_Item } from "../components/Photo_Item";
 import { Modal } from "../components/Modal";
 import { questions } from "../data/questions";
 import { Question_Item } from "../components/Question_Item";
+import { Results } from "../components/Results";
 
 const Page_estados_eventos_click = () => {
     function handleClick() {
@@ -50,7 +51,7 @@ const Page_estados_eventos_click = () => {
     );
 }
 
-//exercicio 2 - criar uma função avisar(msg: string) e passar ela para os botões, para mostrar mensagens diferentes em cada um deles
+// Exercicio 2: criar a função avisar(msg: string) e passá-la para os botões para mostrar mensagens diferentes
 
 const Page_avisar = () => {
     const avisar = (msg: string) => {
@@ -98,14 +99,14 @@ const Page_formulario = () => {
     return (
         <div className="w-screen h-screen flex justify-center items-center bg-black">
 
-            <h1 className="text-5xl mb-3 m-3 text-white">Formario de Login 1</h1>
+            <h1 className="text-5xl mb-3 m-3 text-white">Formulário de Login 1</h1>
             <form onSubmit={handle_Form_Submit} action="">
                 <input type="text" className="bg-gray-200 m-3" />
                 <input type="submit" value="Enviar"
                     className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700" />
             </form>
 
-            <h1 className="text-5xl mb-3 m-3 text-white">Formario de Login 2</h1>
+            <h1 className="text-5xl mb-3 m-3 text-white">Formulário de Login 2</h1>
             <form onSubmit={(e) => {
                 e.preventDefault();
                 alert("Formulário 2 enviado !");
@@ -138,11 +139,11 @@ const Page_State = () => {
         <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
             <p>{count}</p>
             <button onClick={handle_Click_Button}
-                className="bg-amber-px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700 p-3">
+                className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700 p-3">
                 +1
             </button>
             <button onClick={() => setShow_Secret(!show_Secret)}
-                className="bg-amber-px-4 py-2 bg-green-500 text-black font-bold rounded-md hover:bg-green-700 p-3 m-3">
+                className="px-4 py-2 bg-green-500 text-black font-bold rounded-md hover:bg-green-700 p-3 m-3">
                 {show_Secret ? "Esconder Área Secreta" : "Mostrar Área Secreta"}
             </button>
             {show_Secret && (
@@ -184,15 +185,15 @@ const Page_Manipulando_campo_texto = () => {
 
 const Page_States_Mudando_Tempo = () => {
 
-    //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 2, e não 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, mas como as atualizações são agrupadas, o valor final é 2.
+    // Aqui mostramos um exemplo de atualizações de estado sequenciais.
+    // A primeira chamada usa o valor atual de count diretamente,
+    // enquanto as duas seguintes usam a forma funcional para usar o valor atualizado.
     const [count, setCount] = useState(0);
 
-    //abaixo temos um exemplo de como o React agrupa as atualizações de estado feitas dentro de um mesmo evento, ou seja, quando o botão é clicado, as três chamadas para setCount são agrupadas em uma única atualização, e o valor final de count será 6, porque o React pega o valor atual de count (que é 0) e adiciona 2 a ele três vezes, e como as atualizações são agrupadas, o valor final é 6.
     const handleBtnClick = () => {
         setCount(count + 2);
-        setCount(c => c + 2);
-        setCount(c => c + 2);
-
+        setCount((c) => c + 2);
+        setCount((c) => c + 2);
     }
 
     return (
@@ -247,14 +248,14 @@ const Page_atualizando_objetos_states = () => {
             <input
                 type="text"
                 placeholder="Nome"
-                className="border border-white p-3 text-2xl text-white rouded-md mb-3"
+                className="border border-white p-3 text-2xl text-white rounded-md mb-3"
                 value={fullName.firstName}
                 onChange={(e) => setFullName({ ...fullName, firstName: e.target.value })}
             />
             <input
                 type="text"
                 placeholder="Sobrenome"
-                className="border border-white p-3 text-2xl text-white rouded-md mb-3"
+                className="border border-white p-3 text-2xl text-white rounded-md mb-3"
                 value={fullName.lastName}
                 onChange={(e) => setFullName({ ...fullName, lastName: e.target.value })}
             />
@@ -390,27 +391,35 @@ const Page_Galeria_Imagens = () => {
 }
 
 const Page_Questions = () => {
+    const [answers, setAnswers] = useState<number[]>([]);
+    const [showResult, setShowResult] = useState(false);
+
     // index da pergunta atual (0-based)
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const title = "Quiz de Culinária";
 
-    // handleAnswer recebe o payload do `Question_Item` com:
-    // - correct: boolean indicando se a resposta foi correta
-    // - questionIndex: índice da pergunta respondida (0-based)
-    // Aqui apenas avançamos para a próxima pergunta; o payload pode ser
-    // usado para contabilizar pontuação ou exibir feedback ao usuário.
-    const handleAnswer = (payload: { correct: boolean; questionIndex: number }) => {
+    const loadNextQuestion = () => {
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
         } else {
-            alert("Quiz finalizado!");
+            setShowResult(true);
         }
+    }
+
+    // handleAnswer recebe o payload do `Question_Item` com:
+    // - correct: boolean indicando se a resposta foi correta
+    // - questionIndex: índice da pergunta respondida (0-based)
+    // Usamos apenas loadNextQuestion() para avançar de pergunta,
+    // evitando duplicar a atualização do estado.
+    const handleAnswer = (payload: { correct: boolean; questionIndex: number }) => {
+        setAnswers((prev) => [...prev, payload.questionIndex]);
+        loadNextQuestion();
     }
     return (
         <div
             className="w-screen h-screen flex flex-col justify-center items-center text-3xl bg-blue-600 text-white"
         >
-            <div className="w-full max-w-xl rouded-md bg-white text-black shadow shadow-black">
+            <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
                 <div className="p-5 font-bold text-2xl border-b border-gray-300">{title}</div>
                 <div className="p-5">
                     {/* componente que renderiza a pergunta atual
@@ -422,9 +431,26 @@ const Page_Questions = () => {
                         count={currentQuestion + 1}
                         onAnswer={handleAnswer}
                     />
+                    {showResult && (
+                        <Results answers={answers} questions={questions} />
+                    )}
                 </div>
                 <div className="p-5 text-center border-t border-gray-300">
-                    {currentQuestion + 1} de {questions.length} pergunta {questions.length > 1 ? "respondidas" : "respondida"}
+                    {!showResult && (
+                        <>
+                            {currentQuestion + 1} de {questions.length} pergunta {questions.length > 1 ? "respondidas" : "respondida"}
+                        </>
+                    )}
+                    {!showResult && (<button
+                        onClick={loadNextQuestion}
+                        className="ml-3 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
+                        Próxima Pergunta
+                    </button>)}
+                    {!showResult && (<button
+                        onClick={() => setShowResult(true)}
+                        className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">
+                        Ver Resultado
+                    </button>)}
                 </div>
             </div>
         </div>
