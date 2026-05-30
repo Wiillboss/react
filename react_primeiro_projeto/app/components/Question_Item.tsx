@@ -10,7 +10,7 @@ import { Question } from "../types/Questions";
 type Props = {
     question: Question;
     count: number;
-    onAnswer: (payload: { correct: boolean; questionIndex: number }) => void;
+    onAnswer: (payload: { correct: boolean; selectedAnswer: number; questionIndex: number }) => void;
 }
 
 export const Question_Item = ({ question, count, onAnswer }: Props) => {
@@ -27,7 +27,7 @@ export const Question_Item = ({ question, count, onAnswer }: Props) => {
         setSelectedOption(index); // marca a opção escolhida
  
         setTimeout(() => {
-            onAnswer({ correct: isCorrect, questionIndex: count - 1 }); // envia resultado para pai
+            onAnswer({ correct: isCorrect, selectedAnswer: index, questionIndex: count - 1 }); // envia resultado para pai
             setSelectedOption(null); // reseta seleção para próxima pergunta
         }, 2000); // tempo para mostrar feedback antes de resetar
     };

@@ -406,13 +406,19 @@ const Page_Questions = () => {
         }
     }
 
+    const handle_Restar_Button = () => {
+        setCurrentQuestion(0);
+        setAnswers([]);
+        setShowResult(false);
+    }
+
     // handleAnswer recebe o payload do `Question_Item` com:
     // - correct: boolean indicando se a resposta foi correta
     // - questionIndex: índice da pergunta respondida (0-based)
     // Usamos apenas loadNextQuestion() para avançar de pergunta,
     // evitando duplicar a atualização do estado.
-    const handleAnswer = (payload: { correct: boolean; questionIndex: number }) => {
-        setAnswers((prev) => [...prev, payload.questionIndex]);
+    const handleAnswer = (payload: { correct: boolean; selectedAnswer: number; questionIndex: number }) => {
+        setAnswers((prev) => [...prev, payload.selectedAnswer]);
         loadNextQuestion();
     }
     return (
@@ -450,6 +456,16 @@ const Page_Questions = () => {
                         onClick={() => setShowResult(true)}
                         className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">
                         Ver Resultado
+                    </button>)}
+                    {!showResult && (<button
+                        onClick={() => {
+                            setCurrentQuestion(0);
+                            setAnswers([]);
+                            setShowResult(false);
+                            handle_Restar_Button();
+                        }}
+                        className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 mt-3">
+                        Reiniciar
                     </button>)}
                 </div>
             </div>

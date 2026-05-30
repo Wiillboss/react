@@ -1,11 +1,24 @@
 import { Question } from "../types/Questions";
 
-export const Results = ({ answers, questions }: { answers: number[]; questions: Question[] }) => {
-    const correctAnswers = answers.filter((answer, index) => answer === questions[index].answer).length;
+type Props = {
+    questions: Question[];
+    answers: number[];
+}
+
+export const Results = ({ answers, questions }: Props) => {
     return (
         <div className="p-5 text-center">
-            <h2 className="text-2xl font-bold">Resultado</h2>
-            <p>Você respondeu {correctAnswers} de {questions.length} perguntas corretamente.</p>
+            {questions.map((question, index) => {
+                const isCorrect = question.answer === answers[index];
+                return (
+                    <div key={index} className="mb-4">
+                        <h3 className="text-lg font-semibold">{question.questions}</h3>
+                        <p className={`text-sm ${isCorrect ? 'text-green-500' : 'text-red-500'}`}>
+                            Você respondeu: {question.options[answers[index]]} - {isCorrect ? 'Certo' : 'Errado'}
+                        </p>
+                    </div>
+                );
+            })}
         </div>
     );
 };
