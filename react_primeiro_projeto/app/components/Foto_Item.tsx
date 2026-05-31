@@ -1,19 +1,19 @@
-// Photo_Item.tsx
+// Foto_Item.tsx
 // Componente que exibe uma imagem da galeria com clique opcional.
 
 import Image from "next/image";
-import { Photo } from "../types/Photo";
+import { Foto } from "../types/Foto";
 
 type Props = {
-    photo: Photo; // Dados da foto usada pelo componente
-    onClick?: () => void; // Callback opcional para clique
+    foto: Foto; // Dados da foto usada pelo componente
+    aoClicar?: () => void; // Callback opcional para clique
 };
 
-export const Photo_Item = ({ photo, onClick }: Props) => {
+export const Foto_Item = ({ foto, aoClicar }: Props) => {
     return (
         <div
             className="w-full h-full flex justify-center items-center cursor-alias hover:opacity-80 transition-opacity"
-            onClick={onClick}
+            onClick={aoClicar}
         >
             <Image
                 src={photo.url}

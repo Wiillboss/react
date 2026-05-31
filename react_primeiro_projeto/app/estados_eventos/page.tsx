@@ -1,22 +1,24 @@
 "use client";
 
+// page.tsx em estados_eventos
+// Esta página mostra exemplos de eventos, estado local, formulários, listas, galeria e quiz.
 import { useState } from "react";
-import { Custom_Button } from "../components/Custom_Button";
-import { Person_2 } from "../types/Person_2";
+import { Botao_Personalizado } from "../components/Botao_Personalizado";
+import { Pessoa_2 } from "../types/Person_2";
 import { TodoItem } from "../types/TodolItem";
-import { photoList } from "../data/photo_List";
-import { Photo_Item } from "../components/Photo_Item";
+import { listaFotos } from "../data/lista_fotos";
+import { Foto_Item } from "../components/Foto_Item";
 import { Modal } from "../components/Modal";
-import { questions } from "../data/questions";
-import { Question_Item } from "../components/Question_Item";
-import { Results } from "../components/Results";
+import { perguntas } from "../data/perguntas";
+import { Pergunta_Item } from "../components/Pergunta_Item";
+import { Resultados } from "../components/Resultados";
 
-const Page_estados_eventos_click = () => {
-    function handleClick() {
+const Pagina_Eventos_Clique = () => {
+    function aoClicar() {
         alert("Botão clicado 1!");
     }
 
-    const handleClick2 = () => {
+    const aoClicar2 = () => {
         alert("Botão clicado 4!");
     }
 
@@ -24,7 +26,7 @@ const Page_estados_eventos_click = () => {
         <div className="w-screen h-screen flex justify-center items-center">
             <button
                 className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 m-3"
-                onClick={handleClick}>
+                onClick={aoClicar}>
                 Clique aqui - Botão 1
             </button>
 
@@ -44,7 +46,7 @@ const Page_estados_eventos_click = () => {
 
             <button
                 className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 m-3"
-                onClick={handleClick2}>
+                onClick={aoClicar2}>
                 Clique aqui - Botão 4
             </button>
         </div>
@@ -53,7 +55,7 @@ const Page_estados_eventos_click = () => {
 
 // Exercicio 2: criar a função avisar(msg: string) e passá-la para os botões para mostrar mensagens diferentes
 
-const Page_avisar = () => {
+const Pagina_Avisar = () => {
     const avisar = (msg: string) => {
         alert(msg);
     }
@@ -74,24 +76,24 @@ const Page_avisar = () => {
     );
 }
 
-const Page_Botao_Customizado = () => {
+const Pagina_Botoes_Customizados = () => {
 
-    const handle_Button_1 = () => alert("Botão 1 clicado !");
-    const handle_Button_2 = () => alert("Botão 2 clicado !");
-    const handle_Button_3 = () => alert("Botão 3 clicado !");
+    const aoClicarBotao1 = () => alert("Botão 1 clicado !");
+    const aoClicarBotao2 = () => alert("Botão 2 clicado !");
+    const aoClicarBotao3 = () => alert("Botão 3 clicado !");
 
     return (
         <div className="w-screen h-screen flex justify-center items-center">
-            <Custom_Button label="Botão Customizado 1" onclick={handle_Button_1} />
-            <Custom_Button label="Botão Customizado 2" onclick={handle_Button_2} />
-            <Custom_Button label="Botão Customizado 3" onclick={handle_Button_3} />
+            <Botao_Personalizado rotulo="Botão Customizado 1" aoClicar={aoClicarBotao1} />
+            <Botao_Personalizado rotulo="Botão Customizado 2" aoClicar={aoClicarBotao2} />
+            <Botao_Personalizado rotulo="Botão Customizado 3" aoClicar={aoClicarBotao3} />
         </div>
     );
 }
 
-const Page_formulario = () => {
+const Pagina_Formulario = () => {
 
-    const handle_Form_Submit = (event: React.FormEvent<HTMLFormElement>) => {
+    const aoEnviarFormulario = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault(); //evita que a página seja recarregada ao enviar o formulário
         alert("Formulário 1 enviado !");
     }
@@ -100,7 +102,7 @@ const Page_formulario = () => {
         <div className="w-screen h-screen flex justify-center items-center bg-black">
 
             <h1 className="text-5xl mb-3 m-3 text-white">Formulário de Login 1</h1>
-            <form onSubmit={handle_Form_Submit} action="">
+            <form onSubmit={aoEnviarFormulario} action="">
                 <input type="text" className="bg-gray-200 m-3" />
                 <input type="submit" value="Enviar"
                     className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700" />
@@ -121,32 +123,32 @@ const Page_formulario = () => {
 }
 
 
-const Page_State = () => {
+const Pagina_Estado = () => {
 
-    //o setShow_Secret é a função que altera o valor de show_Secret, e o useState é um hook do React que permite criar variáveis de estado em componentes funcionais, foi criado uma arrow function para alterar o valor de show_Secret, e essa função é chamada quando o botão "Mostrar Área Secreta" é clicado, e o valor de show_Secret é usado para mostrar ou esconder a área secreta.
-    const [show_Secret, setShow_Secret] = useState(false);
+    //o definirMostrarSegredo é a função que altera o valor de mostrarSegredo, e o useState é um hook do React que permite criar variáveis de estado em componentes funcionais.
+    const [mostrarSegredo, definirMostrarSegredo] = useState(false);
 
-    //let count = 0;
+    //let contador = 0;
 
-    const [count, setCount] = useState(0);
-    const handle_Click_Button = () => {
-        setCount(count + 1);
-        //count++;
-        //console.log(count);
+    const [contador, definirContador] = useState(0);
+    const aoClicarIncrementar = () => {
+        definirContador(contador + 1);
+        //contador++;
+        //console.log(contador);
     }
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-            <p>{count}</p>
-            <button onClick={handle_Click_Button}
+            <p>{contador}</p>
+            <button onClick={aoClicarIncrementar}
                 className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700 p-3">
                 +1
             </button>
-            <button onClick={() => setShow_Secret(!show_Secret)}
+            <button onClick={() => definirMostrarSegredo(!mostrarSegredo)}
                 className="px-4 py-2 bg-green-500 text-black font-bold rounded-md hover:bg-green-700 p-3 m-3">
-                {show_Secret ? "Esconder Área Secreta" : "Mostrar Área Secreta"}
+                {mostrarSegredo ? "Esconder Área Secreta" : "Mostrar Área Secreta"}
             </button>
-            {show_Secret && (
+            {mostrarSegredo && (
                 <div className="bg-green-400 p-4 m-3 rounded-md">
                     Área secreta
                 </div>
@@ -157,12 +159,12 @@ const Page_State = () => {
 
 }
 
-const Page_Manipulando_campo_texto = () => {
-    //o useState é usado para criar uma variável de estado chamada nameInput, que é inicializada com uma string vazia, e a função setNameInput é usada para atualizar o valor de nameInput quando o usuário digita algo no campo de texto, e o valor de nameInput é mostrado em tempo real abaixo do campo de texto, e quando o botão "Mostrar valor do campo" é clicado, o valor atual de nameInput é exibido em um alerta.
-    const [nameInput, setNameInput] = useState("");
+const Pagina_Campo_Texto = () => {
+    //o useState é usado para criar uma variável de estado chamada entradaNome, que é inicializada com uma string vazia, e a função definirEntradaNome é usada para atualizar o valor quando o usuário digita algo no o campo de texto.
+    const [entradaNome, definirEntradaNome] = useState("");
 
-    const handleBtnClick = () => {
-        alert(nameInput);
+    const aoClicarMostrarValor = () => {
+        alert(entradaNome);
     }
 
     //abaixo temos um campo de texto controlado, onde o valor do campo é controlado pelo estado do componente, e a função onChange é usada para atualizar o estado com o valor digitado pelo usuário, e o valor do estado é mostrado em tempo real abaixo do campo de texto, e quando o botão é clicado, o valor atual do estado é exibido em um alerta.
@@ -171,10 +173,10 @@ const Page_Manipulando_campo_texto = () => {
             <input type="text"
                 className="border border-white bg-gray-50 p-3 text-xl text-black rounded"
                 placeholder="Digite seu nome"
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)} />
-            <p>Seu nome é: {nameInput}</p>
-            <button onClick={handleBtnClick}
+                value={entradaNome}
+                onChange={(e) => definirEntradaNome(e.target.value)} />
+            <p>Seu nome é: {entradaNome}</p>
+            <button onClick={aoClicarMostrarValor}
                 className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
                 Mostrar valor do campo
             </button>
@@ -183,23 +185,23 @@ const Page_Manipulando_campo_texto = () => {
 }
 
 
-const Page_States_Mudando_Tempo = () => {
+const Pagina_Estado_Tempo = () => {
 
     // Aqui mostramos um exemplo de atualizações de estado sequenciais.
-    // A primeira chamada usa o valor atual de count diretamente,
+    // A primeira chamada usa o valor atual de contadorTempo diretamente,
     // enquanto as duas seguintes usam a forma funcional para usar o valor atualizado.
-    const [count, setCount] = useState(0);
+    const [contadorTempo, definirContadorTempo] = useState(0);
 
-    const handleBtnClick = () => {
-        setCount(count + 2);
-        setCount((c) => c + 2);
-        setCount((c) => c + 2);
+    const aoClicarAumentarDois = () => {
+        definirContadorTempo(contadorTempo + 2);
+        definirContadorTempo((c) => c + 2);
+        definirContadorTempo((c) => c + 2);
     }
 
     return (
         <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-            <p>{count}</p>
-            <button onClick={handleBtnClick}
+            <p>{contadorTempo}</p>
+            <button onClick={aoClicarAumentarDois}
                 className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
                 +2
             </button>
@@ -209,31 +211,31 @@ const Page_States_Mudando_Tempo = () => {
 
 }
 
-const Page_atualizando_objetos_states = () => {
+const Pagina_Atualizando_Objeto_Estado = () => {
 
-    const [fullName, setFullName] = useState<Person_2>({
-        firstName: "",
-        lastName: ""
+    const [nomeCompleto, definirNomeCompleto] = useState<Pessoa_2>({
+        primeiroNome: "",
+        ultimoNome: ""
     });
 
-    const handle_Clear_button_FullName = () => {
-        setFullName({
-            firstName: "",
-            lastName: ""
+    const limparNomeCompleto = () => {
+        definirNomeCompleto({
+            primeiroNome: "",
+            ultimoNome: ""
         });
     }
 
-    const handle_Clear_button_FirstName = () => {
-        setFullName({
-            ...fullName,
-            firstName: ""
+    const limparPrimeiroNome = () => {
+        definirNomeCompleto({
+            ...nomeCompleto,
+            primeiroNome: ""
         });
     }
 
-    const handle_Clear_button_LastName = () => {
-        setFullName({
-            ...fullName,
-            lastName: ""
+    const limparSobrenome = () => {
+        definirNomeCompleto({
+            ...nomeCompleto,
+            ultimoNome: ""
         });
     }
 
@@ -249,28 +251,28 @@ const Page_atualizando_objetos_states = () => {
                 type="text"
                 placeholder="Nome"
                 className="border border-white p-3 text-2xl text-white rounded-md mb-3"
-                value={fullName.firstName}
-                onChange={(e) => setFullName({ ...fullName, firstName: e.target.value })}
+                value={nomeCompleto.primeiroNome}
+                onChange={(e) => definirNomeCompleto({ ...nomeCompleto, primeiroNome: e.target.value })}
             />
             <input
                 type="text"
                 placeholder="Sobrenome"
                 className="border border-white p-3 text-2xl text-white rounded-md mb-3"
-                value={fullName.lastName}
-                onChange={(e) => setFullName({ ...fullName, lastName: e.target.value })}
+                value={nomeCompleto.ultimoNome}
+                onChange={(e) => definirNomeCompleto({ ...nomeCompleto, ultimoNome: e.target.value })}
             />
             <p>Meu nome completo é: </p>
-            <p>{fullName.firstName} {fullName.lastName}</p>
+            <p>{nomeCompleto.firstName} {nomeCompleto.lastName}</p>
 
-            <button onClick={handle_Clear_button_FullName}
+            <button onClick={limparNomeCompleto}
                 className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
                 Limpar Nome e Sobrenome
             </button>
-            <button onClick={handle_Clear_button_FirstName}
+            <button onClick={limparPrimeiroNome}
                 className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
                 Limpar Nome
             </button>
-            <button onClick={handle_Clear_button_LastName}
+            <button onClick={limparSobrenome}
                 className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
                 Limpar Sobrenome
             </button>
@@ -279,33 +281,34 @@ const Page_atualizando_objetos_states = () => {
 }
 
 
-const Page_Array_States = () => {
-    const [itemInput, setItemInput] = useState("");
-    const [list, setList] = useState<TodoItem[]>([
-        { id: 1, label: "Fazer dever de casa.", checked: true },
-        { id: 2, label: "Comprar bolo.", checked: false },
+const Pagina_Lista_Estado = () => {
+    const [entradaTarefa, definirEntradaTarefa] = useState("");
+    const [listaTarefas, definirListaTarefas] = useState<ItemTarefa[]>([
+        { id: 1, rotulo: "Fazer dever de casa.", concluido: true },
+        { id: 2, rotulo: "Comprar bolo.", concluido: false },
     ]);
 
-    const handle_Add_Button = () => {
-        if (itemInput.trim() === "") {
+    const adicionarTarefa = () => {
+        if (entradaTarefa.trim() === "") {
             alert("O campo de tarefa não pode estar vazio.");
             return;
         }
-        const newItem: TodoItem = { id: Date.now(), label: itemInput, checked: false };
-        setList([...list, newItem]);
-        setItemInput("");
+        const novoItem: ItemTarefa = { id: Date.now(), rotulo: entradaTarefa, concluido: false };
+        definirListaTarefas([...listaTarefas, novoItem]);
+        definirEntradaTarefa("");
     }
 
-    const toggleItem = (index: number) => {
-        let newList = [...list];
-        newList[index].checked = !newList[index].checked;
-        setList(newList);
+    const alternarItem = (index: number) => {
+        const listaAtualizada = [...listaTarefas];
+        listaAtualizada[index].concluido = !listaAtualizada[index].concluido;
+        definirListaTarefas(listaAtualizada);
     }
 
-    const deleteItem = (index: number) => {
-        const newList = list.filter((_, i) => i !== index);
-        setList(newList);
-        alert(`Item "${list[index].label}" deletado!`);
+    const deletarItem = (index: number) => {
+        const listaAtualizada = listaTarefas.filter((_, i) => i !== index);
+        const tarefaRemovida = listaTarefas[index]?.rotulo;
+        definirListaTarefas(listaAtualizada);
+        alert(`Item "${tarefaRemovida}" deletado!`);
     }
 
     return (
@@ -317,33 +320,33 @@ const Page_Array_States = () => {
                     type="text"
                     placeholder="O que deseja fazer? "
                     className="flex-1 border border-black p-3 text-2xl text-blue-900 rounded-md mr-3 bg-white"
-                    value={itemInput}
-                    onChange={(e) => setItemInput(e.target.value)}
+                    value={entradaTarefa}
+                    onChange={(e) => definirEntradaTarefa(e.target.value)}
                 />
 
                 <button
                     className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3"
-                    onClick={handle_Add_Button}>
+                    onClick={adicionarTarefa}>
                     Adicionar
                 </button>
             </div>
 
-            <p className="my-4">{list.length} Itens na lista</p>
+            <p className="my-4">{listaTarefas.length} Itens na lista</p>
 
             <ul className="w-full max-w-lg list-disc pl-5">
-                {list.map((item, index) => (
+                {listaTarefas.map((item, index) => (
                     <li key={item.id} className={`flex items-center mb-2 ${item.checked ? "line-through text-gray-500" : ""}`}>
                         <input
                             type="checkbox"
                             className="w-6 h-6 mr-3"
-                            checked={item.checked} onChange={() => { }}
+                            checked={item.concluido} onChange={() => { }}
                             onClick={() => {
-                                toggleItem(index);
+                                alternarItem(index);
                             }}
                         />
-                        {item.label} -
+                        {item.rotulo} -
                         <button
-                            onClick={() => deleteItem(index)}
+                            onClick={() => deletarItem(index)}
                             className="hover:underline">[Deletar]
                         </button>
                     </li>
@@ -354,18 +357,18 @@ const Page_Array_States = () => {
 
 }
 
-const Page_Galeria_Imagens = () => {
+const Pagina_Galeria_Imagens = () => {
 
-    const [showModal, setShowModal] = useState(false);
-    const [selectedPhoto, setSelectedPhoto] = useState(photoList[0]);
+    const [mostrarModal, definirMostrarModal] = useState(false);
+    const [fotoSelecionada, definirFotoSelecionada] = useState(listaFotos[0]);
 
-    const openModal = (photo: typeof photoList[0]) => {
-        setSelectedPhoto(photo);
-        setShowModal(true);
+    const abrirModal = (foto: typeof listaFotos[0]) => {
+        definirFotoSelecionada(foto);
+        definirMostrarModal(true);
     }
 
-    const closeModal = () => {
-        setShowModal(false);
+    const fecharModal = () => {
+        definirMostrarModal(false);
     }
 
     return (
@@ -375,95 +378,90 @@ const Page_Galeria_Imagens = () => {
             <section
                 className="container  max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 {/* Imagens da galeria */}
-                {photoList.map((photo) => (
-                    <Photo_Item
-                        key={photo.id}
-                        photo={photo}
-                        onClick={() => openModal(photo)} />
+                {listaFotos.map((foto) => (
+                    <Foto_Item
+                        key={foto.id}
+                        foto={foto}
+                        aoClicar={() => abrirModal(foto)} />
                 ))}
             </section>
 
             {/* Modal para exibir a foto selecionada */}
-            {showModal && <Modal image={selectedPhoto.url} closeModal={closeModal} />}
+            {mostrarModal && <Modal image={fotoSelecionada.url} closeModal={fecharModal} />}
 
         </div>
     )
 }
 
-const Page_Questions = () => {
-    const [answers, setAnswers] = useState<number[]>([]);
-    const [showResult, setShowResult] = useState(false);
+const Pagina_Questoes = () => {
+    const [respostas, definirRespostas] = useState<number[]>([]);
+    const [mostrarResultado, definirMostrarResultado] = useState(false);
 
-    // index da pergunta atual (0-based)
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const title = "Quiz de Culinária";
+    // índice da pergunta atual (0-based)
+    const [perguntaAtual, definirPerguntaAtual] = useState(0);
+    const titulo = "Quiz de Culinária";
 
-    const loadNextQuestion = () => {
-        if (currentQuestion < questions.length - 1) {
-            setCurrentQuestion(currentQuestion + 1);
+    const carregarProximaPergunta = () => {
+        if (perguntaAtual < perguntas.length - 1) {
+            definirPerguntaAtual(perguntaAtual + 1);
         } else {
-            setShowResult(true);
+            definirMostrarResultado(true);
         }
     }
 
-    const handle_Restar_Button = () => {
-        setCurrentQuestion(0);
-        setAnswers([]);
-        setShowResult(false);
+    const reiniciarQuiz = () => {
+        definirPerguntaAtual(0);
+        definirRespostas([]);
+        definirMostrarResultado(false);
     }
 
-    // handleAnswer recebe o payload do `Question_Item` com:
+    // processarResposta recebe o payload do `Pergunta_Item` com:
     // - correct: boolean indicando se a resposta foi correta
     // - questionIndex: índice da pergunta respondida (0-based)
-    // Usamos apenas loadNextQuestion() para avançar de pergunta,
+    // Usamos apenas carregarProximaPergunta() para avançar de pergunta,
     // evitando duplicar a atualização do estado.
-    const handleAnswer = (payload: { correct: boolean; selectedAnswer: number; questionIndex: number }) => {
-        setAnswers((prev) => [...prev, payload.selectedAnswer]);
-        loadNextQuestion();
+    const processarResposta = (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => {
+        definirRespostas((anterior) => [...anterior, payload.respostaSelecionada]);
+        carregarProximaPergunta();
     }
     return (
         <div
             className="w-screen h-screen flex flex-col justify-center items-center text-3xl bg-blue-600 text-white"
         >
             <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
-                <div className="p-5 font-bold text-2xl border-b border-gray-300">{title}</div>
+                <div className="p-5 font-bold text-2xl border-b border-gray-300">Quiz de culinária</div>
                 <div className="p-5">
                     {/* componente que renderiza a pergunta atual
-                        - question: dados da pergunta
+                        - pergunta: dados da pergunta
                         - count: número (1-based) mostrado para o usuário
                         - onAnswer: callback que recebe um payload com o resultado */}
-                    <Question_Item
-                        question={questions[currentQuestion]}
-                        count={currentQuestion + 1}
-                        onAnswer={handleAnswer}
+                    <Pergunta_Item
+                        pergunta={perguntas[perguntaAtual]}
+                        count={perguntaAtual + 1}
+                        aoResponder={processarResposta}
                     />
-                    {showResult && (
-                        <Results answers={answers} questions={questions} />
+                    {mostrarResultado && (
+                        <Resultados respostas={respostas} perguntas={perguntas} />
                     )}
                 </div>
                 <div className="p-5 text-center border-t border-gray-300">
-                    {!showResult && (
+                    {!mostrarResultado && (
                         <>
-                            {currentQuestion + 1} de {questions.length} pergunta {questions.length > 1 ? "respondidas" : "respondida"}
+                            {perguntaAtual + 1} de {perguntas.length} pergunta {perguntas.length > 1 ? "respondidas" : "respondida"}
                         </>
                     )}
-                    {!showResult && (<button
-                        onClick={loadNextQuestion}
+                    {!mostrarResultado && (<button
+                        onClick={carregarProximaPergunta}
                         className="ml-3 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
                         Próxima Pergunta
                     </button>)}
-                    {!showResult && (<button
-                        onClick={() => setShowResult(true)}
+                    {!mostrarResultado && (<button
+                        onClick={() => definirMostrarResultado(true)}
                         className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">
                         Ver Resultado
                     </button>)}
-                    {!showResult && (<button
-                        onClick={() => {
-                            setCurrentQuestion(0);
-                            setAnswers([]);
-                            setShowResult(false);
-                            handle_Restar_Button();
-                        }}
+                    {!mostrarResultado && (<button
+                        onClick={reiniciarQuiz}
                         className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 mt-3">
                         Reiniciar
                     </button>)}
@@ -473,14 +471,14 @@ const Page_Questions = () => {
     );
 }
 
-//export default Page_estados_eventos_click;
-//export default Page_avisar;
-//export default Page_Botao_Customizado;
-//export default Page_formulario;
-//export default Page_State;
-//export default Page_Manipulando_campo_texto;
-//export default Page_States_Mudando_Tempo;
-//export default Page_atualizando_objetos_states;
-//export default Page_Array_States;
-//export default Page_Galeria_Imagens;
-export default Page_Questions;
+//export default Pagina_Eventos_Clique;
+//export default Pagina_Avisar;
+//export default Pagina_Botoes_Customizados;
+//export default Pagina_Formulario;
+//export default Pagina_Estado;
+//export default Pagina_Campo_Texto;
+//export default Pagina_Estado_Tempo;
+//export default Pagina_Atualizando_Objeto_Estado;
+//export default Pagina_Lista_Estado;
+//export default Pagina_Galeria_Imagens;
+export default Pagina_Questoes;

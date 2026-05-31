@@ -14,12 +14,12 @@ const getWeekDay = (day: number): string => {
     return weekDays[day];
 }
 
-// TIPO DE DADOS: Define a estrutura de props para os componentes Person
-// - name: nome da pessoa (obrigatório)
+// TIPO DE DADOS: Define a estrutura de props para os componentes Pessoa
+// - nome: nome da pessoa (obrigatório)
 // - avatar: caminho da imagem (opcional, com "?")
 // - esposa: objeto contendo dados da esposa com nome, profissão e array de ocupações
-type Prosp = {
-    name: string;
+type PropsPessoa = {
+    nome: string;
     avatar?: string;
     esposa: {
         nome: string;
@@ -28,20 +28,20 @@ type Prosp = {
     };
 };
 
-// COMPONENTE PERSON: Exibe informações da pessoa e sua esposa
+// COMPONENTE PESSOA: Exibe informações da pessoa e sua esposa
 // Forma de recebimento de props: destructuring completo na função
-export const Person = (props: Prosp) => {
+export const Pessoa = (props: PropsPessoa) => {
 
-    // Desestruturando as props para extrair name, avatar e esposa
-    const { name, avatar, esposa } = props;
+    // Desestruturando as props para extrair nome, avatar e esposa
+    const { nome, avatar, esposa } = props;
 
     return (
         <>
             {/* Nome da pessoa principal */}
-            <h1>{name}</h1>
+            <h1>{nome}</h1>
             
             {/* Avatar/foto da pessoa */}
-            <img src={avatar} alt={name} className="w-40" />
+            <img src={avatar} alt={nome} className="w-40" />
             
             {/* Lista de informações da esposa */}
             <ul>
@@ -55,7 +55,7 @@ export const Person = (props: Prosp) => {
                 <li>Ocupações:</li>
                 
                 {/* Itera sobre o array de ocupações e renderiza cada uma em um <li> */}
-                {esposa.ocupacoes.map((ocupacao, index) => (
+                {esposa.ocupacoes.map((ocupacao: string, index: number) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
             </ul>
@@ -66,12 +66,12 @@ export const Person = (props: Prosp) => {
 
 // COMPONENTE PERSON2: Versão melhorada do Person com avatar padrão
 // Forma de recebimento de props: desestruturação direta com valor padrão
-export const Person2 = ({ 
-    name,
+export const Pessoa2 = ({ 
+    nome,
     // Avatar padrão: se não for fornecido, usa imagem genérica do pngtree
     avatar = 'https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-black-default-avatar-image_2237212.jpg',
     esposa 
-}: Prosp) => {
+}: PropsPessoa) => {
 
     return (
         <>
@@ -93,7 +93,7 @@ export const Person2 = ({
                 <li>Ocupações:</li>
                 
                 {/* Itera sobre o array de ocupações e renderiza cada uma em um <li> */}
-                {esposa.ocupacoes.map((ocupacao, index) => (
+                {esposa.ocupacoes.map((ocupacao: string, index: number) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
             </ul>
@@ -104,7 +104,7 @@ export const Person2 = ({
 
 // COMPONENTE PERSON3: Versão customizada com dados hardcoded e estilos inline
 // Props são recebidas mas não são utilizadas (dados estão fixos no componente)
-export const Person3 = (props: Prosp) => {
+export const Pessoa3 = (props: PropsPessoa) => {
     // DADOS FIXOS PERSON3: Willian
     const name: string = "Willian";
     const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
@@ -137,7 +137,7 @@ export const Person3 = (props: Prosp) => {
             {/* Lista em negrito com as ocupações de Roberta */}
             <ul className="font-bold">
                 {/* Itera sobre cada ocupação e renderiza em <li> */}
-                {esposa.ocupacoes.map((ocupacao, index) => (
+                {esposa.ocupacoes.map((ocupacao: string, index: number) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
             </ul>

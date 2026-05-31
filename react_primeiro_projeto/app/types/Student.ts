@@ -1,9 +1,11 @@
-export type Student = {
+// Estudante.ts
+// Tipo de estudante usado para representar alunos em uma tabela.
+export type Estudante = {
     id: number;
-    active: boolean;
-    name: string;
+    ativo: boolean;
+    nome: string;
     email: string;
     avatar: string;
-    grade1: number;
-    grade2: number;
+    nota1: number;
+    nota2: number;
 }

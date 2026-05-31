@@ -1,19 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { Question } from "../types/Questions";
+import { Pergunta } from "../types/Pergunta";
 
 // Props do componente:
-// - question: objeto com enunciado, opções e índice da resposta correta
+// - pergunta: objeto com enunciado, opções e índice da resposta correta
 // - count: número da pergunta (1-based)
-// - onAnswer: função callback que recebe um payload explicando se a resposta foi correta
+// - aoResponder: função callback que recebe um payload explicando se a resposta foi correta
 type Props = {
-    question: Question;
+    pergunta: Pergunta;
     count: number;
-    onAnswer: (payload: { correct: boolean; selectedAnswer: number; questionIndex: number }) => void;
+    aoResponder: (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => void;
 }
 
-export const Question_Item = ({ question, count, onAnswer }: Props) => {
+export const Pergunta_Item = ({ pergunta, count, aoResponder }: Props) => {
     // estado local para marcar qual opção foi selecionada (index) ou null se nenhuma
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
@@ -23,11 +23,11 @@ export const Question_Item = ({ question, count, onAnswer }: Props) => {
     const checkAnswer = (index: number) => {
         if (selectedOption !== null) return; // impede múltiplas respostas
 
-        const isCorrect = index === question.answer; // compara índices
+        const isCorrect = index === pergunta.respostaCorreta; // compara índices
         setSelectedOption(index); // marca a opção escolhida
  
         setTimeout(() => {
-            onAnswer({ correct: isCorrect, selectedAnswer: index, questionIndex: count - 1 }); // envia resultado para pai
+            aoResponder({ correto: isCorrect, respostaSelecionada: index, indicePergunta: count - 1 }); // envia resultado para pai
             setSelectedOption(null); // reseta seleção para próxima pergunta
         }, 2000); // tempo para mostrar feedback antes de resetar
     };
@@ -35,13 +35,13 @@ export const Question_Item = ({ question, count, onAnswer }: Props) => {
     return (
         <div>
             {/* título da pergunta: mostra número + enunciado */}
-            <div className="text-3xl font-bold mb-5">{count}.{question.questions}</div>
+            <div className="text-3xl font-bold mb-5">{count}.{pergunta.enunciado}</div>
             <div>
-                {question.options.map((option, index) => {
+                {pergunta.opcoes.map((opcao, index) => {
                     // indica se a opção atual foi selecionada
                     const isSelected = selectedOption === index;
                     // mostra a opção correta após seleção (se houver seleção)
-                    const showCorrect = selectedOption !== null && index === question.answer;
+                    const showCorrect = selectedOption !== null && index === pergunta.respostaCorreta;
                     // classes: verde se correta, vermelho se selecionada e incorreta
                     const className = `border px-3 py-2 rounded-md mb-3 cursor-pointer hover:bg-gray-200 border-gray-300 ${showCorrect ? "bg-green-500 text-white" : isSelected ? "bg-red-500 text-white" : ""}`;
 
@@ -50,7 +50,7 @@ export const Question_Item = ({ question, count, onAnswer }: Props) => {
                             className={className}
                             onClick={() => checkAnswer(index)}
                         >
-                            {option}
+                            {opcao}
                         </div>
                     );
                 })}

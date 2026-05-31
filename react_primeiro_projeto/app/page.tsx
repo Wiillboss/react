@@ -1,3 +1,5 @@
+// app/page.tsx
+// Página principal de demonstrações de componentes, listas e exemplos de renderização.
 // O nome após o import é um alias para o componente. Pode ser qualquer nome consistente.
 // O nome do arquivo não precisa coincidir com o do componente, mas é boa prática manter consistência.
 
@@ -6,20 +8,20 @@
 
 // Importação de componentes de outros arquivos. O caminho é relativo ao arquivo atual (page.tsx).
 // A importação pode usar chaves {} para componentes nomeados, ou sem chaves para o componente exportado como padrão (default).
-import Square from "./components/Square";
+import QuadradoExemplo from "./components/Quadrado_Exemplo";
 
 // Importação de componentes de outros arquivos. O caminho é relativo ao arquivo atual (page.tsx).
 import { Quadrado } from "./components/Quadrado";
-import { Geo_Form } from "./components/Geo_Form";
-import { Person, Person2, Person3 } from "./components/Person";
+import { Formulario_Geometrico } from "./components/Formulario_Geometrico";
+import { Pessoa, Pessoa2, Pessoa3 } from "./components/Pessoa";
 import { Card } from "./components/Card";
 import { Card2 } from "./components/Card_2";
 import { Card_2_sem_if_ternario } from "./components/Card_2_sem_if_ternario";
 import { Card_3 } from "./components/Card_3_and";
-import { people_list } from "./data/people_list";
-import { Emoji_Rating } from "./components/Emoji_Rating";
-import { Student_Table } from "./components/Student_Table";
-import { students } from "./data/students";
+import { listaPessoas } from "./data/lista_pessoas";
+import { Avaliacao_Emoji } from "./components/Avaliacao_Emoji";
+import { Tabela_Alunos } from "./components/Tabela_Alunos";
+import { estudantes } from "./data/estudantes";
 
 function Page() {
   return (
@@ -28,17 +30,17 @@ function Page() {
       <h3>Seja bem-vindo</h3>
 
       {/* Componentes geométricos */}
-      <Square />
+      <QuadradoExemplo />
       <Quadrado />
 
       {/* Container agrupando formas geométricas */}
       <div className="flex gap-2 border-2 p-3">
-        <Geo_Form />
+        <Formulario_Geometrico />
       </div>
 
       {/* Pessoa 1: Willian e esposa Roberta (usa destructuring de props) */}
-      <Person
-        name="Willian"
+      <Pessoa
+        nome="Willian"
         avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
         esposa={{
           nome: "Roberta",
@@ -48,8 +50,8 @@ function Page() {
       />
 
       {/* Pessoa 2: Jose e esposa Elpidia (usa valor padrão para avatar) */}
-      <Person2
-        name="Jose"
+      <Pessoa2
+        nome="Jose"
         avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
         esposa={{
           nome: "Elpidia",
@@ -59,8 +61,8 @@ function Page() {
       />
 
       {/* Pessoa 3: Maradona e esposa Manoela (sem avatar, usa padrão) */}
-      <Person2
-        name="Maradona"
+      <Pessoa2
+        nome="Maradona"
         esposa={{
           nome: "Manoela",
           profissao: "Frentista",
@@ -69,8 +71,8 @@ function Page() {
       />
 
       {/* Pessoa 4: Edson (Person3 ignora props e usa dados fixos) */}
-      <Person3
-        name="Edson"
+      <Pessoa3
+        nome="Edson"
         avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
         esposa={{
           nome: "Amanda",
@@ -88,7 +90,7 @@ const Page_dois = () => {
     <div>
       <h1 className="font-bold text-2xl">Olá mundo, de novo!</h1>
       <h3>Seja bem-vindo, novamente.</h3>
-      <Square />
+      <Quadrado />
     </div>
   );
 }
@@ -150,11 +152,11 @@ const Page_renderizando_listas = () => {
 
   // Filtro 1: Usa a função filter() para criar um novo array contendo apenas as pessoas cuja profissão é "Programador"
   // filter() retorna um novo array com apenas os elementos que atendem a condição especificada na arrow function
-  const programador = people_list.filter((person) => person.profession === "Programador");
+  const programadores = listaPessoas.filter((pessoa) => pessoa.profissao === "Programador");
 
   // Filtro 2: Usa a função filter() para criar um novo array contendo apenas as pessoas cuja profissão é "Protético"
-  // Cada person é verificado: se person.profession === "Protético", o elemento é incluído no novo array
-  const protetico = people_list.filter((person) => person.profession === "Protético");
+  // Cada pessoa é verificada: se pessoa.profession === "Protético", o elemento é incluído no novo array
+  const proteticos = listaPessoas.filter((pessoa) => pessoa.profissao === "Protético");
   return (
 
 
@@ -162,22 +164,22 @@ const Page_renderizando_listas = () => {
       <h1 className="font-bold text-2xl">Olá Mundo!</h1>
       <h3>Renderizando listas com map</h3>
       {/* Renderiza a lista completa de pessoas se houver elementos */}
-      {/* people_list.length > 0 verifica se há itens; && renderiza o bloco à direita apenas se a condição for verdadeira */}
-      {people_list.length > 0 && (
+      {/* listaPessoas.length > 0 verifica se há itens; && renderiza o bloco à direita apenas se a condição for verdadeira */}
+      {listaPessoas.length > 0 && (
         <ul>
-          {people_list.map((person) => (
-            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          {listaPessoas.map((pessoa) => (
+            <li key={pessoa.id}>{pessoa.nome} - {pessoa.profissao} - {pessoa.sexo}</li>
           ))}
         </ul>
       )}
       <br />
       <h3>Renderizando apenas programadores</h3>
       {/* Usa ternário (? :) para exibir a lista filtrada de programadores se houver, ou mensagem de vazio */}
-      {/* programador.length > 0 ? renderiza lista : renderiza mensagem */}
-      {programador.length > 0 ? (
+      {/* programadores.length > 0 ? renderiza lista : renderiza mensagem */}
+      {programadores.length > 0 ? (
         <ul>
-          {programador.map((person) => (
-            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          {programadores.map((pessoa) => (
+            <li key={pessoa.id}>{pessoa.nome} - {pessoa.profissao} - {pessoa.sexo}</li>
           ))}
         </ul>
       ) : (
@@ -186,37 +188,37 @@ const Page_renderizando_listas = () => {
       <br />
       <h3>Renderizando apenas protéticos usando operador lógico &&</h3>
       {/* Usa o operador lógico && para renderizar a lista filtrada de protéticos apenas se houver elementos */}
-      {/* Se protetico.length for > 0 (true), renderiza a lista; se for 0 (false), não renderiza nada */}
-      {protetico.length > 0 && (
+      {/* Se proteticos.length for > 0 (true), renderiza a lista; se for 0 (false), não renderiza nada */}
+      {proteticos.length > 0 && (
         <ul>
-          {protetico.map((person) => (
-            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          {proteticos.map((pessoa) => (
+            <li key={pessoa.id}>{pessoa.nome} - {pessoa.profissao} - {pessoa.sexo}</li>
           ))}
         </ul>
       )}
       <br />
       <h3>Renderizando apenas mulheres</h3>
-      {/* Filtro inline: people_list.filter() filtra pessoas no momento do render */}
-      {/* (person) => person.sexo === "Feminino" retorna true apenas para mulheres */}
+      {/* Filtro inline: listaPessoas.filter() filtra pessoas no momento do render */}
+      {/* (pessoa) => pessoa.sexo === "Feminino" retorna true apenas para mulheres */}
       {/* .length > 0 && verifica se há mulheres; se sim, renderiza a lista */}
-      {people_list.filter((person) => person.sexo === "Feminino").length > 0 && (
+      {listaPessoas.filter((pessoa) => pessoa.sexo === "Feminino").length > 0 && (
         <ul>
           {/* Mesmo filtro é aplicado novamente para renderizar os elementos filtrados com map */}
-          {people_list.filter((person) => person.sexo === "Feminino").map((person) => (
-            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          {listaPessoas.filter((pessoa) => pessoa.sexo === "Feminino").map((pessoa) => (
+            <li key={pessoa.id}>{pessoa.nome} - {pessoa.profissao} - {pessoa.sexo}</li>
           ))}
         </ul>
       )}
       <br />
       <h3>Renderizando apenas proteticas</h3>
       {/* Filtro inline para mulheres cuja profissão é "Protética" */}
-      {/* Primeiro filter: verifica se person.profession === "Protética" */}
+      {/* Primeiro filter: verifica se pessoa.profession === "Protética" */}
       {/* .length > 0 && renderiza a lista apenas se houver protéticas */}
-      {people_list.filter((person) => person.profession === "Protética").length > 0 && (
+      {listaPessoas.filter((pessoa) => pessoa.profession === "Protética").length > 0 && (
         <ul>
           {/* Mesmo filtro é aplicado novamente para renderizar os elementos com map */}
-          {people_list.filter((person) => person.profession === "Protética").map((person) => (
-            <li key={person.id}>{person.name} - {person.profession} - {person.sexo}</li>
+          {listaPessoas.filter((pessoa) => pessoa.profession === "Protética").map((pessoa) => (
+            <li key={pessoa.id}>{pessoa.name} - {pessoa.profession} - {pessoa.sexo}</li>
           ))}
         </ul>
       )}
@@ -255,7 +257,7 @@ const Exercicio_Rating_emoji = () => {
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center
      text-white bg-linear-to-r from-sky-200 to-indigo-800 text-6xl">
-      <Emoji_Rating rating={1} />
+      <Avaliacao_Emoji avaliacao={1} />
     </div>
   );
 }
@@ -264,7 +266,7 @@ const Tabela_de_notas = () => {
   return (
       <div className="container mx-auto w-full h-full bg-black text-white">
         <h1 className="text-5xl ml-5">Lista de estudantes</h1>
-      <Student_Table students={students} />
+      <Tabela_Alunos estudantes={estudantes} />
       </div>
   );
 }

@@ -1,6 +1,8 @@
-export type Person = {
+// Pessoa.ts
+// Define o formato de dados para uma pessoa usada na lista de pessoas.
+export type Pessoa = {
     id: number;
-    name: string;
-    profession: string;
+    nome: string;
+    profissao: string;
     sexo: string;
 };

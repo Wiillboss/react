@@ -2,9 +2,9 @@
 //importação do React para usar JSX
 //jsx é uma extensão de sintaxe para JavaScript que permite escrever código HTML dentro do JavaScript, facilitando a criação de componentes de interface do usuário.
 
-// COMPONENTE SQUARE: Renderiza um quadrado azul com texto
+// COMPONENTE QUADRADO_EXEMPLO: Renderiza um quadrado azul com texto
 // Componente simples sem props
-const Square = () => {
+const QuadradoExemplo = () => {
     return (
         // Div com estilo Tailwind: largura 160, altura 16, fundo azul e texto branco
         <div className="w-160 h-16 bg-blue-500 text-white">
@@ -22,4 +22,4 @@ const Square = () => {
 //   - Importação: import Square from "..."
 
 // Usando a forma 2 (export default) para exportar este componente
-export default Square;
+export default QuadradoExemplo;

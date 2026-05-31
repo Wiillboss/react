@@ -1,13 +1,13 @@
-// Emoji_Rating.tsx
+// Avaliacao_Emoji.tsx
 // Componente que exibe uma nota e um emoji de avaliação.
 
 type Props = {
-    rating: number; // Nota de 0 a 5
+    avaliacao: number; // Nota de 0 a 5
 };
 
-export const Emoji_Rating = ({ rating }: Props) => {
+export const Avaliacao_Emoji = ({ avaliacao }: Props) => {
     // Limita a nota para o intervalo válido.
-    const safeRating = Math.max(0, Math.min(rating, 5));
+    const safeRating = Math.max(0, Math.min(avaliacao, 5));
     const rateInt = Math.floor(safeRating);
     const rateDecimal = safeRating - rateInt;
 
