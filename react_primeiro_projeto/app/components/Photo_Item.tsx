@@ -2,10 +2,10 @@
 // Componente que exibe uma imagem da galeria com clique opcional.
 
 import Image from "next/image";
-import { Photo } from "../types/Photo";
+import { Foto } from "../types/Photo";
 
 type Props = {
-    photo: Photo; // Dados da foto usada pelo componente
+    photo: Foto; // Dados da foto usada pelo componente
     onClick?: () => void; // Callback opcional para clique
 };
 

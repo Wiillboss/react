@@ -2,7 +2,7 @@
 // Componente que exibe uma imagem da galeria com clique opcional.
 
 import Image from "next/image";
-import { Foto } from "../types/Foto";
+import { Foto } from "../types/Photo";
 
 type Props = {
     foto: Foto; // Dados da foto usada pelo componente
@@ -16,8 +16,8 @@ export const Foto_Item = ({ foto, aoClicar }: Props) => {
             onClick={aoClicar}
         >
             <Image
-                src={photo.url}
-                alt={`Foto ${photo.id}`}
+                src={foto.url}
+                alt={`Foto ${foto.id}`}
                 width={400}
                 height={300}
                 className="w-full h-auto object-cover mb-4"

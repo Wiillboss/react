@@ -2,11 +2,11 @@
 // Componente que mostra uma imagem em modo modal e fecha ao clicar fora ou no botão.
 
 type ModalProps = {
-    imagem: string; // URL da imagem a ser exibida no modal
-    fecharModal: () => void; // Função chamada para fechar o modal
+    image: string; // URL da imagem a ser exibida no modal
+    closeModal: () => void; // Função chamada para fechar o modal
 };
 
-export const Modal = ({ imagem, fecharModal }: ModalProps) => {
+export const Modal = ({ image, closeModal }: ModalProps) => {
     return (
         <>
             <div

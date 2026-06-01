@@ -1,5 +1,5 @@
-// Estudante.ts
-// Tipo de estudante usado para representar alunos em uma tabela.
+// Student.ts
+// Tipos de estudante usados em diferentes partes da aplicação.
 export type Estudante = {
     id: number;
     ativo: boolean;
@@ -8,4 +8,14 @@ export type Estudante = {
     avatar: string;
     nota1: number;
     nota2: number;
-}
+};
+
+export type Student = {
+    id: number;
+    active: boolean;
+    name: string;
+    email: string;
+    avatar: string;
+    grade1: number;
+    grade2: number;
+};

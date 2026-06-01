@@ -212,13 +212,13 @@ const Page_renderizando_listas = () => {
       <br />
       <h3>Renderizando apenas proteticas</h3>
       {/* Filtro inline para mulheres cuja profissão é "Protética" */}
-      {/* Primeiro filter: verifica se pessoa.profession === "Protética" */}
+      {/* Primeiro filter: verifica se pessoa.profissao === "Protética" */}
       {/* .length > 0 && renderiza a lista apenas se houver protéticas */}
-      {listaPessoas.filter((pessoa) => pessoa.profession === "Protética").length > 0 && (
+      {listaPessoas.filter((pessoa) => pessoa.profissao === "Protética").length > 0 && (
         <ul>
           {/* Mesmo filtro é aplicado novamente para renderizar os elementos com map */}
-          {listaPessoas.filter((pessoa) => pessoa.profession === "Protética").map((pessoa) => (
-            <li key={pessoa.id}>{pessoa.name} - {pessoa.profession} - {pessoa.sexo}</li>
+          {listaPessoas.filter((pessoa) => pessoa.profissao === "Protética").map((pessoa) => (
+            <li key={pessoa.id}>{pessoa.nome} - {pessoa.profissao} - {pessoa.sexo}</li>
           ))}
         </ul>
       )}

@@ -76,10 +76,10 @@ export const Pessoa2 = ({
     return (
         <>
             {/* Nome da pessoa principal */}
-            <h1>{name}</h1>
+            <h1>{nome}</h1>
             
             {/* Avatar/foto da pessoa (padrão se não fornecido) */}
-            <img src={avatar} alt={name} className="w-40" />
+            <img src={avatar} alt={nome} className="w-40" />
             
             {/* Lista de informações da esposa */}
             <ul>

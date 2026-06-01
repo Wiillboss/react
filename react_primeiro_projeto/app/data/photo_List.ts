@@ -1,9 +1,9 @@
 // photo_List.ts
 // Dados de fotos usados na galeria de imagens.
 
-import { Photo } from "../types/Photo";
+import { Foto } from "../types/Photo";
 
-export const photoList: Photo[] = [
+export const photoList: Foto[] = [
     { id: 1, url: "/imagens_intergalaticas/1.jpg" },
     { id: 2, url: "/imagens_intergalaticas/2.jpg" },
     { id: 3, url: "/imagens_intergalaticas/3.jpg" },

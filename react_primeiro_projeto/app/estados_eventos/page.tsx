@@ -2,10 +2,10 @@
 
 // page.tsx em estados_eventos
 // Esta página mostra exemplos de eventos, estado local, formulários, listas, galeria e quiz.
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Botao_Personalizado } from "../components/Botao_Personalizado";
 import { Pessoa_2 } from "../types/Person_2";
-import { TodoItem } from "../types/TodolItem";
+import { ItemTarefa } from "../types/TodolItem";
 import { listaFotos } from "../data/lista_fotos";
 import { Foto_Item } from "../components/Foto_Item";
 import { Modal } from "../components/Modal";
@@ -93,7 +93,7 @@ const Pagina_Botoes_Customizados = () => {
 
 const Pagina_Formulario = () => {
 
-    const aoEnviarFormulario = (event: React.FormEvent<HTMLFormElement>) => {
+    const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault(); //evita que a página seja recarregada ao enviar o formulário
         alert("Formulário 1 enviado !");
     }
@@ -262,7 +262,7 @@ const Pagina_Atualizando_Objeto_Estado = () => {
                 onChange={(e) => definirNomeCompleto({ ...nomeCompleto, ultimoNome: e.target.value })}
             />
             <p>Meu nome completo é: </p>
-            <p>{nomeCompleto.firstName} {nomeCompleto.lastName}</p>
+            <p>{nomeCompleto.primeiroNome} {nomeCompleto.ultimoNome}</p>
 
             <button onClick={limparNomeCompleto}
                 className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
@@ -335,14 +335,12 @@ const Pagina_Lista_Estado = () => {
 
             <ul className="w-full max-w-lg list-disc pl-5">
                 {listaTarefas.map((item, index) => (
-                    <li key={item.id} className={`flex items-center mb-2 ${item.checked ? "line-through text-gray-500" : ""}`}>
+                    <li key={item.id} className={`flex items-center mb-2 ${item.concluido ? "line-through text-gray-500" : ""}`}>
                         <input
                             type="checkbox"
                             className="w-6 h-6 mr-3"
-                            checked={item.concluido} onChange={() => { }}
-                            onClick={() => {
-                                alternarItem(index);
-                            }}
+                            checked={item.concluido}
+                            onChange={() => alternarItem(index)}
                         />
                         {item.rotulo} -
                         <button

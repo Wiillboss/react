@@ -1,7 +1,7 @@
 // lista_fotos.ts
 // Dados de fotos usados na galeria de imagens.
 
-import { Foto } from "../types/Foto";
+import { Foto } from "../types/Photo";
 
 export const listaFotos: Foto[] = [
     { id: 1, url: "/imagens_intergalaticas/1.jpg" },
