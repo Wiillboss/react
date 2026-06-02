@@ -1,5 +1,5 @@
-// Results.tsx
-// Componente que mostra o resultado final do quiz.
+// Results.tsx (legado)
+// Arquivo legado de resultados de quiz. A versão atual em português está em Resultados.tsx.
 
 import { Pergunta } from "../types/Pergunta";
 

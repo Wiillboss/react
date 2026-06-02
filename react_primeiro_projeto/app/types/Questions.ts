@@ -1,5 +1,5 @@
-// Questions.ts
-// Tipo utilizado por arquivos de dados que seguem o formato de questões em inglês.
+// Questions.ts (legado)
+// Tipo legado usado por arquivos de questões em inglês. O formato atual em português está em Pergunta.ts.
 export type Question = {
     questions: string;
     options: string[];

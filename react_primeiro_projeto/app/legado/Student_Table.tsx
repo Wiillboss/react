@@ -1,5 +1,5 @@
-// Student_Table.tsx
-// Componente que renderiza uma tabela de estudantes.
+// Student_Table.tsx (legado)
+// Arquivo legado de tabela de estudantes. A versão atual em português é Tabela_Alunos.
 
 import { Student } from "../types/Student";
 
@@ -12,11 +12,11 @@ export const Student_Table = ({ students }: Props) => {
         <table className="w-full border-collapse border border-gray-700 rounded-b-md">
             <thead>
                 <tr className="text-left bg-gray-800 text-white">
-                    <th className="border border-gray-700 p-2">Name</th>
+                    <th className="border border-gray-700 p-2">Nome</th>
                     <th className="border border-gray-700 p-2">Status</th>
-                    <th className="border border-gray-700 p-2">Grade 1</th>
-                    <th className="border border-gray-700 p-2">Grade 2</th>
-                    <th className="border border-gray-700 p-2">Final Grade</th>
+                    <th className="border border-gray-700 p-2">Nota 1</th>
+                    <th className="border border-gray-700 p-2">Nota 2</th>
+                    <th className="border border-gray-700 p-2">Média Final</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,11 +32,11 @@ export const Student_Table = ({ students }: Props) => {
                         <td className="p-3">
                             {item.active ? (
                                 <div className="px-2 py-1 inline-block rounded-md border border-green-800 bg-green-600 text-white text-xs">
-                                    Active
+                                    Ativo
                                 </div>
                             ) : (
                                 <div className="px-2 py-1 inline-block rounded-md border border-red-800 bg-red-600 text-white text-xs">
-                                    Inactive
+                                    Inativo
                                 </div>
                             )}
                         </td>

@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
 // page.tsx em estados_eventos
-// Esta página mostra exemplos de eventos, estado local, formulários, listas, galeria e quiz.
+// Esta página reúne exemplos claros de eventos, estado local, formulários,
+// listas, galeria e quiz em uma única rota organizada.
 import { useState, type FormEvent } from "react";
 import { Botao_Personalizado } from "../components/Botao_Personalizado";
 import { Pessoa_2 } from "../types/Person_2";
@@ -13,470 +14,441 @@ import { perguntas } from "../data/perguntas";
 import { Pergunta_Item } from "../components/Pergunta_Item";
 import { Resultados } from "../components/Resultados";
 
-const Pagina_Eventos_Clique = () => {
-    function aoClicar() {
-        alert("Botão clicado 1!");
-    }
-
-    const aoClicar2 = () => {
-        alert("Botão clicado 4!");
-    }
-
-    return (
-        <div className="w-screen h-screen flex justify-center items-center">
-            <button
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 m-3"
-                onClick={aoClicar}>
-                Clique aqui - Botão 1
-            </button>
-
-            <button
-                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 m-3"
-                onClick={function click() {
-                    alert("Botão clicado 2!");
-                }}>
-                Clique aqui - Botão 2
-            </button>
-
-            <button
-                className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 m-3"
-                onClick={() => alert("Botão clicado 3!")}>
-                Clique aqui - Botão 3
-            </button>
-
-            <button
-                className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 m-3"
-                onClick={aoClicar2}>
-                Clique aqui - Botão 4
-            </button>
-        </div>
-    );
-}
-
-// Exercicio 2: criar a função avisar(msg: string) e passá-la para os botões para mostrar mensagens diferentes
-
-const Pagina_Avisar = () => {
-    const avisar = (msg: string) => {
-        alert(msg);
-    }
-
-    return (
-        <div className="w-screen h-screen flex justify-center items-center">
-            <button
-                onClick={() => avisar("Botão clicado 1!")}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 m-3">
-                Clique aqui - Botão 1
-            </button>
-            <button
-                onClick={() => avisar("Botão clicado 2!")}
-                className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 m-3">
-                Clique aqui - Botão 2
-            </button>
-        </div>
-    );
-}
-
-const Pagina_Botoes_Customizados = () => {
-
-    const aoClicarBotao1 = () => alert("Botão 1 clicado !");
-    const aoClicarBotao2 = () => alert("Botão 2 clicado !");
-    const aoClicarBotao3 = () => alert("Botão 3 clicado !");
-
-    return (
-        <div className="w-screen h-screen flex justify-center items-center">
-            <Botao_Personalizado rotulo="Botão Customizado 1" aoClicar={aoClicarBotao1} />
-            <Botao_Personalizado rotulo="Botão Customizado 2" aoClicar={aoClicarBotao2} />
-            <Botao_Personalizado rotulo="Botão Customizado 3" aoClicar={aoClicarBotao3} />
-        </div>
-    );
-}
-
-const Pagina_Formulario = () => {
-
-    const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault(); //evita que a página seja recarregada ao enviar o formulário
-        alert("Formulário 1 enviado !");
-    }
-
-    return (
-        <div className="w-screen h-screen flex justify-center items-center bg-black">
-
-            <h1 className="text-5xl mb-3 m-3 text-white">Formulário de Login 1</h1>
-            <form onSubmit={aoEnviarFormulario} action="">
-                <input type="text" className="bg-gray-200 m-3" />
-                <input type="submit" value="Enviar"
-                    className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700" />
-            </form>
-
-            <h1 className="text-5xl mb-3 m-3 text-white">Formulário de Login 2</h1>
-            <form onSubmit={(e) => {
-                e.preventDefault();
-                alert("Formulário 2 enviado !");
-            }} action="">
-                <input type="text" className="bg-gray-200 m-3" />
-                <input type="submit" value="Enviar"
-                    className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700" />
-            </form>
-
-        </div>
-    );
-}
-
-
-const Pagina_Estado = () => {
-
-    //o definirMostrarSegredo é a função que altera o valor de mostrarSegredo, e o useState é um hook do React que permite criar variáveis de estado em componentes funcionais.
-    const [mostrarSegredo, definirMostrarSegredo] = useState(false);
-
-    //let contador = 0;
-
-    const [contador, definirContador] = useState(0);
-    const aoClicarIncrementar = () => {
-        definirContador(contador + 1);
-        //contador++;
-        //console.log(contador);
-    }
-
-    return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-            <p>{contador}</p>
-            <button onClick={aoClicarIncrementar}
-                className="px-4 py-2 bg-gray-500 text-black font-bold rounded-md hover:bg-gray-700 p-3">
-                +1
-            </button>
-            <button onClick={() => definirMostrarSegredo(!mostrarSegredo)}
-                className="px-4 py-2 bg-green-500 text-black font-bold rounded-md hover:bg-green-700 p-3 m-3">
-                {mostrarSegredo ? "Esconder Área Secreta" : "Mostrar Área Secreta"}
-            </button>
-            {mostrarSegredo && (
-                <div className="bg-green-400 p-4 m-3 rounded-md">
-                    Área secreta
-                </div>
-            )}
-        </div>
-
-    );
-
-}
-
-const Pagina_Campo_Texto = () => {
-    //o useState é usado para criar uma variável de estado chamada entradaNome, que é inicializada com uma string vazia, e a função definirEntradaNome é usada para atualizar o valor quando o usuário digita algo no o campo de texto.
-    const [entradaNome, definirEntradaNome] = useState("");
-
-    const aoClicarMostrarValor = () => {
-        alert(entradaNome);
-    }
-
-    //abaixo temos um campo de texto controlado, onde o valor do campo é controlado pelo estado do componente, e a função onChange é usada para atualizar o estado com o valor digitado pelo usuário, e o valor do estado é mostrado em tempo real abaixo do campo de texto, e quando o botão é clicado, o valor atual do estado é exibido em um alerta.
-    return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-            <input type="text"
-                className="border border-white bg-gray-50 p-3 text-xl text-black rounded"
-                placeholder="Digite seu nome"
-                value={entradaNome}
-                onChange={(e) => definirEntradaNome(e.target.value)} />
-            <p>Seu nome é: {entradaNome}</p>
-            <button onClick={aoClicarMostrarValor}
-                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
-                Mostrar valor do campo
-            </button>
-        </div>
-    );
-}
-
-
-const Pagina_Estado_Tempo = () => {
-
-    // Aqui mostramos um exemplo de atualizações de estado sequenciais.
-    // A primeira chamada usa o valor atual de contadorTempo diretamente,
-    // enquanto as duas seguintes usam a forma funcional para usar o valor atualizado.
-    const [contadorTempo, definirContadorTempo] = useState(0);
-
-    const aoClicarAumentarDois = () => {
-        definirContadorTempo(contadorTempo + 2);
-        definirContadorTempo((c) => c + 2);
-        definirContadorTempo((c) => c + 2);
-    }
-
-    return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-            <p>{contadorTempo}</p>
-            <button onClick={aoClicarAumentarDois}
-                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
-                +2
-            </button>
-        </div>
-    );
-
-
-}
-
-const Pagina_Atualizando_Objeto_Estado = () => {
-
-    const [nomeCompleto, definirNomeCompleto] = useState<Pessoa_2>({
-        primeiroNome: "",
-        ultimoNome: ""
-    });
-
-    const limparNomeCompleto = () => {
-        definirNomeCompleto({
-            primeiroNome: "",
-            ultimoNome: ""
-        });
-    }
-
-    const limparPrimeiroNome = () => {
-        definirNomeCompleto({
-            ...nomeCompleto,
-            primeiroNome: ""
-        });
-    }
-
-    const limparSobrenome = () => {
-        definirNomeCompleto({
-            ...nomeCompleto,
-            ultimoNome: ""
-        });
-    }
-
-
-    //abaixo temos um exemplo de como atualizar um objeto no estado do React, onde o estado é um objeto com as propriedades firstName e lastName, e a função setFullName é usada para atualizar o estado, e quando o usuário digita algo no campo de texto, a função onChange é chamada, e o estado é atualizado com o valor digitado pelo usuário, e o valor do estado é mostrado em tempo real abaixo dos campos de texto.
-
-    //value está recebendo o valor do estado fullName.firstName, e quando o usuário digita algo no campo de texto, a função onChange é chamada, e o estado é atualizado com o valor digitado pelo usuário, usando a sintaxe de spread operator para manter as outras propriedades do estado inalteradas, e o valor do estado é mostrado em tempo real abaixo dos campos de texto.
-
-    //o onChange do segundo campo de texto está atualizando a propriedade lastName do estado fullName, usando a mesma sintaxe de spread operator para manter as outras propriedades do estado inalteradas, e o valor do estado é mostrado em tempo real abaixo dos campos de texto.
-    return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center text-3xl">
-            <input
-                type="text"
-                placeholder="Nome"
-                className="border border-white p-3 text-2xl text-white rounded-md mb-3"
-                value={nomeCompleto.primeiroNome}
-                onChange={(e) => definirNomeCompleto({ ...nomeCompleto, primeiroNome: e.target.value })}
-            />
-            <input
-                type="text"
-                placeholder="Sobrenome"
-                className="border border-white p-3 text-2xl text-white rounded-md mb-3"
-                value={nomeCompleto.ultimoNome}
-                onChange={(e) => definirNomeCompleto({ ...nomeCompleto, ultimoNome: e.target.value })}
-            />
-            <p>Meu nome completo é: </p>
-            <p>{nomeCompleto.primeiroNome} {nomeCompleto.ultimoNome}</p>
-
-            <button onClick={limparNomeCompleto}
-                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
-                Limpar Nome e Sobrenome
-            </button>
-            <button onClick={limparPrimeiroNome}
-                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
-                Limpar Nome
-            </button>
-            <button onClick={limparSobrenome}
-                className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3 m-3">
-                Limpar Sobrenome
-            </button>
-        </div>
-    );
-}
-
-
-const Pagina_Lista_Estado = () => {
-    const [entradaTarefa, definirEntradaTarefa] = useState("");
-    const [listaTarefas, definirListaTarefas] = useState<ItemTarefa[]>([
-        { id: 1, rotulo: "Fazer dever de casa.", concluido: true },
-        { id: 2, rotulo: "Comprar bolo.", concluido: false },
-    ]);
-
-    const adicionarTarefa = () => {
-        if (entradaTarefa.trim() === "") {
-            alert("O campo de tarefa não pode estar vazio.");
-            return;
-        }
-        const novoItem: ItemTarefa = { id: Date.now(), rotulo: entradaTarefa, concluido: false };
-        definirListaTarefas([...listaTarefas, novoItem]);
-        definirEntradaTarefa("");
-    }
-
-    const alternarItem = (index: number) => {
-        const listaAtualizada = [...listaTarefas];
-        listaAtualizada[index].concluido = !listaAtualizada[index].concluido;
-        definirListaTarefas(listaAtualizada);
-    }
-
-    const deletarItem = (index: number) => {
-        const listaAtualizada = listaTarefas.filter((_, i) => i !== index);
-        const tarefaRemovida = listaTarefas[index]?.rotulo;
-        definirListaTarefas(listaAtualizada);
-        alert(`Item "${tarefaRemovida}" deletado!`);
-    }
-
-    return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center text-2xl">
-            <h1 className="text-4xl mt-5">Lista de Tarefas</h1>
-
-            <div className="flex w-full max-w-lg my-3 p-4 rounded-md bg-gray-700 border-2 border-gray-200">
-                <input
-                    type="text"
-                    placeholder="O que deseja fazer? "
-                    className="flex-1 border border-black p-3 text-2xl text-blue-900 rounded-md mr-3 bg-white"
-                    value={entradaTarefa}
-                    onChange={(e) => definirEntradaTarefa(e.target.value)}
-                />
-
-                <button
-                    className="bg-amber-500 text-black font-bold rounded-md hover:bg-amber-700 p-3"
-                    onClick={adicionarTarefa}>
-                    Adicionar
-                </button>
-            </div>
-
-            <p className="my-4">{listaTarefas.length} Itens na lista</p>
-
-            <ul className="w-full max-w-lg list-disc pl-5">
-                {listaTarefas.map((item, index) => (
-                    <li key={item.id} className={`flex items-center mb-2 ${item.concluido ? "line-through text-gray-500" : ""}`}>
-                        <input
-                            type="checkbox"
-                            className="w-6 h-6 mr-3"
-                            checked={item.concluido}
-                            onChange={() => alternarItem(index)}
-                        />
-                        {item.rotulo} -
-                        <button
-                            onClick={() => deletarItem(index)}
-                            className="hover:underline">[Deletar]
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
-
-}
-
-const Pagina_Galeria_Imagens = () => {
-
-    const [mostrarModal, definirMostrarModal] = useState(false);
-    const [fotoSelecionada, definirFotoSelecionada] = useState(listaFotos[0]);
-
-    const abrirModal = (foto: typeof listaFotos[0]) => {
-        definirFotoSelecionada(foto);
-        definirMostrarModal(true);
-    }
-
-    const fecharModal = () => {
-        definirMostrarModal(false);
-    }
-
-    return (
-        <div className="mx-2">
-            <h1 className="text-3xl  font-bold my-10 mt-5 text-center">Fotos Intergalacticas</h1>
-
-            <section
-                className="container  max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                {/* Imagens da galeria */}
-                {listaFotos.map((foto) => (
-                    <Foto_Item
-                        key={foto.id}
-                        foto={foto}
-                        aoClicar={() => abrirModal(foto)} />
-                ))}
-            </section>
-
-            {/* Modal para exibir a foto selecionada */}
-            {mostrarModal && <Modal image={fotoSelecionada.url} closeModal={fecharModal} />}
-
-        </div>
-    )
-}
-
-const Pagina_Questoes = () => {
-    const [respostas, definirRespostas] = useState<number[]>([]);
-    const [mostrarResultado, definirMostrarResultado] = useState(false);
-
-    // índice da pergunta atual (0-based)
-    const [perguntaAtual, definirPerguntaAtual] = useState(0);
-    const titulo = "Quiz de Culinária";
-
-    const carregarProximaPergunta = () => {
-        if (perguntaAtual < perguntas.length - 1) {
-            definirPerguntaAtual(perguntaAtual + 1);
-        } else {
-            definirMostrarResultado(true);
-        }
-    }
-
-    const reiniciarQuiz = () => {
-        definirPerguntaAtual(0);
-        definirRespostas([]);
-        definirMostrarResultado(false);
-    }
-
-    // processarResposta recebe o payload do `Pergunta_Item` com:
-    // - correct: boolean indicando se a resposta foi correta
-    // - questionIndex: índice da pergunta respondida (0-based)
-    // Usamos apenas carregarProximaPergunta() para avançar de pergunta,
-    // evitando duplicar a atualização do estado.
-    const processarResposta = (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => {
-        definirRespostas((anterior) => [...anterior, payload.respostaSelecionada]);
-        carregarProximaPergunta();
-    }
-    return (
-        <div
-            className="w-screen h-screen flex flex-col justify-center items-center text-3xl bg-blue-600 text-white"
+const Secao_Eventos_Clique = () => {
+  const clicar1 = () => alert("Botão clicado 1!");
+  const clicar2 = () => alert("Botão clicado 4!");
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Eventos de Clique</h2>
+      <p className="mb-4 text-gray-700">Este exemplo mostra diferentes formas de atribuir funções ao evento <code>onClick</code>.</p>
+
+      <div className="flex flex-wrap gap-3">
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" onClick={clicar1}>
+          Clique aqui - Botão 1
+        </button>
+        <button
+          className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+          onClick={() => alert("Botão clicado 2!")}
         >
-            <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
-                <div className="p-5 font-bold text-2xl border-b border-gray-300">Quiz de culinária</div>
-                <div className="p-5">
-                    {/* componente que renderiza a pergunta atual
-                        - pergunta: dados da pergunta
-                        - count: número (1-based) mostrado para o usuário
-                        - onAnswer: callback que recebe um payload com o resultado */}
-                    <Pergunta_Item
-                        pergunta={perguntas[perguntaAtual]}
-                        count={perguntaAtual + 1}
-                        aoResponder={processarResposta}
-                    />
-                    {mostrarResultado && (
-                        <Resultados respostas={respostas} perguntas={perguntas} />
-                    )}
-                </div>
-                <div className="p-5 text-center border-t border-gray-300">
-                    {!mostrarResultado && (
-                        <>
-                            {perguntaAtual + 1} de {perguntas.length} pergunta {perguntas.length > 1 ? "respondidas" : "respondida"}
-                        </>
-                    )}
-                    {!mostrarResultado && (<button
-                        onClick={carregarProximaPergunta}
-                        className="ml-3 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
-                        Próxima Pergunta
-                    </button>)}
-                    {!mostrarResultado && (<button
-                        onClick={() => definirMostrarResultado(true)}
-                        className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700">
-                        Ver Resultado
-                    </button>)}
-                    {!mostrarResultado && (<button
-                        onClick={reiniciarQuiz}
-                        className="ml-3 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 mt-3">
-                        Reiniciar
-                    </button>)}
-                </div>
-            </div>
-        </div>
-    );
-}
+          Clique aqui - Botão 2
+        </button>
+        <button
+          className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+          onClick={() => alert("Botão clicado 3!")}
+        >
+          Clique aqui - Botão 3
+        </button>
+        <button className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700" onClick={clicar2}>
+          Clique aqui - Botão 4
+        </button>
+      </div>
+    </section>
+  );
+};
 
-//export default Pagina_Eventos_Clique;
-//export default Pagina_Avisar;
-//export default Pagina_Botoes_Customizados;
-//export default Pagina_Formulario;
-//export default Pagina_Estado;
-//export default Pagina_Campo_Texto;
-//export default Pagina_Estado_Tempo;
-//export default Pagina_Atualizando_Objeto_Estado;
-//export default Pagina_Lista_Estado;
-//export default Pagina_Galeria_Imagens;
-export default Pagina_Questoes;
+const Secao_Avisar = () => {
+  const avisar = (mensagem: string) => {
+    alert(mensagem);
+  };
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Reutilização de função</h2>
+      <p className="mb-4 text-gray-700">Veja como um único manipulador pode exibir mensagens diferentes.</p>
+
+      <div className="flex flex-wrap gap-3">
+        <button
+          onClick={() => avisar("Botão clicado 1!")}
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+        >
+          Clique aqui - Botão 1
+        </button>
+        <button
+          onClick={() => avisar("Botão clicado 2!")}
+          className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+        >
+          Clique aqui - Botão 2
+        </button>
+      </div>
+    </section>
+  );
+};
+
+const Secao_Botoes_Customizados = () => {
+  const acao1 = () => alert("Botão 1 clicado !");
+  const acao2 = () => alert("Botão 2 clicado !");
+  const acao3 = () => alert("Botão 3 clicado !");
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Botões Customizados</h2>
+      <p className="mb-4 text-gray-700">Componente reutilizável que recebe texto e callback.</p>
+
+      <div className="flex flex-wrap gap-3">
+        <Botao_Personalizado rotulo="Botão Customizado 1" aoClicar={acao1} />
+        <Botao_Personalizado rotulo="Botão Customizado 2" aoClicar={acao2} />
+        <Botao_Personalizado rotulo="Botão Customizado 3" aoClicar={acao3} />
+      </div>
+    </section>
+  );
+};
+
+const Secao_Formulario = () => {
+  const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    alert("Formulário enviado com sucesso!");
+  };
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Formulário Controlado</h2>
+      <p className="mb-4 text-gray-700">O formulário usa <code>preventDefault</code> para evitar recarregar a página.</p>
+
+      <form onSubmit={aoEnviarFormulario} className="flex flex-col gap-4">
+        <input type="text" placeholder="Digite algo" className="border border-gray-300 px-4 py-2 rounded-md" />
+        <button type="submit" className="w-fit rounded-md bg-slate-800 px-6 py-2 text-white hover:bg-slate-900">
+          Enviar
+        </button>
+      </form>
+    </section>
+  );
+};
+
+const Secao_Estado_Basico = () => {
+  const [mostrarSegredo, setMostrarSegredo] = useState(false);
+  const [contador, setContador] = useState(0);
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Estado Básico</h2>
+      <p className="mb-4 text-gray-700">Exemplo de contador e renderização condicional.</p>
+
+      <div className="flex flex-col items-start gap-3 text-2xl">
+        <span>Contador: <strong>{contador}</strong></span>
+        <div className="flex flex-wrap gap-3">
+          <button
+            onClick={() => setContador(contador + 1)}
+            className="rounded-md bg-gray-700 px-4 py-2 text-white hover:bg-gray-900"
+          >
+            +1
+          </button>
+          <button
+            onClick={() => setMostrarSegredo(!mostrarSegredo)}
+            className="rounded-md bg-emerald-500 px-4 py-2 text-black hover:bg-emerald-700"
+          >
+            {mostrarSegredo ? "Esconder Área Secreta" : "Mostrar Área Secreta"}
+          </button>
+        </div>
+
+        {mostrarSegredo && (
+          <div className="rounded-md bg-emerald-200 px-4 py-3 text-black">Área secreta</div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+const Secao_Campo_Texto = () => {
+  const [entradaNome, setEntradaNome] = useState("");
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Campo de Texto Controlado</h2>
+      <p className="mb-4 text-gray-700">O valor do campo é controlado pelo estado do componente.</p>
+
+      <div className="flex flex-col gap-4">
+        <input
+          type="text"
+          placeholder="Digite seu nome"
+          className="border border-gray-300 px-4 py-2 rounded-md"
+          value={entradaNome}
+          onChange={(e) => setEntradaNome(e.target.value)}
+        />
+        <span className="text-xl">Seu nome é: <strong>{entradaNome || "..."}</strong></span>
+        <button
+          onClick={() => alert(entradaNome)}
+          className="w-fit rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700"
+        >
+          Mostrar valor do campo
+        </button>
+      </div>
+    </section>
+  );
+};
+
+const Secao_Estado_Tempo = () => {
+  const [contadorTempo, setContadorTempo] = useState(0);
+
+  const aumentarDeDois = () => {
+    setContadorTempo((atual) => atual + 2);
+    setContadorTempo((atual) => atual + 2);
+    setContadorTempo((atual) => atual + 2);
+  };
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Atualização Sequencial</h2>
+      <p className="mb-4 text-gray-700">Use a forma funcional do estado para evitar resultados incorretos.</p>
+
+      <div className="flex items-center gap-4 text-2xl">
+        <span>Valor: <strong>{contadorTempo}</strong></span>
+        <button
+          onClick={aumentarDeDois}
+          className="rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700"
+        >
+          +2
+        </button>
+      </div>
+    </section>
+  );
+};
+
+const Secao_Objeto_Estado = () => {
+  const [nomeCompleto, setNomeCompleto] = useState<Pessoa_2>({
+    primeiroNome: "",
+    ultimoNome: "",
+  });
+
+  const limpar = () => setNomeCompleto({ primeiroNome: "", ultimoNome: "" });
+  const limparPrimeiro = () => setNomeCompleto({ ...nomeCompleto, primeiroNome: "" });
+  const limparSobrenome = () => setNomeCompleto({ ...nomeCompleto, ultimoNome: "" });
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Atualização de Objeto no Estado</h2>
+      <p className="mb-4 text-gray-700">Mostra como usar spread operator para manter o resto do objeto.</p>
+
+      <div className="flex flex-col gap-4">
+        <input
+          type="text"
+          placeholder="Nome"
+          className="border border-gray-300 px-4 py-2 rounded-md"
+          value={nomeCompleto.primeiroNome}
+          onChange={(e) => setNomeCompleto({ ...nomeCompleto, primeiroNome: e.target.value })}
+        />
+        <input
+          type="text"
+          placeholder="Sobrenome"
+          className="border border-gray-300 px-4 py-2 rounded-md"
+          value={nomeCompleto.ultimoNome}
+          onChange={(e) => setNomeCompleto({ ...nomeCompleto, ultimoNome: e.target.value })}
+        />
+        <p>Meu nome completo é: <strong>{nomeCompleto.primeiroNome} {nomeCompleto.ultimoNome}</strong></p>
+
+        <div className="flex flex-wrap gap-3">
+          <button onClick={limpar} className="rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700">
+            Limpar Nome e Sobrenome
+          </button>
+          <button onClick={limparPrimeiro} className="rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700">
+            Limpar Nome
+          </button>
+          <button onClick={limparSobrenome} className="rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700">
+            Limpar Sobrenome
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Secao_Lista_Tarefas = () => {
+  const [entradaTarefa, setEntradaTarefa] = useState("");
+  const [listaTarefas, setListaTarefas] = useState<ItemTarefa[]>([
+    { id: 1, rotulo: "Fazer dever de casa.", concluido: true },
+    { id: 2, rotulo: "Comprar bolo.", concluido: false },
+  ]);
+
+  const adicionarTarefa = () => {
+    if (entradaTarefa.trim() === "") {
+      alert("O campo de tarefa não pode estar vazio.");
+      return;
+    }
+
+    setListaTarefas([...listaTarefas, { id: Date.now(), rotulo: entradaTarefa, concluido: false }]);
+    setEntradaTarefa("");
+  };
+
+  const alternarItem = (index: number) => {
+    const novaLista = [...listaTarefas];
+    novaLista[index].concluido = !novaLista[index].concluido;
+    setListaTarefas(novaLista);
+  };
+
+  const deletarItem = (index: number) => {
+    const tarefaRemovida = listaTarefas[index]?.rotulo;
+    setListaTarefas(listaTarefas.filter((_, i) => i !== index));
+    alert(`Item "${tarefaRemovida}" deletado!`);
+  };
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Lista de Tarefas</h2>
+      <p className="mb-4 text-gray-700">Exemplo de lista com adicionar, marcar como concluído e deletar.</p>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <input
+            type="text"
+            placeholder="O que deseja fazer?"
+            className="flex-1 border border-gray-300 px-4 py-2 rounded-md"
+            value={entradaTarefa}
+            onChange={(e) => setEntradaTarefa(e.target.value)}
+          />
+          <button
+            onClick={adicionarTarefa}
+            className="rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700"
+          >
+            Adicionar
+          </button>
+        </div>
+
+        <p>{listaTarefas.length} item(s) na lista</p>
+
+        <ul className="space-y-3">
+          {listaTarefas.map((item, index) => (
+            <li key={item.id} className={`flex items-center gap-3 rounded-md border border-gray-200 p-3 ${item.concluido ? "bg-gray-100 line-through text-gray-500" : "bg-white"}`}>
+              <input
+                type="checkbox"
+                checked={item.concluido}
+                onChange={() => alternarItem(index)}
+                className="h-5 w-5"
+              />
+              <span className="flex-1">{item.rotulo}</span>
+              <button onClick={() => deletarItem(index)} className="text-blue-600 hover:underline">
+                Deletar
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+};
+
+const Secao_Galeria_Imagens = () => {
+  const [mostrarModal, setMostrarModal] = useState(false);
+  const [fotoSelecionada, setFotoSelecionada] = useState(listaFotos[0]);
+
+  const abrirModal = (foto: typeof listaFotos[0]) => {
+    setFotoSelecionada(foto);
+    setMostrarModal(true);
+  };
+
+  const fecharModal = () => setMostrarModal(false);
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Galeria de Imagens</h2>
+      <p className="mb-4 text-gray-700">Clique em uma imagem para abrir o modal.</p>
+
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {listaFotos.map((foto) => (
+          <Foto_Item key={foto.id} foto={foto} aoClicar={() => abrirModal(foto)} />
+        ))}
+      </div>
+
+      {mostrarModal && <Modal image={fotoSelecionada.url} closeModal={fecharModal} />}
+    </section>
+  );
+};
+
+const Secao_Quiz = () => {
+  const [respostas, setRespostas] = useState<number[]>(new Array(perguntas.length).fill(-1));
+  const [mostrarResultado, setMostrarResultado] = useState(false);
+  const [perguntaAtual, setPerguntaAtual] = useState(0);
+
+  const carregarProximaPergunta = () => {
+    if (perguntaAtual < perguntas.length - 1) {
+      setPerguntaAtual(perguntaAtual + 1);
+    } else {
+      setMostrarResultado(true);
+    }
+  };
+
+  const reiniciarQuiz = () => {
+    setPerguntaAtual(0);
+    setRespostas(new Array(perguntas.length).fill(-1));
+    setMostrarResultado(false);
+  };
+
+  const processarResposta = (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => {
+    setRespostas((anterior) => {
+      const copia = [...anterior];
+      copia[payload.indicePergunta] = payload.respostaSelecionada;
+      return copia;
+    });
+    carregarProximaPergunta();
+  };
+
+  return (
+    <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
+      <h2 className="text-3xl font-bold mb-4">Quiz Interativo</h2>
+      <p className="mb-4 text-gray-700">O componente de pergunta dispara um callback com o resultado escolhido.</p>
+
+      <div className="space-y-6">
+        <div className="rounded-lg border border-gray-200 bg-slate-50 p-6">
+          <Pergunta_Item
+            pergunta={perguntas[perguntaAtual]}
+            count={perguntaAtual + 1}
+            aoResponder={processarResposta}
+          />
+        </div>
+
+        {mostrarResultado && <Resultados respostas={respostas} perguntas={perguntas} />}
+
+        <div className="flex flex-wrap gap-3">
+          <button
+            onClick={carregarProximaPergunta}
+            className="rounded-md bg-slate-800 px-4 py-2 text-white hover:bg-slate-900"
+          >
+            Próxima Pergunta
+          </button>
+          <button
+            onClick={() => setMostrarResultado(true)}
+            className="rounded-md bg-gray-500 px-4 py-2 text-white hover:bg-gray-700"
+          >
+            Ver Resultado
+          </button>
+          <button
+            onClick={reiniciarQuiz}
+            className="rounded-md bg-amber-500 px-4 py-2 text-black hover:bg-amber-700"
+          >
+            Reiniciar
+          </button>
+        </div>
+
+        <span className="text-sm text-gray-600">
+          Pergunta {perguntaAtual + 1} de {perguntas.length}
+        </span>
+      </div>
+    </section>
+  );
+};
+
+const Pagina_Estados_Eventos = () => {
+  return (
+    <main className="min-h-screen bg-slate-100 p-6 text-slate-900">
+      <header className="mb-10 text-center">
+        <h1 className="text-5xl font-bold mb-3">Estudos de Estado e Eventos</h1>
+        <p className="mx-auto max-w-3xl text-lg text-slate-600">
+          Página de exemplos organizada por seções. Cada parte demonstra um conceito de React em português.
+        </p>
+      </header>
+
+      <Secao_Eventos_Clique />
+      <Secao_Avisar />
+      <Secao_Botoes_Customizados />
+      <Secao_Formulario />
+      <Secao_Estado_Basico />
+      <Secao_Campo_Texto />
+      <Secao_Estado_Tempo />
+      <Secao_Objeto_Estado />
+      <Secao_Lista_Tarefas />
+      <Secao_Galeria_Imagens />
+      <Secao_Quiz />
+    </main>
+  );
+};
+
+export default Pagina_Estados_Eventos;
