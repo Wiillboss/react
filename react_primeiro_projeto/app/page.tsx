@@ -19,58 +19,38 @@ import { estudantes } from "./data/estudantes";
 // Atualmente a página de estudantes está definida como exportação padrão.
 // -----------------------------------------------------------------------------
 
-const Tabela_de_notas = () => {
+const Secao_Componente_Quadrado = () => {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <section className="container mx-auto px-6 py-10">
-        <header className="mb-8">
-          <h1 className="text-5xl font-bold">Lista de Estudantes</h1>
-          <p className="mt-3 max-w-2xl text-lg text-slate-300">
-            Exemplo de tabela de alunos usando dados importados e componente de lista.
-          </p>
-        </header>
-
-        <Tabela_Alunos estudantes={estudantes} />
-      </section>
-    </main>
-  );
-};
-
-// -----------------------------------------------------------------------------
-// Componentes de demonstração auxiliares. Descomente a exportação desejada
-// para alternar a página renderizada durante o desenvolvimento.
-// -----------------------------------------------------------------------------
-
-const Pagina_Componente_Quadrado = () => {
-  return (
-    <section className="p-6">
-      <h1 className="text-4xl font-bold">Componente Quadrado</h1>
-      <p className="mb-4 text-slate-600">Demonstração de componente com estado visual simples.</p>
-      <QuadradoExemplo />
-      <Quadrado />
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Componente Quadrado</h2>
+      <p className="mb-6 text-slate-300">Demonstração de componente com estado visual simples.</p>
+      <div className="space-y-6 rounded-3xl bg-slate-950 p-6">
+        <QuadradoExemplo />
+        <Quadrado />
+      </div>
     </section>
   );
 };
 
-const Pagina_Formulario_Geometrico = () => {
+const Secao_Formulario_Geometrico = () => {
   return (
-    <section className="p-6">
-      <h1 className="text-4xl font-bold">Formulário Geométrico</h1>
-      <p className="mb-4 text-slate-600">Exemplo de formulário dentro de um contêiner com borda.</p>
-      <div className="flex gap-2 rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Formulário Geométrico</h2>
+      <p className="mb-6 text-slate-300">Exemplo de formulário dentro de um contêiner com borda.</p>
+      <div className="rounded-3xl bg-white p-6 shadow-sm">
         <Formulario_Geometrico />
       </div>
     </section>
   );
 };
 
-const Pagina_Pessoas = () => {
+const Secao_Pessoas = () => {
   return (
-    <section className="p-6">
-      <h1 className="text-4xl font-bold">Exemplos de Pessoa</h1>
-      <p className="mb-4 text-slate-600">Componentes com props para nome, avatar e informações pessoais.</p>
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Exemplos de Pessoa</h2>
+      <p className="mb-6 text-slate-300">Componentes com props para nome, avatar e informações pessoais.</p>
 
-      <div className="space-y-6">
+      <div className="space-y-6 rounded-3xl bg-slate-950 p-6">
         <Pessoa
           nome="Willian"
           avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
@@ -98,13 +78,13 @@ const Pagina_Pessoas = () => {
   );
 };
 
-const Pagina_Cartoes = () => {
+const Secao_Cartoes = () => {
   return (
-    <section className="p-6">
-      <h1 className="text-4xl font-bold">Cards de Exemplo</h1>
-      <p className="mb-4 text-slate-600">Uso de componentes para apresentar conteúdo estilizado.</p>
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Cards de Exemplo</h2>
+      <p className="mb-6 text-slate-300">Uso de componentes para apresentar conteúdo estilizado.</p>
 
-      <div className="space-y-6">
+      <div className="space-y-6 rounded-3xl bg-slate-950 p-6">
         <Card>
           <>
             <h3 className="text-3xl font-bold italic">"Frase de efeito!"</h3>
@@ -125,20 +105,20 @@ const Pagina_Cartoes = () => {
   );
 };
 
-const Pagina_Renderizando_Listas = () => {
+const Secao_Renderizando_Listas = () => {
   const programadores = listaPessoas.filter((pessoa) => pessoa.profissao === "Programador");
   const proteticos = listaPessoas.filter((pessoa) => pessoa.profissao === "Protético");
   const mulheres = listaPessoas.filter((pessoa) => pessoa.sexo === "Feminino");
   const mulheresProteticas = listaPessoas.filter((pessoa) => pessoa.profissao === "Protética");
 
   return (
-    <section className="p-6">
-      <h1 className="text-4xl font-bold">Renderização de Listas</h1>
-      <p className="mb-4 text-slate-600">Exemplos de uso de <code>map</code>, ternário e operador lógico <code>&&</code>.</p>
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Renderização de Listas</h2>
+      <p className="mb-6 text-slate-300">Exemplos de uso de <code>map</code>, ternário e operador lógico <code>&&</code>.</p>
 
-      <div className="space-y-8">
+      <div className="space-y-8 rounded-3xl bg-slate-950 p-6">
         <div>
-          <h2 className="text-2xl font-semibold">Lista completa de pessoas</h2>
+          <h3 className="text-2xl font-semibold">Lista completa de pessoas</h3>
           <ul className="list-disc pl-6">
             {listaPessoas.map((pessoa) => (
               <li key={pessoa.id}>{pessoa.nome} - {pessoa.profissao} - {pessoa.sexo}</li>
@@ -147,7 +127,7 @@ const Pagina_Renderizando_Listas = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold">Apenas programadores</h2>
+          <h3 className="text-2xl font-semibold">Apenas programadores</h3>
           {programadores.length > 0 ? (
             <ul className="list-disc pl-6">
               {programadores.map((pessoa) => (
@@ -160,7 +140,7 @@ const Pagina_Renderizando_Listas = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold">Apenas protéticos</h2>
+          <h3 className="text-2xl font-semibold">Apenas protéticos</h3>
           {proteticos.length > 0 && (
             <ul className="list-disc pl-6">
               {proteticos.map((pessoa) => (
@@ -171,7 +151,7 @@ const Pagina_Renderizando_Listas = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold">Apenas mulheres</h2>
+          <h3 className="text-2xl font-semibold">Apenas mulheres</h3>
           {mulheres.length > 0 && (
             <ul className="list-disc pl-6">
               {mulheres.map((pessoa) => (
@@ -182,7 +162,7 @@ const Pagina_Renderizando_Listas = () => {
         </div>
 
         <div>
-          <h2 className="text-2xl font-semibold">Apenas protéticas</h2>
+          <h3 className="text-2xl font-semibold">Apenas protéticas</h3>
           {mulheresProteticas.length > 0 && (
             <ul className="list-disc pl-6">
               {mulheresProteticas.map((pessoa) => (
@@ -196,15 +176,17 @@ const Pagina_Renderizando_Listas = () => {
   );
 };
 
-const Pagina_Exercicio_Hora = () => {
+const Secao_Exercicio_Hora = () => {
   const horarioAtual = new Date().toLocaleTimeString();
   const hora = new Date().getHours();
 
   return (
-    <section className="min-h-screen bg-linear-to-r from-sky-200 to-indigo-800 p-10 text-white">
-      <div className="mx-auto max-w-3xl rounded-3xl bg-slate-900/70 p-10 text-center shadow-xl">
-        <div className="text-8xl font-bold mb-6">{horarioAtual}</div>
-        <div className="text-6xl">
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Exercício de Hora</h2>
+      <p className="mb-6 text-slate-300">Exibe a hora atual e uma mensagem dependendo do período do dia.</p>
+      <div className="rounded-3xl bg-slate-950 p-10 text-center text-white shadow-lg">
+        <div className="text-6xl font-bold mb-4">{horarioAtual}</div>
+        <div className="text-3xl">
           {hora >= 0 && hora < 12 && "Bom dia!"}
           {hora >= 12 && hora < 18 && "Boa tarde!"}
           {hora >= 18 && hora <= 23 && "Boa noite!"}
@@ -214,27 +196,54 @@ const Pagina_Exercicio_Hora = () => {
   );
 };
 
-const Pagina_Rating_Emoji = () => {
+const Secao_Rating_Emoji = () => {
   return (
-    <section className="min-h-screen bg-linear-to-r from-sky-200 to-indigo-800 p-10 text-white">
-      <div className="mx-auto max-w-3xl rounded-3xl bg-slate-900/70 p-10 text-center shadow-xl">
-        <h1 className="text-5xl font-bold mb-6">Avaliação Emoji</h1>
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Avaliação Emoji</h2>
+      <p className="mb-6 text-slate-300">Exemplo de avaliação usando componente de emoji.</p>
+      <div className="rounded-3xl bg-slate-950 p-10 text-center text-white shadow-lg">
         <Avaliacao_Emoji avaliacao={1} />
       </div>
     </section>
   );
 };
 
-// -----------------------------------------------------------------------------
-// Exportação principal.
-// Descomente uma das linhas abaixo para testar outra página localmente.
-// -----------------------------------------------------------------------------
+const Secao_Tabela_de_Notas = () => {
+  return (
+    <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
+      <h2 className="text-4xl font-bold">Lista de Estudantes</h2>
+      <p className="mb-6 text-slate-300">Tabela de alunos usando dados importados e um componente de lista.</p>
+      <div className="rounded-3xl bg-white p-6 text-slate-900 shadow-lg">
+        <Tabela_Alunos estudantes={estudantes} />
+      </div>
+    </section>
+  );
+};
 
-// export default Pagina_Componente_Quadrado;
-// export default Pagina_Formulario_Geometrico;
-// export default Pagina_Pessoas;
-// export default Pagina_Cartoes;
-// export default Pagina_Renderizando_Listas;
-// export default Pagina_Exercicio_Hora;
-// export default Pagina_Rating_Emoji;
-export default Tabela_de_notas;
+const Pagina_Exercicios = () => {
+  return (
+    <main className="min-h-screen bg-slate-950 text-white">
+      <section className="container mx-auto px-6 py-10">
+        <header className="mb-10 text-center">
+          <h1 className="text-5xl font-bold">Pasta app: todos os exercícios</h1>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
+            Reuni todos os exercícios da pasta <code>app</code> em uma única página para visualização contínua.
+          </p>
+        </header>
+
+        <div className="space-y-10">
+          <Secao_Componente_Quadrado />
+          <Secao_Formulario_Geometrico />
+          <Secao_Pessoas />
+          <Secao_Cartoes />
+          <Secao_Renderizando_Listas />
+          <Secao_Exercicio_Hora />
+          <Secao_Rating_Emoji />
+          <Secao_Tabela_de_Notas />
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Pagina_Exercicios;
