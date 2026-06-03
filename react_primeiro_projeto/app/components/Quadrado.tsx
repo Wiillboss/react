@@ -18,4 +18,6 @@ export const Quadrado = () => {
 //
 // Diferenca entre tipos de exportacao:
 // 1. Named export (export const Quadrado): permite multiplos por arquivo
+//    - Exemplo de importacao: import { Quadrado } from "./components/Quadrado"
 // 2. Default export (export default): permite apenas um por arquivo
+//    - Exemplo de importacao: import Quadrado from "./components/Quadrado"

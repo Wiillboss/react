@@ -15,11 +15,15 @@ const QuadradoExemplo = () => {
 
 // EXPORTAÇÃO: Existem duas formas de exportar componentes
 // Forma 1 (named export): export { Square }
-//   - Permite exportar múltiplos componentes
+//   - Permite exportar múltiplos componentes do mesmo arquivo
 //   - Importação: import { Square } from "..."
 // Forma 2 (default export): export default Square
 //   - Permite apenas um componente por arquivo
 //   - Importação: import Square from "..."
+//
+// Este arquivo usa default export, então o componente é o valor padrão do módulo.
+// Importação deste componente:
+//   import QuadradoExemplo from "./components/Quadrado_Exemplo";
 
 // Usando a forma 2 (export default) para exportar este componente
 export default QuadradoExemplo;

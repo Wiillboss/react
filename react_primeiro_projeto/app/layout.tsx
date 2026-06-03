@@ -18,13 +18,17 @@ const geistMono = Geist_Mono({
 });
 
 // Metadata usada pelo Next.js para título e descrição da página.
+// Esta é uma named export, então é importada com chaves:
+//   import { metadata } from "./layout";
 export const metadata: Metadata = {
   title: "Primeiro Projeto React",
   description: "Exemplo de aplicação Next.js com componentes e estado em português.",
 };
 
 // RootLayout é o componente de layout principal.
-// Recebe `children` e aplica classes de estilo ao elemento <html> e ao <body>.
+// Ele usa export default porque cada arquivo de layout normalmente exporta um único componente padrão.
+// A importação deste layout seria sem chaves:
+//   import RootLayout from "./layout";
 export default function RootLayout({
   children,
 }: Readonly<{

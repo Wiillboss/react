@@ -246,4 +246,7 @@ const Pagina_Exercicios = () => {
   );
 };
 
+// EXPORTAÇÃO DEFAULT: páginas do Next.js normalmente exportam um único componente como padrão.
+// Isso permite importar sem chaves em outros arquivos, por exemplo:
+//   import Pagina_Exercicios from "./page";
 export default Pagina_Exercicios;
