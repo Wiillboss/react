@@ -7,7 +7,7 @@
 const QuadradoExemplo = () => {
     return (
         // Div com estilo Tailwind: largura 160, altura 16, fundo azul e texto branco
-        <div className="w-160 h-16 bg-blue-500 text-white">
+        <div className="w-160 h-16 bg-blue-500 text-white border-amber-500 flex items-center justify-center rounded-lg">
             Texto qualquer inspirador
         </div>
     );
