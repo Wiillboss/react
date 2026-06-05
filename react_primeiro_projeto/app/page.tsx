@@ -84,10 +84,10 @@ const Secao_Cartoes = () => {
       <h2 className="text-4xl font-bold">Cards de Exemplo</h2>
       <p className="mb-6 text-slate-300">Uso de componentes para apresentar conteúdo estilizado.</p>
 
-      <div className="space-y-6 rounded-3xl bg-slate-950 p-6">
+      <div className="space-y-6 rounded-3xl bg-slate-950 p-6 ">
         <Card>
           <>
-            <h3 className="text-3xl font-bold italic">"Frase de efeito!"</h3>
+            <h3 className="text-3xl font-bold italic ">"Frase de efeito!"</h3>
             <p className="text-right text-sm">Este é um exemplo de uso do componente Card.</p>
           </>
         </Card>
