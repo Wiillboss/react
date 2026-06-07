@@ -15,6 +15,7 @@ const getWeekDay = (day: number): string => {
 }
 
 // TIPO DE DADOS: Define a estrutura de props para os componentes Pessoa
+//Props são os dados que um componente recebe para renderizar informações dinâmicas. No caso do componente Pessoa, as props definem quais informações sobre a pessoa e sua esposa serão exibidas. O tipo PropsPessoa especifica que o componente espera receber um objeto com as seguintes propriedades:
 // - nome: nome da pessoa (obrigatório)
 // - avatar: caminho da imagem (opcional, com "?")
 // - esposa: objeto contendo dados da esposa com nome, profissão e array de ocupações
