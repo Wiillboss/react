@@ -14,6 +14,11 @@ const getWeekDay = (day: number): string => {
     return weekDays[day];
 }
 
+//outra forma de fazr o getWeekDay:
+//  const getWeekDay = () => {
+//      return nwe Int Date().toLocaleDateString('pt-BR', { weekday: 'long' }).format(new Date());
+//  }
+
 // TIPO DE DADOS: Define a estrutura de props para os componentes Pessoa
 //Props são os dados que um componente recebe para renderizar informações dinâmicas. No caso do componente Pessoa, as props definem quais informações sobre a pessoa e sua esposa serão exibidas. O tipo PropsPessoa especifica que o componente espera receber um objeto com as seguintes propriedades:
 // - nome: nome da pessoa (obrigatório)
