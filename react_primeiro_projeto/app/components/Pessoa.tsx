@@ -16,7 +16,7 @@ const getWeekDay = (day: number): string => {
 
 //outra forma de fazr o getWeekDay:
 //  const getWeekDay = () => {
-//      return nwe Int Date().toLocaleDateString('pt-BR', { weekday: 'long' }).format(new Date());
+//      return new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(new Date());
 //  }
 
 // TIPO DE DADOS: Define a estrutura de props para os componentes Pessoa
