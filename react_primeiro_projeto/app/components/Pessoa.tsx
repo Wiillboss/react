@@ -36,6 +36,7 @@ type PropsPessoa = {
 
 // COMPONENTE PESSOA: Exibe informações da pessoa e sua esposa
 // Forma de recebimento de props: destructuring completo na função
+// O destructuring permite extrair diretamente as propriedades do objeto de props, facilitando o acesso aos dados dentro do componente. No caso do componente Pessoa, as props são desestruturadas para obter nome, avatar e esposa, que são usados para renderizar as informações na interface.
 export const Pessoa = (props: PropsPessoa) => {
 
     // Desestruturando as props para extrair nome, avatar e esposa
