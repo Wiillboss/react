@@ -3,6 +3,8 @@ type Props = {
     author?: string;
 }
 
+//Caso venha ter dois return no mesmo local, o primeiro anula o segundo.
+
 export const Card_2_sem_if_ternario = ({ phrase, author }: Props) => {
     if (author) {
         return (
