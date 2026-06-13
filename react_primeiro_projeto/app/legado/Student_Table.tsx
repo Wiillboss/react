@@ -1,6 +1,7 @@
 // Student_Table.tsx (legado)
 // Arquivo legado de tabela de estudantes. A versão atual em português é Tabela_Alunos.
 
+import Image from 'next/image';
 import { Student } from "../types/Student";
 
 type Props = {
@@ -23,7 +24,7 @@ export const Student_Table = ({ students }: Props) => {
                 {students.map((item) => (
                     <tr key={item.id} className="text-black bg-gray-400 border-b border-black">
                         <td className="p-3 flex items-center">
-                            <img src={item.avatar} alt={item.name} className="w-10 h-10 rounded-full mr-3" />
+                            <Image src={item.avatar} alt={item.name} width={40} height={40} className="w-10 h-10 rounded-full mr-3" />
                             <div>
                                 <div className="font-bold">{item.name}</div>
                                 <div>{item.email}</div>

@@ -87,7 +87,7 @@ const Secao_Cartoes = () => {
       <div className="space-y-6 rounded-3xl bg-slate-950 p-6 border border-slate-700 shadow-lg">
         <Card>
           <>
-            <h3 className="text-3xl font-bold italic ">"Frase de efeito!"</h3>
+            <h3 className="text-3xl font-bold italic ">&quot;Frase de efeito!&quot;</h3>
             <p className="text-right text-sm">Este é um exemplo de uso do componente Card.</p>
           </>
         </Card>

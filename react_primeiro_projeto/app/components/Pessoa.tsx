@@ -34,41 +34,33 @@ type PropsPessoa = {
     };
 };
 
+import Image from 'next/image';
+
 // COMPONENTE PESSOA: Exibe informações da pessoa e sua esposa
 // Forma de recebimento de props: destructuring completo na função
 // O destructuring permite extrair diretamente as propriedades do objeto de props, facilitando o acesso aos dados dentro do componente. No caso do componente Pessoa, as props são desestruturadas para obter nome, avatar e esposa, que são usados para renderizar as informações na interface.
 export const Pessoa = (props: PropsPessoa) => {
 
-    // Desestruturando as props para extrair nome, avatar e esposa
     const { nome, avatar, esposa } = props;
 
     return (
         <>
-            {/* Nome da pessoa principal */}
             <h1>{nome}</h1>
-            
-            {/* Avatar/foto da pessoa */}
-            <img src={avatar} alt={nome} className="w-40" />
-            
-            {/* Lista de informações da esposa */}
+
+            {avatar && (
+                <Image src={avatar} alt={nome} width={160} height={160} className="w-40" />
+            )}
+
             <ul>
-                {/* Nome da esposa */}
                 <li>Nome: {esposa.nome}</li>
-                
-                {/* Profissão da esposa */}
                 <li>Profissão: {esposa.profissao}</li>
-                
-                {/* Título da seção de ocupações */}
                 <li>Ocupações:</li>
-                
-                {/* Itera sobre o array de ocupações e renderiza cada uma em um <li> */}
                 {esposa.ocupacoes.map((ocupacao: string, index: number) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
             </ul>
         </>
-
-    )
+    );
 }
 
 // COMPONENTE PERSON2: Versão melhorada do Person com avatar padrão
@@ -85,8 +77,7 @@ export const Pessoa2 = ({
             {/* Nome da pessoa principal */}
             <h1>{nome}</h1>
             
-            {/* Avatar/foto da pessoa (padrão se não fornecido) */}
-            <img src={avatar} alt={nome} className="w-40" />
+            <Image src={avatar} alt={nome} width={160} height={160} className="w-40" />
             
             {/* Lista de informações da esposa */}
             <ul>
@@ -111,7 +102,7 @@ export const Pessoa2 = ({
 
 // COMPONENTE PERSON3: Versão customizada com dados hardcoded e estilos inline
 // Props são recebidas mas não são utilizadas (dados estão fixos no componente)
-export const Pessoa3 = (props: PropsPessoa) => {
+export const Pessoa3 = () => {
     // DADOS FIXOS PERSON3: Willian
     const name: string = "Willian";
     const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
@@ -133,8 +124,7 @@ export const Pessoa3 = (props: PropsPessoa) => {
             <p>Idade: 30 anos</p>
             <p>Profissão: Desenvolvedor</p>
             
-            {/* Avatar/foto da pessoa com dimensões maiores (w-60 h-60) */}
-            <img src={avatar} alt="Descrição da imagem" className="w-60 h-60" />
+            <Image src={avatar} alt="Descrição da imagem" width={240} height={240} className="w-60 h-60" />
             
             {/* Informações da esposa Roberta */}
             <p>Nome: {esposa.nome}</p>

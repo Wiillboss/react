@@ -1,9 +1,11 @@
 // Modal.tsx
 // Componente que mostra uma imagem em modo modal e fecha ao clicar fora ou no botão.
 
+import Image from 'next/image';
+
 type ModalProps = {
-    image: string; // URL da imagem a ser exibida no modal
-    closeModal: () => void; // Função chamada para fechar o modal
+    image: string;
+    closeModal: () => void;
 };
 
 export const Modal = ({ image, closeModal }: ModalProps) => {
@@ -13,7 +15,9 @@ export const Modal = ({ image, closeModal }: ModalProps) => {
                 onClick={closeModal}
                 className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black/90"
             >
-                <img src={image} alt="Modal" className="max-w-full max-h-full" />
+                <div className="max-w-full max-h-full">
+                    <Image src={image} alt="Modal" width={800} height={600} className="object-contain" />
+                </div>
             </div>
             <div
                 onClick={closeModal}
