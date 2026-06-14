@@ -24,7 +24,7 @@ export const Student_Table = ({ students }: Props) => {
                 {students.map((item) => (
                     <tr key={item.id} className="text-black bg-gray-400 border-b border-black">
                         <td className="p-3 flex items-center">
-                            <Image src={item.avatar} alt={item.name} width={40} height={40} className="w-10 h-10 rounded-full mr-3" />
+                            <Image src={item.avatar} alt={item.name} width={40} height={40} className="w-10 h-10 rounded-full mr-3" style={{ height: 'auto' }} />
                             <div>
                                 <div className="font-bold">{item.name}</div>
                                 <div>{item.email}</div>

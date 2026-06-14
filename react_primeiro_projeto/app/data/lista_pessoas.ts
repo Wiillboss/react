@@ -12,7 +12,8 @@
 
 // a diferença das pastas DATA e TYPES é que a pasta DATA é onde ficam os arquivos de dados, que são usados para armazenar informações que serão usadas no projeto, como a lista de pessoas. Já a pasta TYPES é onde ficam os arquivos de definição de tipos, que são usados para definir as interfaces e tipos de dados usados no projeto. Os arquivos de dados geralmente exportam arrays ou objetos com informações, enquanto os arquivos de tipos exportam interfaces ou tipos que descrevem a estrutura dos dados usados no projeto.
 
-import type { Pessoa } from "../legado/Person";
+// O tipo Pessoa agora foi movido para app/types/Pessoa.ts. A pasta app/legado permanece como consulta histórica.
+import type { Pessoa } from "../types/Pessoa";
 
 export const listaPessoas: Pessoa[] = [
     { id: 1, nome: "Willian", profissao: "Programador", sexo: "Masculino" },

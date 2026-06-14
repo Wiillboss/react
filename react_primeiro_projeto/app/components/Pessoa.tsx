@@ -48,7 +48,7 @@ export const Pessoa = (props: PropsPessoa) => {
             <h1>{nome}</h1>
 
             {avatar && (
-                <Image src={avatar} alt={nome} width={160} height={160} className="w-40" />
+                <Image src={avatar} alt={nome} width={160} height={160} className="w-40" style={{ height: 'auto' }} />
             )}
 
             <ul>
@@ -77,7 +77,7 @@ export const Pessoa2 = ({
             {/* Nome da pessoa principal */}
             <h1>{nome}</h1>
             
-            <Image src={avatar} alt={nome} width={160} height={160} className="w-40" />
+            <Image src={avatar} alt={nome} width={160} height={160} className="w-40" style={{ height: 'auto' }} />
             
             {/* Lista de informações da esposa */}
             <ul>
@@ -102,38 +102,30 @@ export const Pessoa2 = ({
 
 // COMPONENTE PERSON3: Versão customizada com dados hardcoded e estilos inline
 // Props são recebidas mas não são utilizadas (dados estão fixos no componente)
-export const Pessoa3 = () => {
-    // DADOS FIXOS PERSON3: Willian
-    const name: string = "Willian";
-    const avatar: string = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg";
- 
-    // DADOS FIXOS ESPOSA: Roberta (nome, profissão e ocupações definidas no componente)
-    const esposa = {
+export const Pessoa3 = (props?: PropsPessoa) => {
+    const defaultEsposa = {
         nome: "Roberta",
         profissao: "Professora",
         ocupacoes: ['Dona de casa', 'Mãe', 'Esposa']
     };
-    
+
+    const { nome = "Willian", avatar = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg", esposa = defaultEsposa } = props ?? {};
+
     return (
         <>
-            {/* Título com estilo inline - exibe nome e dia da semana atual em vermelho */}
-            <h1 style={{ color: 'red', fontSize: '1.5rem' }}> Nome: {name} - {getWeekDay(new Date().getDay())} </h1>
-            
-            {/* Informações adicionais fixas sobre João (dados hardcoded) */}
+            <h1 style={{ color: 'red', fontSize: '1.5rem' }}> Nome: {nome} - {getWeekDay(new Date().getDay())} </h1>
+
             <p>Nome: João</p>
             <p>Idade: 30 anos</p>
             <p>Profissão: Desenvolvedor</p>
-            
+
             <Image src={avatar} alt="Descrição da imagem" width={240} height={240} className="w-60 h-60" />
-            
-            {/* Informações da esposa Roberta */}
+
             <p>Nome: {esposa.nome}</p>
             <p>Profissão: {esposa.profissao}</p>
             <p>Ocupações:</p>
-            
-            {/* Lista em negrito com as ocupações de Roberta */}
+
             <ul className="font-bold">
-                {/* Itera sobre cada ocupação e renderiza em <li> */}
                 {esposa.ocupacoes.map((ocupacao: string, index: number) => (
                     <li key={index}>{ocupacao}</li>
                 ))}
