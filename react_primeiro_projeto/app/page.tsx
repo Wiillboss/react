@@ -105,6 +105,11 @@ const Secao_Cartoes = () => {
   );
 };
 
+//abaixo está a seção de renderização de listas, onde filtramos a lista de pessoas por profissão e sexo, e exibimos os resultados usando map, ternário e operador lógico && para renderização condicional.
+
+// A seção de renderização de listas demonstra como filtrar e exibir dados usando métodos de array e renderização condicional em React. Ela exibe a lista completa de pessoas, bem como sublistas filtradas por profissão (programadores, protéticos) e sexo (mulheres, mulheres protéticas). O uso de map permite iterar sobre os arrays filtrados para criar elementos JSX, enquanto o ternário e o operador lógico && são usados para renderizar mensagens ou listas apenas quando há resultados a mostrar.
+
+
 const Secao_Renderizando_Listas = () => {
   const programadores = listaPessoas.filter((pessoa) => pessoa.profissao === "Programador");
   const proteticos = listaPessoas.filter((pessoa) => pessoa.profissao === "Protético");
