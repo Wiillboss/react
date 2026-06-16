@@ -182,8 +182,13 @@ const Secao_Renderizando_Listas = () => {
 };
 
 const Secao_Exercicio_Hora = () => {
+
+  //a primeira linha abaixo está obtendo a hora atual formatada como string usando o método toLocaleTimeString() do objeto Date. A segunda linha está obtendo apenas a hora (número inteiro) usando o método getHours() do mesmo objeto Date. Essas informações são usadas para exibir a hora atual e determinar a mensagem de saudação apropriada (bom dia, boa tarde, boa noite) com base no horário do dia.
+
   const horarioAtual = new Date().toLocaleTimeString();
   const hora = new Date().getHours();
+
+//abaixo está a seção de exercício de hora, que exibe a hora atual e uma mensagem de saudação dependendo do período do dia. A hora é obtida usando o objeto Date do JavaScript, e a mensagem é determinada por meio de condições que verificam o valor da hora para exibir "Bom dia!", "Boa tarde!" ou "Boa noite!" conforme apropriado.
 
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
