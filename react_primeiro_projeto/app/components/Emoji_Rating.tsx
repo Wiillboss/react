@@ -5,6 +5,15 @@ type Props = {
     rating: number; // Nota de 0 a 5
 };
 
+//explicando todas as linhas abaixo:
+// - rating: nota de 0 a 5
+// - safeRating: nota limitada para o intervalo válido (0 a 5)
+// - rateInt: parte inteira da nota
+// - rateDecimal: parte decimal da nota
+// - emojis: array de emojis correspondentes às notas
+// - selectedEmoji: emoji selecionado com base na nota
+// - halfStar: estrela metade (se a parte decimal for >= 0.5)
+
 export const Emoji_Rating = ({ rating }: Props) => {
     // Limita a nota para o intervalo válido.
     const safeRating = Math.max(0, Math.min(rating, 5));
