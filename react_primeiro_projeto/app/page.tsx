@@ -230,6 +230,9 @@ const Secao_Tabela_de_Notas = () => {
   );
 };
 
+//explicando detalhadamente o cost Pagina_Exercicios:
+// O componente Pagina_Exercicios é a página principal que reúne todas as seções de exercícios em um layout organizado. Ele utiliza uma estrutura de contêiner para centralizar o conteúdo e aplicar estilos de espaçamento e cores. Cada seção é representada por um componente separado, que é renderizado dentro de um contêiner com borda e fundo estilizado para criar uma aparência consistente e visualmente agradável. A página inclui um cabeçalho com título e descrição, seguido por uma série de seções que demonstram diferentes aspectos do React, como componentes, formulários, renderização de listas e avaliação com emojis.
+
 const Pagina_Exercicios = () => {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
