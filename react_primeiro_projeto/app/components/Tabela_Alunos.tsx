@@ -8,6 +8,9 @@ type Props = {
     estudantes: Estudante[]; // Lista de estudantes exibida na tabela
 };
 
+//explicando detalhadamente o componente Tabela_Alunos:
+// O componente Tabela_Alunos é responsável por renderizar uma tabela que exibe informações sobre os estudantes. Ele recebe uma lista de estudantes como props e itera sobre essa lista para criar uma linha na tabela para cada estudante. Cada linha inclui o nome do estudante, seu status (ativo ou inativo), suas notas e a média das notas. O componente utiliza o componente Image do Next.js para exibir o avatar do estudante ao lado de seu nome, e aplica estilos usando Tailwind CSS para criar uma aparência visualmente atraente e organizada. A tabela é estruturada com um cabeçalho que define as colunas e um corpo que contém as linhas de dados dos estudantes.
+
 export const Tabela_Alunos = ({ estudantes }: Props) => {
     return (
         <table className="w-full border-collapse border border-gray-700 rounded-b-md">

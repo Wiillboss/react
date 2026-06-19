@@ -218,6 +218,9 @@ const Secao_Rating_Emoji = () => {
   );
 };
 
+//explicando detalhadamente o componente Secao_Tabela_de_Notas:
+// O componente Secao_Tabela_de_Notas é uma seção estilizada que exibe uma tabela de estudantes usando o componente Tabela_Alunos. Ele importa os dados dos estudantes de um arquivo externo e os passa como props para o componente de tabela. A seção é estruturada com um título, uma descrição e um contêiner para a tabela, todos estilizados com classes Tailwind CSS para criar uma aparência visualmente atraente e organizada. O componente Tabela_Alunos é responsável por renderizar os dados dos estudantes em formato tabular, mostrando informações como nome, email, avatar e notas.
+
 const Secao_Tabela_de_Notas = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
