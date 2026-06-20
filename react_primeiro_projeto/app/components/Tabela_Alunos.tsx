@@ -11,6 +11,16 @@ type Props = {
 //explicando detalhadamente o componente Tabela_Alunos:
 // O componente Tabela_Alunos é responsável por renderizar uma tabela que exibe informações sobre os estudantes. Ele recebe uma lista de estudantes como props e itera sobre essa lista para criar uma linha na tabela para cada estudante. Cada linha inclui o nome do estudante, seu status (ativo ou inativo), suas notas e a média das notas. O componente utiliza o componente Image do Next.js para exibir o avatar do estudante ao lado de seu nome, e aplica estilos usando Tailwind CSS para criar uma aparência visualmente atraente e organizada. A tabela é estruturada com um cabeçalho que define as colunas e um corpo que contém as linhas de dados dos estudantes.
 
+//detalhando o tbody:
+// O tbody é a parte da tabela onde os dados dos estudantes são renderizados. Ele utiliza o método map para iterar sobre a lista de estudantes e criar uma linha (tr) para cada estudante. Cada linha contém várias células (td) que exibem as informações do estudante, como nome, status, notas e média. O nome do estudante é exibido junto com seu avatar usando o componente Image do Next.js. O status do estudante é representado por um badge colorido que indica se ele está ativo ou inativo. As notas são formatadas para exibir uma casa decimal, e a média é calculada apenas para estudantes ativos, caso contrário, exibe "N/A". Cada linha também tem um estilo aplicado para melhorar a legibilidade e a aparência visual da tabela.
+
+//detalhando cada elemento dentro de tbody:
+//1. A linha (tr) é criada para cada estudante usando o método map, e cada linha tem uma chave única baseada no ID do estudante para garantir a renderização eficiente.
+//2. A primeira célula (td) contém o nome do estudante e seu avatar. O avatar é exibido usando o componente Image do Next.js, que otimiza a exibição de imagens. O nome do estudante é exibido ao lado do avatar em um layout flexível.
+//3. A segunda célula (td) exibe o status do estudante. Se o estudante estiver ativo, um badge verde é mostrado; caso contrário, um badge vermelho é exibido para indicar que o estudante está inativo.
+//4. As terceira e quarta células (td) exibem as notas do estudante, formatadas para mostrar uma casa decimal.
+//5. A quinta célula (td) exibe a média das notas apenas para estudantes ativos. Se o estudante estiver inativo, a célula exibe "N/A" para indicar que a média não está disponível.
+
 export const Tabela_Alunos = ({ estudantes }: Props) => {
     return (
         <table className="w-full border-collapse border border-gray-700 rounded-b-md">
