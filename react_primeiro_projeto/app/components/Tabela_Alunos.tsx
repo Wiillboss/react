@@ -21,6 +21,10 @@ type Props = {
 //4. As terceira e quarta células (td) exibem as notas do estudante, formatadas para mostrar uma casa decimal.
 //5. A quinta célula (td) exibe a média das notas apenas para estudantes ativos. Se o estudante estiver inativo, a célula exibe "N/A" para indicar que a média não está disponível.
 
+
+//detalhando o map:
+// O método map é utilizado para iterar sobre a lista de estudantes e criar uma linha na tabela para cada estudante. Ele recebe uma função de callback que é executada para cada elemento da lista, onde o elemento atual é representado por "item". Dentro dessa função, uma linha (tr) é retornada para cada estudante, contendo as células (td) com as informações do estudante. O map é uma maneira eficiente de renderizar listas em React, pois permite criar elementos dinamicamente com base nos dados fornecidos. Cada linha gerada pelo map tem uma chave única baseada no ID do estudante para garantir que o React possa identificar e atualizar corretamente os elementos da tabela quando necessário.
+
 export const Tabela_Alunos = ({ estudantes }: Props) => {
     return (
         <table className="w-full border-collapse border border-gray-700 rounded-b-md">
