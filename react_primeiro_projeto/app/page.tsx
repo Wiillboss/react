@@ -78,6 +78,9 @@ const Secao_Pessoas = () => {
   );
 };
 
+//explicando o componente Secao_Cartoes:
+// O componente Secao_Cartoes é uma seção estilizada que demonstra o uso de diferentes componentes de cartão (Card, Card2, Card_2_sem_if_ternario, Card_3) para exibir conteúdo estilizado. Ele inclui um título, uma descrição e um contêiner que agrupa os cartões com espaçamento e estilo visual. Cada cartão recebe props específicas, como frases e autores, para mostrar como os componentes podem ser reutilizados com diferentes dados. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente.
+
 const Secao_Cartoes = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
