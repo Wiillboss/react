@@ -1,6 +1,34 @@
 ﻿// app/page.tsx
 // Página principal de demonstração de componentes, renderização de listas e exemplos de UI.
 
+//explicando a difernça entre export default e export named:
+// export default: permite exportar um único valor padrão de um módulo, que pode ser importado sem chaves.
+// export named: permite exportar múltiplos valores nomeados de um módulo, que devem ser importados com chaves.
+
+//exemplo de export default:
+// export default function MeuComponente() { ... }
+// import MeuComponente from './MeuComponente';
+
+//exemplo de export named:
+// export function MeuComponente() { ... }
+// import { MeuComponente } from './MeuComponente';
+
+//explicando em quais situações usar export default e export named e dando exemplos de cada caso:
+// Use export default quando você deseja exportar um único valor principal de um módulo, como um componente React principal ou uma função utilitária. Isso facilita a importação sem chaves e é útil quando há apenas uma entidade principal no arquivo.
+// Exemplo:
+// // MeuComponente.tsx
+// export default function MeuComponente() { ... }
+// // OutroArquivo.tsx
+// import MeuComponente from './MeuComponente';
+
+// Use export named quando você deseja exportar múltiplos valores de um módulo, permitindo que outros arquivos escolham quais importar. Isso é útil para bibliotecas ou módulos que contêm várias funções ou componentes relacionados.
+// Exemplo:
+// // utils.ts
+// export function funcaoA() { ... }
+// export function funcaoB() { ... }
+// // OutroArquivo.tsx
+// import { funcaoA, funcaoB } from './utils';
+
 import QuadradoExemplo from "./components/Quadrado_Exemplo";
 import { Quadrado } from "./components/Quadrado";
 import { Formulario_Geometrico } from "./components/Formulario_Geometrico";
