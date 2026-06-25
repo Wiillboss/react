@@ -72,6 +72,10 @@ const Secao_Formulario_Geometrico = () => {
   );
 };
 
+//explicando o que está acontecendo no componente Secao_Pessoas:
+// O componente Secao_Pessoas é uma seção estilizada que demonstra o uso de diferentes componentes de pessoa (Pessoa, Pessoa2, Pessoa3) para exibir informações pessoais. Ele inclui um título, uma descrição e um contêiner que agrupa os componentes de pessoa com espaçamento e estilo visual. Cada componente de pessoa recebe props específicas, como nome, avatar e informações sobre a esposa, para mostrar como os componentes podem ser reutilizados com diferentes dados. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente.
+// A seção também demonstra a capacidade de passar objetos como props, permitindo que informações complexas sejam encapsuladas e exibidas de maneira organizada.
+
 const Secao_Pessoas = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
