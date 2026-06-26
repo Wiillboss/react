@@ -29,6 +29,25 @@
 // // OutroArquivo.tsx
 // import { funcaoA, funcaoB } from './utils';
 
+//Emplicando quando se cria um componente com outros componentes dentro, e quando se cria um componente com apenas um componente dentro:
+// Quando você cria um componente com outros componentes dentro, você está compondo uma interface mais complexa a partir de componentes menores e reutilizáveis. Isso é útil para criar layouts ou seções que combinam múltiplos elementos visuais e funcionais.
+// Exemplo:
+// function ComponentePai() {
+//   return (
+//     <div>
+//       <ComponenteFilho1 />
+//       <ComponenteFilho2 />
+//     </div>
+//   );
+// }
+
+// Quando você cria um componente com apenas um componente dentro, você está encapsulando um único elemento ou funcionalidade em um componente separado. Isso é útil para abstrair lógica ou estilo específico, tornando o código mais modular e fácil de manter.
+// Exemplo:
+// function ComponenteEncapsulado() {
+//   return <ComponenteUnico />;
+// }
+
+
 import QuadradoExemplo from "./components/Quadrado_Exemplo";
 import { Quadrado } from "./components/Quadrado";
 import { Formulario_Geometrico } from "./components/Formulario_Geometrico";
