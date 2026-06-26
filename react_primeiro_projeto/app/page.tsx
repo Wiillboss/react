@@ -47,6 +47,18 @@
 //   return <ComponenteUnico />;
 // }
 
+//explicando o que um fragmento faz dentro de um componente:
+// Um fragmento em React é usado para agrupar múltiplos elementos sem adicionar nós extras ao DOM. Ele permite que você retorne vários elementos de um componente sem envolver cada um deles em uma div ou outro contêiner, mantendo a estrutura do DOM mais limpa e evitando problemas de estilo ou layout.
+// Exemplo:
+// function MeuComponente() {
+//   return (
+//     <>
+//       <h1>Título</h1>
+//       <p>Parágrafo</p>
+//     </>
+//   );
+// }
+
 
 import QuadradoExemplo from "./components/Quadrado_Exemplo";
 import { Quadrado } from "./components/Quadrado";
