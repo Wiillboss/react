@@ -272,6 +272,10 @@ const Secao_Exercicio_Hora = () => {
   );
 };
 
+//explicando secao_ratin_emoji:
+// O componente Secao_Rating_Emoji é uma seção estilizada que demonstra o uso do componente Avaliacao_Emoji para exibir uma avaliação visual usando emojis. Ele inclui um título, uma descrição e um contêiner centralizado que contém o componente de avaliação. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente, com bordas arredondadas, fundo sombreado e espaçamento adequado. O componente Avaliacao_Emoji recebe uma prop chamada "avaliacao", que determina a quantidade de emojis exibidos para representar a avaliação.
+  
+
 const Secao_Rating_Emoji = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
