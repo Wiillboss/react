@@ -59,6 +59,18 @@
 //   );
 // }
 
+// explicando porque se usa o @ no caminho de importação de um arquivo:
+// O uso do "@" no caminho de importação de um arquivo é uma convenção que indica um alias para um diretório específico no projeto. Isso ajuda a simplificar os caminhos de importação, tornando-os mais legíveis e fáceis de manter, especialmente em projetos grandes com estruturas de diretórios complexas. Em vez de usar caminhos relativos longos, você pode configurar o alias "@" para apontar para a raiz do projeto ou outro diretório relevante, permitindo importações mais curtas e claras.
+// Exemplo:
+// // Configuração do alias no tsconfig.json ou jsconfig.json
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["src/*"]
+//     }
+//   }
+
 
 import QuadradoExemplo from "./components/Quadrado_Exemplo";
 import { Quadrado } from "./components/Quadrado";
