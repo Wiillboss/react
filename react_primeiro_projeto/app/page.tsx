@@ -91,6 +91,9 @@ const Secao_Componente_Quadrado = () => {
   );
 };
 
+// explicando o secao_formulario_geometrico:
+// O componente Secao_Formulario_Geometrico é uma seção estilizada que demonstra o uso do componente Formulario_Geometrico para exibir um formulário dentro de um contêiner com borda. Ele inclui um título, uma descrição e um contêiner que agrupa o formulário com estilo visual. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente, com bordas arredondadas, fundo sombreado e espaçamento adequado. O componente Formulario_Geometrico é responsável por renderizar o formulário e gerenciar a entrada do usuário. 
+
 const Secao_Formulario_Geometrico = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
