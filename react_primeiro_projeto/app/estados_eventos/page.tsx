@@ -113,7 +113,11 @@ const Secao_Botoes_Customizados = () => {
   );
 };
 
-
+//explicando secao de formulario:
+// A seção de formulário demonstra como criar um formulário controlado em React.
+// O evento onSubmit do formulário é interceptado pela função aoEnviarFormulario, que chama event.preventDefault() para evitar o recarregamento da página.
+// Quando o formulário é enviado, um alerta é exibido indicando que o envio foi bem-sucedido.
+// O formulário contém um campo de entrada de texto e um botão de envio, ambos estilizados com Tailwind CSS.
 
 const Secao_Formulario = () => {
   const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
