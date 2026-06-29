@@ -113,6 +113,8 @@ const Secao_Botoes_Customizados = () => {
   );
 };
 
+
+
 const Secao_Formulario = () => {
   const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -133,6 +135,13 @@ const Secao_Formulario = () => {
     </section>
   );
 };
+
+//explicando secao de estado basico:
+// A seção de estado básico demonstra o uso do hook useState para gerenciar o estado local do componente.
+// Ela inclui um contador que pode ser incrementado e uma área secreta que pode ser mostrada ou escondida.
+// O estado mostrarSegredo controla a visibilidade da área secreta, enquanto o estado contador mantém o valor atual do contador.
+// Os botões chamam funções que atualizam esses estados, e a renderização condicional é usada para exibir a área secreta apenas quando mostrarSegredo é verdadeiro.
+
 
 const Secao_Estado_Basico = () => {
   const [mostrarSegredo, setMostrarSegredo] = useState(false);
