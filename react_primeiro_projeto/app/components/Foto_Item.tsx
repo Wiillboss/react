@@ -1,3 +1,5 @@
+"use client";
+
 // Foto_Item.tsx
 // Componente que exibe uma imagem da galeria com clique opcional.
 
