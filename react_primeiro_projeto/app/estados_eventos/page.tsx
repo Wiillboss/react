@@ -181,6 +181,12 @@ const Secao_Estado_Basico = () => {
   );
 };
 
+//explicando secao de campo de texto controlado:
+// A seção de campo de texto controlado demonstra como usar o estado para controlar o valor de um campo de entrada.
+// O estado entradaNome mantém o valor atual do campo de texto, e a função setEntradaNome é usada para atualizar esse valor quando o usuário digita.
+// O valor do campo de entrada é vinculado ao estado, tornando-o um componente controlado.
+// Um botão permite que o usuário veja o valor atual do campo em um alerta.
+
 const Secao_Campo_Texto = () => {
   const [entradaNome, setEntradaNome] = useState("");
 
