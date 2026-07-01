@@ -27,6 +27,11 @@ import { Resultados } from "../components/Resultados";
 // A função avisar recebe uma mensagem como argumento e exibe um alerta com essa mensagem.
 // Os botões chamam a função avisar com diferentes mensagens, mostrando como você pode criar manipuladores de eventos flexíveis e reutilizáveis em React.
 
+//explicando e dando exemplos de como usar PROPS para criar componentes reutilizáveis:
+// A seção de botões customizados demonstra como criar um componente reutilizável que recebe props para personalizar seu comportamento.
+// O componente Botao_Personalizado recebe duas props: rotulo, que define o texto exibido no botão, e aoClicar, que é uma função callback chamada quando o botão é clicado.
+// Cada instância do Botao_Personalizado é configurada com diferentes rótulos e funções de clique, mostrando como você pode criar componentes flexíveis e reutilizáveis em React.
+
 
 const Secao_Eventos_Clique = () => {
   const clicar1 = () => alert("Botão clicado 1!");
