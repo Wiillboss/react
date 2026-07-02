@@ -14,14 +14,6 @@ import { perguntas } from "../data/perguntas";
 import { Pergunta_Item } from "../components/Pergunta_Item";
 import { Resultados } from "../components/Resultados";
 
-//explicando secao de eventos de clique:
-// A seção de eventos de clique demonstra diferentes maneiras de lidar com eventos em React.
-// Cada botão possui um manipulador de clique que exibe um alerta com uma mensagem específica.
-// A primeira função, clicar1, é definida fora do JSX e atribuída diretamente ao evento onClick do primeiro botão.
-// O segundo e terceiro botões usam funções anônimas diretamente no JSX para exibir alertas.
-// O quarto botão utiliza a função clicar2, que também é definida fora do JSX.
-// Essa abordagem mostra como você pode escolher entre definir funções separadas ou usar funções inline para lidar com eventos de clique em React.
-
 //explicando secao de avisar:
 // A seção de avisar demonstra como reutilizar uma única função para exibir diferentes mensagens de alerta.
 // A função avisar recebe uma mensagem como argumento e exibe um alerta com essa mensagem.
@@ -31,6 +23,14 @@ import { Resultados } from "../components/Resultados";
 // A seção de botões customizados demonstra como criar um componente reutilizável que recebe props para personalizar seu comportamento.
 // O componente Botao_Personalizado recebe duas props: rotulo, que define o texto exibido no botão, e aoClicar, que é uma função callback chamada quando o botão é clicado.
 // Cada instância do Botao_Personalizado é configurada com diferentes rótulos e funções de clique, mostrando como você pode criar componentes flexíveis e reutilizáveis em React.
+
+//explicando secao de eventos de clique:
+// A seção de eventos de clique demonstra diferentes maneiras de lidar com eventos em React.
+// Cada botão possui um manipulador de clique que exibe um alerta com uma mensagem específica.
+// A primeira função, clicar1, é definida fora do JSX e atribuída diretamente ao evento onClick do primeiro botão.
+// O segundo e terceiro botões usam funções anônimas diretamente no JSX para exibir alertas.
+// O quarto botão utiliza a função clicar2, que também é definida fora do JSX.
+// Essa abordagem mostra como você pode escolher entre definir funções separadas ou usar funções inline para lidar com eventos de clique em React.
 
 
 const Secao_Eventos_Clique = () => {
