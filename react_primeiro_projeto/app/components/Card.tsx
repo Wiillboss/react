@@ -1,6 +1,9 @@
 // Componente Card: Renderiza um card verde com texto passado como children
 // O componente Card recebe uma prop children, que é do tipo React.ReactNode (qualquer conteúdo renderizável)
-
+//explicando detalhadamento o que é children:
+// O children é uma prop especial em React que permite passar elementos filhos para um componente. 
+// Ele pode ser qualquer coisa que possa ser renderizada pelo React, como texto, elementos JSX, outros componentes, arrays de elementos, etc. 
+// Isso permite que o componente Card seja flexível e reutilizável, pois você pode passar diferentes conteúdos para ele sem precisar modificar o próprio componente.
 type Props = {
     children: React.ReactNode;
 }
