@@ -295,6 +295,25 @@ const Secao_Objeto_Estado = () => {
   );
 };
 
+//explicando secao de lista de tarefas:
+// A seção de lista de tarefas demonstra como gerenciar uma lista de itens com estado em React.
+// Ela permite adicionar novas tarefas, marcar tarefas como concluídas e deletar tarefas da lista.
+// O estado listaTarefas mantém a lista atual de tarefas, enquanto entradaTarefa mantém o valor do campo de entrada para adicionar novas tarefas.
+// Funções são definidas para adicionar, alternar o status e deletar tarefas, e a renderização condicional é usada para exibir a lista de tarefas com base no estado atual. 
+
+//explicando o setListaTarefas:
+// O setListaTarefas é a função fornecida pelo hook useState para atualizar o estado listaTarefas.
+// Quando você chama setListaTarefas com um novo array de tarefas, o React atualiza o estado e re-renderiza o componente com a nova lista.
+// Isso permite que a interface do usuário reflita imediatamente as mudanças na lista de tarefas, como adicionar, marcar ou deletar itens.  
+
+//explicando completamente o que é o return:
+// O return dentro do componente Secao_Lista_Tarefas retorna o JSX que define a estrutura e o conteúdo da seção de lista de tarefas.
+// Ele inclui um título, uma descrição, um campo de entrada para adicionar novas tarefas, um botão para adicionar a tarefa, e uma lista de tarefas renderizada dinamicamente.
+// Cada item da lista é exibido com um checkbox para marcar como concluído e um botão para deletar a tarefa.
+// O JSX retornado é o que será renderizado na tela quando o componente for usado em outro lugar no aplicativo.
+
+
+
 const Secao_Lista_Tarefas = () => {
   const [entradaTarefa, setEntradaTarefa] = useState("");
   const [listaTarefas, setListaTarefas] = useState<ItemTarefa[]>([
