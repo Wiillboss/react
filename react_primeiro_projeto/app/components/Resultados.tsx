@@ -8,6 +8,10 @@ type Props = {
     respostas: number[]; // Índices das respostas escolhidas
 };
 
+//explicando detalhadamente o componente Resultados:
+// O componente Resultados recebe duas props: perguntas e respostas.
+// Ele mapeia sobre o array de perguntas e para cada pergunta, verifica se a resposta escolhida pelo usuário está correta.
+
 export const Resultados = ({ respostas, perguntas }: Props) => {
     return (
         <div className="p-5 text-center">
