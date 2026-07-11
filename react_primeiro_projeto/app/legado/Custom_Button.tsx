@@ -6,6 +6,13 @@ type Props = {
     aoClicar?: () => void; // Função executada ao clicar
 };
 
+//explicando o arquivo Custom_Button.tsx e por qual motivo ele foi criado:
+// Este arquivo contém um componente de botão personalizado em React, chamado Custom_Button.
+// Ele foi criado para fornecer um botão reutilizável com estilo e funcionalidade específicos.
+// O componente recebe duas propriedades: 'rotulo', que define o texto exibido no botão, e 'aoClicar', que é uma função opcional executada quando o botão é clicado.
+// O botão possui estilos CSS aplicados para aparência e comportamento ao passar o mouse.
+// Este arquivo é mantido como legado para referência, mas o componente principal em português é Botao_Personalizado.
+
 export const Custom_Button = ({ rotulo, aoClicar }: Props) => {
     return (
         <button
