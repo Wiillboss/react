@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 
+//explicando a props do componente Modal: O componente Modal recebe duas props: "image", que é uma string representando a URL da imagem a ser exibida na modal, e "closeModal", que é uma função que será chamada quando o usuário clicar fora da imagem ou no botão de fechar. A prop "closeModal" permite que você defina um comportamento personalizado para fechar a modal, como atualizar o estado do componente pai para ocultar a modal.
 type ModalProps = {
     image: string;
     closeModal: () => void;
