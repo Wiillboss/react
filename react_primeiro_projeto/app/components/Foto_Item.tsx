@@ -1,14 +1,14 @@
 "use client";
 
-// Foto_Item.tsx
-// Componente que exibe uma imagem da galeria com clique opcional.
+
+
 
 import Image from "next/image";
 import { Foto } from "../types/Photo";
 
 type Props = {
-    foto: Foto; // Dados da foto usada pelo componente
-    aoClicar?: () => void; // Callback opcional para clique
+    foto: Foto; 
+    aoClicar?: () => void; 
 };
 
 export const Foto_Item = ({ foto, aoClicar }: Props) => {

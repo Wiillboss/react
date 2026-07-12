@@ -1,12 +1,12 @@
-// Photo_Item.tsx (legado)
-// Arquivo legado de item de foto. A versão em português atualizada é Foto_Item.
+
+
 
 import Image from "next/image";
 import { Foto } from "../types/Photo";
 
 type Props = {
-    foto: Foto; // Dados da foto usada pelo componente
-    aoClicar?: () => void; // Callback opcional para clique
+    foto: Foto; 
+    aoClicar?: () => void; 
 };
 
 export const Photo_Item = ({ foto, aoClicar }: Props) => {

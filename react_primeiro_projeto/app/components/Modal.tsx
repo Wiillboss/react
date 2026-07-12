@@ -1,7 +1,7 @@
 "use client";
 
-// Modal.tsx
-// Componente que mostra uma imagem em modo modal e fecha ao clicar fora ou no botão.
+
+
 
 import Image from 'next/image';
 

@@ -1,9 +1,9 @@
-// Botao_Personalizado.tsx
-// Componente de botão reutilizável que recebe um texto e uma função para evento de clique.
+
+
 
 type Props = {
-    rotulo: string; // Texto exibido no botão
-    aoClicar?: () => void; // Função executada ao clicar
+    rotulo: string; 
+    aoClicar?: () => void; 
 };
 
 export const Botao_Personalizado = ({ rotulo, aoClicar }: Props) => {

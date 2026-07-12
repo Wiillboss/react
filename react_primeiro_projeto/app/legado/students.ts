@@ -1,5 +1,5 @@
-// students.ts
-// Arquivo de dados com estudantes de exemplo para usar na tabela.
+
+
 import { Student } from "../types/Student";
 
 export const students: Student[] = [

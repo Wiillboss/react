@@ -1,5 +1,5 @@
-// questions.ts
-// Lista de perguntas usada no quiz de culinária.
+
+
 
 import { Question } from "../types/Questions";
 

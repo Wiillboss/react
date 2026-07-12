@@ -1,5 +1,5 @@
-// photo_List.ts
-// Dados de fotos usados na galeria de imagens.
+
+
 
 import { Foto } from "../types/Photo";
 

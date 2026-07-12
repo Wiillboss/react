@@ -1,5 +1,5 @@
-// people_list.ts
-// Lista de pessoas de exemplo usada para demonstração de renderização de listas.
+
+
 import type { Person } from "./Person";
 
 export const people_list: Person[] = [

@@ -1,5 +1,5 @@
-// Student.ts
-// Tipos de estudante usados em diferentes partes da aplicação.
+
+
 export type Estudante = {
     id: number;
     ativo: boolean;

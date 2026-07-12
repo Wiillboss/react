@@ -1,11 +1,11 @@
-// Student_Table.tsx (legado)
-// Arquivo legado de tabela de estudantes. A versão atual em português é Tabela_Alunos.
+
+
 
 import Image from 'next/image';
 import { Student } from "../types/Student";
 
 type Props = {
-    students: Student[]; // Lista de estudantes exibida na tabela
+    students: Student[]; 
 };
 
 export const Student_Table = ({ students }: Props) => {

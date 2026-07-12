@@ -1,11 +1,11 @@
-// Results.tsx (legado)
-// Arquivo legado de resultados de quiz. A versão atual em português está em Resultados.tsx.
+
+
 
 import { Pergunta } from "../types/Pergunta";
 
 type Props = {
-    perguntas: Pergunta[]; // Array de perguntas do quiz
-    respostas: number[]; // Índices das respostas escolhidas
+    perguntas: Pergunta[]; 
+    respostas: number[]; 
 };
 
 export const Results = ({ respostas, perguntas }: Props) => {
