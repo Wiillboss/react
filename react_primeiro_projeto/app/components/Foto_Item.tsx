@@ -1,8 +1,5 @@
 "use client";
 
-
-
-
 import Image from "next/image";
 import { Foto } from "../types/Photo";
 

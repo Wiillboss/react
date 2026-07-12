@@ -3,9 +3,6 @@ type Props = {
     author?: string;
 }
 
-
-
-
 export const Card_2_sem_if_ternario = ({ phrase, author }: Props) => {
     if (author) {
         return (

@@ -1,6 +1,4 @@
 
-
-
 import Image from 'next/image';
 import { Student } from "../types/Student";
 

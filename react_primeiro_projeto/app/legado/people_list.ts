@@ -1,5 +1,4 @@
 
-
 import type { Person } from "./Person";
 
 export const people_list: Person[] = [

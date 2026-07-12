@@ -1,6 +1,4 @@
 
-
-
 import { Foto } from "../types/Photo";
 
 export const photoList: Foto[] = [

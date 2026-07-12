@@ -105,7 +105,6 @@ export const Pessoa2 = ({
 //explicando detalhadamente o componente Pessoa3:
 // O componente Pessoa3 é uma versão customizada do componente Pessoa, onde os dados da pessoa e da esposa são hardcoded (fixos) dentro do componente. Ele recebe props opcionais, mas utiliza valores padrão caso não sejam fornecidos. O componente exibe o nome da pessoa, a data atual formatada com o dia da semana em português, informações sobre a esposa e suas ocupações. Além disso, ele utiliza o componente Image do Next.js para exibir o avatar da pessoa com estilos aplicados via Tailwind CSS. A função getWeekDay é usada para converter o número do dia da semana em seu nome correspondente em português.
 
-
 export const Pessoa3 = (props?: PropsPessoa) => {
     const defaultEsposa = {
         nome: "Roberta",

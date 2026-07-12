@@ -7,7 +7,6 @@
 // O array perguntas é exportado para ser usado em outros componentes ou arquivos do projeto, como o quiz de culinária.
 // Ele foi criado para fornecer dados de perguntas de exemplo que podem ser exibidos no quiz do aplicativo.
 
-
 import { Pergunta } from "../types/Pergunta";
 
 export const perguntas: Pergunta[] = [

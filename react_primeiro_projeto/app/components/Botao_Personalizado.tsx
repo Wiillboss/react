@@ -1,6 +1,4 @@
 
-
-
 type Props = {
     rotulo: string; 
     aoClicar?: () => void; 

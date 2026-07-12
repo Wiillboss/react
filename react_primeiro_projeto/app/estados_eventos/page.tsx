@@ -32,7 +32,6 @@ import { Resultados } from "../components/Resultados";
 // O quarto botão utiliza a função clicar2, que também é definida fora do JSX.
 // Essa abordagem mostra como você pode escolher entre definir funções separadas ou usar funções inline para lidar com eventos de clique em React.
 
-
 const Secao_Eventos_Clique = () => {
   const clicar1 = () => alert("Botão clicado 1!");
   const clicar2 = () => alert("Botão clicado 4!");
@@ -150,7 +149,6 @@ const Secao_Formulario = () => {
 // Ela inclui um contador que pode ser incrementado e uma área secreta que pode ser mostrada ou escondida.
 // O estado mostrarSegredo controla a visibilidade da área secreta, enquanto o estado contador mantém o valor atual do contador.
 // Os botões chamam funções que atualizam esses estados, e a renderização condicional é usada para exibir a área secreta apenas quando mostrarSegredo é verdadeiro.
-
 
 const Secao_Estado_Basico = () => {
   const [mostrarSegredo, setMostrarSegredo] = useState(false);
@@ -311,8 +309,6 @@ const Secao_Objeto_Estado = () => {
 // Ele inclui um título, uma descrição, um campo de entrada para adicionar novas tarefas, um botão para adicionar a tarefa, e uma lista de tarefas renderizada dinamicamente.
 // Cada item da lista é exibido com um checkbox para marcar como concluído e um botão para deletar a tarefa.
 // O JSX retornado é o que será renderizado na tela quando o componente for usado em outro lugar no aplicativo.
-
-
 
 const Secao_Lista_Tarefas = () => {
   const [entradaTarefa, setEntradaTarefa] = useState("");

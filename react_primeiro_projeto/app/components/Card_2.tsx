@@ -38,7 +38,6 @@ export const Card2 = ({ phrase, author }: Props) => {
 //     );
 // }
 
-
 //Abaixo está uma forma mais concisa usando um operador ternário para decidir o que exibir com base na presença do autor:
 // if (author) {
 //     return (

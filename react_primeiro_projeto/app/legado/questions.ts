@@ -1,6 +1,4 @@
 
-
-
 import { Question } from "../types/Questions";
 
 export const questions: Question[] = [

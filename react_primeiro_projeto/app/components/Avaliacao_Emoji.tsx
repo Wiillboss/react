@@ -1,6 +1,4 @@
 
-
-
 type Props = {
     avaliacao: number; 
 };
