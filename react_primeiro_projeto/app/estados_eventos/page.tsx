@@ -98,6 +98,11 @@ const Secao_Avisar = () => {
   );
 };
 
+//explicando secao de botoes customizados:
+// A seção de botões customizados demonstra como criar um componente reutilizável que recebe props para personalizar seu comportamento.
+// O componente Botao_Personalizado recebe duas props: rotulo, que define o texto exibido no botão, e aoClicar, que é uma função callback chamada quando o botão é clicado.
+// Cada instância do Botao_Personalizado é configurada com diferentes rótulos e funções de clique, mostrando como você pode criar componentes flexíveis e reutilizáveis em React.
+
 const Secao_Botoes_Customizados = () => {
   const acao1 = () => alert("Botão 1 clicado !");
   const acao2 = () => alert("Botão 2 clicado !");
