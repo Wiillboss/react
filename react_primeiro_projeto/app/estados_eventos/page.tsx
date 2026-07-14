@@ -223,6 +223,11 @@ const Secao_Campo_Texto = () => {
   );
 };
 
+//explicando secao de atualizacao sequencial:
+// A seção de atualização sequencial demonstra como atualizar o estado várias vezes em sequência usando a forma funcional do setState.
+// A função aumentarDeDois incrementa o contador em 2, três vezes, usando a forma funcional para garantir que cada atualização seja baseada no valor mais recente do estado.
+// Isso evita problemas de atualização incorreta que podem ocorrer quando se tenta atualizar o estado diretamente com base no valor anterior.
+
 const Secao_Estado_Tempo = () => {
   const [contadorTempo, setContadorTempo] = useState(0);
 
