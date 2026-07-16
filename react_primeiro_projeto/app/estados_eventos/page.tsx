@@ -255,6 +255,12 @@ const Secao_Estado_Tempo = () => {
   );
 };
 
+//explicando as funções dentro de secao objeto estado:
+// A função limpar redefine o estado nomeCompleto para um objeto vazio, limpando ambos os campos.
+// A função limparPrimeiro redefine apenas a propriedade primeiroNome para uma string vazia, mantendo o valor atual de ultimoNome.
+// A função limparSobrenome faz o mesmo para a propriedade ultimoNome, mantendo o valor atual de primeiroNome.
+// Essas funções demonstram como atualizar partes específicas de um objeto no estado sem perder outras informações.
+
 const Secao_Objeto_Estado = () => {
   const [nomeCompleto, setNomeCompleto] = useState<Pessoa_2>({
     primeiroNome: "",
