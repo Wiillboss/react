@@ -400,6 +400,12 @@ const Secao_Lista_Tarefas = () => {
   );
 };
 
+//explicando secao de galeria de imagens:
+// A seção de galeria de imagens demonstra como exibir uma lista de imagens e abrir um modal ao clicar em uma delas.
+// O estado mostrarModal controla a visibilidade do modal, enquanto fotoSelecionada mantém a imagem atualmente selecionada.
+// A função abrirModal define a imagem selecionada e mostra o modal, enquanto fecharModal oculta o modal.
+// Cada imagem é renderizada usando o componente Foto_Item, que recebe a imagem e uma função de clique como props.
+
 const Secao_Galeria_Imagens = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
   const [fotoSelecionada, setFotoSelecionada] = useState(listaFotos[0]);
