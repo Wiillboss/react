@@ -433,6 +433,13 @@ const Secao_Galeria_Imagens = () => {
   );
 };
 
+//explicando secao de quiz interativo:
+// A seção de quiz interativo demonstra como criar um quiz com múltiplas perguntas e respostas.
+// O estado respostas mantém as respostas selecionadas pelo usuário, enquanto mostrarResultado controla a exibição dos resultados.
+// A função carregarProximaPergunta avança para a próxima pergunta ou mostra os resultados se todas as perguntas foram respondidas.
+// A função reiniciarQuiz redefine o estado para permitir que o usuário refaça o quiz.
+// A função processarResposta atualiza o estado das respostas com base na resposta selecionada pelo usuário e chama carregarProximaPergunta para avançar.
+
 const Secao_Quiz = () => {
   const [respostas, setRespostas] = useState<number[]>(new Array(perguntas.length).fill(-1));
   const [mostrarResultado, setMostrarResultado] = useState(false);
