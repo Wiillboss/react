@@ -445,6 +445,10 @@ const Secao_Quiz = () => {
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [perguntaAtual, setPerguntaAtual] = useState(0);
 
+  //explicando a função carregarProximaPergunta:
+  // A função carregarProximaPergunta verifica se a pergunta atual é a última do quiz.
+  // Se não for, ela incrementa o índice da pergunta atual para avançar para a próxima pergunta.
+  // Se for a última pergunta, ela define mostrarResultado como true, indicando que o quiz foi concluído e os resultados devem ser exibidos.
   const carregarProximaPergunta = () => {
     if (perguntaAtual < perguntas.length - 1) {
       setPerguntaAtual(perguntaAtual + 1);
@@ -453,6 +457,7 @@ const Secao_Quiz = () => {
     }
   };
 
+  
   const reiniciarQuiz = () => {
     setPerguntaAtual(0);
     setRespostas(new Array(perguntas.length).fill(-1));
