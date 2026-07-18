@@ -39,6 +39,9 @@ import Image from 'next/image';
 // COMPONENTE PESSOA: Exibe informações da pessoa e sua esposa
 // Forma de recebimento de props: destructuring completo na função
 // O destructuring permite extrair diretamente as propriedades do objeto de props, facilitando o acesso aos dados dentro do componente. No caso do componente Pessoa, as props são desestruturadas para obter nome, avatar e esposa, que são usados para renderizar as informações na interface.
+
+//Sobre PROPS: é usada quando se quer passar dados de um componente pai para um componente filho. As props são imutáveis, ou seja, não podem ser alteradas pelo componente filho. Elas são passadas como atributos no JSX do componente pai e recebidas como parâmetros no componente filho. No caso do componente Pessoa, as props são usadas para exibir informações dinâmicas sobre a pessoa e sua esposa, permitindo que o mesmo componente seja reutilizado com diferentes dados.
+
 export const Pessoa = (props: PropsPessoa) => {
 
     const { nome, avatar, esposa } = props;
