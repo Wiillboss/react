@@ -468,6 +468,11 @@ const Secao_Quiz = () => {
     setMostrarResultado(false);
   };
 
+  //explicando a função processarResposta:
+  // A função processarResposta é chamada quando o usuário seleciona uma resposta para a pergunta atual.
+  // Ela recebe um payload contendo se a resposta está correta, a resposta selecionada e o índice da pergunta.
+  // A função atualiza o estado respostas com a resposta selecionada para a pergunta atual e chama carregarProximaPergunta para avançar para a próxima pergunta ou mostrar os resultados se todas as perguntas foram respondidas.
+
   const processarResposta = (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => {
     setRespostas((anterior) => {
       const copia = [...anterior];
