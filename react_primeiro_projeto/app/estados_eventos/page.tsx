@@ -482,6 +482,11 @@ const Secao_Quiz = () => {
     carregarProximaPergunta();
   };
 
+  //explicando o return:
+  // O return dentro do componente Secao_Quiz retorna o JSX que define a estrutura e o conteúdo da seção de quiz interativo.
+  // Ele inclui um título, uma descrição, o componente Pergunta_Item para exibir a pergunta atual, e o componente Resultados para mostrar os resultados do quiz quando todas as perguntas forem respondidas.
+  // Também há botões para avançar para a próxima pergunta, ver os resultados e reiniciar o quiz, além de um indicador de progresso mostrando qual pergunta está sendo exibida atualmente.
+  
   return (
     <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
       <h2 className="text-3xl font-bold mb-4">Quiz Interativo</h2>
