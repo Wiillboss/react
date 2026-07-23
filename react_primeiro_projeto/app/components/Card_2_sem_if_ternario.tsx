@@ -1,3 +1,6 @@
+//explicando a props e o componente Card_2_sem_if_ternario:
+// O componente Card_2_sem_if_ternario é um cartão estilizado que exibe uma frase e o autor da frase. Ele recebe duas props: "phrase" e "author". A prop "phrase" é uma string obrigatória que contém a frase a ser exibida no cartão. A prop "author" é uma string opcional que representa o autor da frase. Se o autor for fornecido, ele será exibido; caso contrário, será exibido "Autor Desconhecido". O componente utiliza classes de estilo para criar um cartão visualmente atraente, com cores, espaçamento e tipografia, proporcionando uma experiência de usuário agradável e intuitiva.
+
 type Props = {
     phrase: string;
     author?: string;
