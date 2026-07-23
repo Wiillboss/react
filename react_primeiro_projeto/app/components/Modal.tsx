@@ -8,6 +8,8 @@ type ModalProps = {
     closeModal: () => void;
 };
 
+//explicando o que o componente Modal faz: O componente Modal é uma função que recebe as props "image" e "closeModal" e retorna um JSX.Element. Ele cria uma modal estilizada com Tailwind CSS, exibindo a imagem fornecida e permitindo que o usuário feche a modal clicando fora da imagem ou no botão de fechar. A modal é posicionada de forma fixa na tela, cobrindo todo o conteúdo subjacente, proporcionando uma experiência de visualização de imagem em tela cheia.
+
 export const Modal = ({ image, closeModal }: ModalProps) => {
     return (
         <>
