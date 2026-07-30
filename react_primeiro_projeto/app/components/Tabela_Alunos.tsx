@@ -4,6 +4,10 @@
 import Image from 'next/image';
 import { Estudante } from "../types/Student";
 
+//explicando deetalhadammente a prop "estudantes":
+// A prop "estudantes" é um array de objetos do tipo Estudante, que contém informações sobre cada estudante, como nome, email, avatar, status (ativo ou inativo), notas e ID. Essa prop é passada para o componente Tabela_Alunos para que ele possa renderizar uma tabela com os dados dos estudantes. Cada objeto Estudante possui as seguintes propriedades:
+// - id: número único que identifica o estudante.
+
 type Props = {
     estudantes: Estudante[]; // Lista de estudantes exibida na tabela
 };
