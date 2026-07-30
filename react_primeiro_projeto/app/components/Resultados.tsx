@@ -3,6 +3,9 @@
 
 import { Pergunta } from "../types/Pergunta";
 
+//explicando detalhadamente o componente Resultados:
+// O componente Resultados é responsável por exibir os resultados do quiz após o usuário ter respondido todas as perguntas. Ele recebe duas props: perguntas, que é um array de objetos do tipo Pergunta, e respostas, que é um array de números representando os índices das respostas escolhidas pelo usuário para cada pergunta. O componente mapeia sobre o array de perguntas e para cada pergunta, verifica se a resposta escolhida pelo usuário está correta comparando o índice da resposta com a propriedade respostaCorreta da pergunta. Em seguida, ele renderiza o enunciado da pergunta, a resposta selecionada pelo usuário e uma indicação visual (em verde ou vermelho) se a resposta estava correta ou incorreta.
+
 type Props = {
     perguntas: Pergunta[]; // Array de perguntas do quiz
     respostas: number[]; // Índices das respostas escolhidas
