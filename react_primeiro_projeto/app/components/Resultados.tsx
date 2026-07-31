@@ -15,6 +15,9 @@ type Props = {
 // O componente Resultados recebe duas props: perguntas e respostas.
 // Ele mapeia sobre o array de perguntas e para cada pergunta, verifica se a resposta escolhida pelo usuário está correta.
 
+//explicando a div dentro do return:
+// A div é o elemento principal que contém todos os resultados do quiz. Ela é estilizada com padding e alinhamento centralizado.
+
 export const Resultados = ({ respostas, perguntas }: Props) => {
     return (
         <div className="p-5 text-center">
@@ -25,11 +28,4 @@ export const Resultados = ({ respostas, perguntas }: Props) => {
                     <div key={index} className="mb-4">
                         <h3 className="text-lg font-semibold">{pergunta.enunciado}</h3>
                         <p className={`text-sm ${estaCorreta ? "text-green-500" : "text-red-500"}`}>
-                            Você respondeu: {respostaSelecionada} - {estaCorreta ? "Certo" : "Errado"}
-                        </p>
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+                            Você respondeu: {respostaSelecionada} - {estaCorreta ? "Certo" :
