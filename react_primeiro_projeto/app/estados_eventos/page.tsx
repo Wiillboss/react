@@ -4,14 +4,14 @@
 // Esta página reúne exemplos claros de eventos, estado local, formulários,
 // listas, galeria e quiz em uma única rota organizada.
 import { useState, type FormEvent } from "react";
-import { Botao_Personalizado } from "../components/Botao_Personalizado";
+import { BotaoPersonalizado } from "../components/BotaoPersonalizado";
 import { Pessoa_2 } from "../types/Person_2";
 import { ItemTarefa } from "../types/TodolItem";
 import { listaFotos } from "../data/lista_fotos";
-import { Foto_Item } from "../components/Foto_Item";
+import { FotoItem } from "../components/FotoItem";
 import { Modal } from "../components/Modal";
 import { perguntas } from "../data/perguntas";
-import { Pergunta_Item } from "../components/Pergunta_Item";
+import { PerguntaItem } from "../components/PerguntaItem";
 import { Resultados } from "../components/Resultados";
 
 // Seções de eventos e reutilização:
@@ -100,9 +100,9 @@ const Secao_Botoes_Customizados = () => {
       <p className="mb-4 text-gray-700">Componente reutilizável que recebe texto e callback.</p>
 
       <div className="flex flex-wrap gap-3">
-        <Botao_Personalizado rotulo="Botão Customizado 1" aoClicar={acao1} />
-        <Botao_Personalizado rotulo="Botão Customizado 2" aoClicar={acao2} />
-        <Botao_Personalizado rotulo="Botão Customizado 3" aoClicar={acao3} />
+        <BotaoPersonalizado rotulo="Botão Customizado 1" aoClicar={acao1} />
+        <BotaoPersonalizado rotulo="Botão Customizado 2" aoClicar={acao2} />
+        <BotaoPersonalizado rotulo="Botão Customizado 3" aoClicar={acao3} />
       </div>
     </section>
   );
@@ -386,7 +386,7 @@ const Secao_Galeria_Imagens = () => {
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {listaFotos.map((foto) => (
-          <Foto_Item key={foto.id} foto={foto} aoClicar={() => abrirModal(foto)} />
+          <FotoItem key={foto.id} foto={foto} aoClicar={() => abrirModal(foto)} />
         ))}
       </div>
 
@@ -440,7 +440,7 @@ const Secao_Quiz = () => {
 
       <div className="space-y-6">
         <div className="rounded-lg border border-gray-200 bg-slate-50 p-6">
-          <Pergunta_Item
+          <PerguntaItem
             pergunta={perguntas[perguntaAtual]}
             count={perguntaAtual + 1}
             aoResponder={processarResposta}

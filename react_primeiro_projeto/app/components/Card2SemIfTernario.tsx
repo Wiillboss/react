@@ -12,7 +12,7 @@ type Props = {
     author?: string;
 };
 
-export const Card_2_sem_if_ternario = ({ phrase, author }: Props) => {
+export const Card2SemIfTernario = ({ phrase, author }: Props) => {
     if (author) {
         return (
             <div className="w-96 h-40 bg-gray-600 text-black p-3 text-3xl text-center italic">

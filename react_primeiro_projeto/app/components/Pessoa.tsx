@@ -96,7 +96,7 @@ export const Pessoa3 = (props?: PropsPessoa) => {
     };
 
     const { nome = "Willian",
-             avatar = "/WhatsApp Image 2026-02-03 at 12.30.09.jpg",
+             avatar = "/assets/images/WhatsApp Image 2026-02-03 at 12.30.09.jpg",
               esposa = defaultEsposa } = props ?? {};
 
     return (

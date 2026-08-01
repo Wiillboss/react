@@ -14,7 +14,7 @@ type Props = {
     estudantes: Estudante[];
 };
 
-export const Tabela_Alunos = ({ estudantes }: Props) => {
+export const TabelaAlunos = ({ estudantes }: Props) => {
     return (
         <table className="w-full border-collapse border border-gray-700 rounded-b-md">
             <thead>

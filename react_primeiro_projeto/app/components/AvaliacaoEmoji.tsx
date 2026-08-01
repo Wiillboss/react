@@ -3,14 +3,14 @@ type Props = {
     avaliacao: number;
 };
 
-// Componente Avaliacao_Emoji:
+// Componente AvaliacaoEmoji:
 // Esse componente recebe a prop "avaliacao" com uma nota numérica.
 // A nota é normalizada para ficar entre 0 e 5, depois é convertida em:
 // - uma parte inteira para escolher o emoji
 // - uma parte decimal para decidir se deve aparecer uma estrela metade
 //
 // Esse exemplo ensina como transformar dados numéricos em feedback visual.
-export const Avaliacao_Emoji = ({ avaliacao }: Props) => {
+export const AvaliacaoEmoji = ({ avaliacao }: Props) => {
     
     const safeRating = Math.max(0, Math.min(avaliacao, 5));
     const rateInt = Math.floor(safeRating);

@@ -1,10 +1,10 @@
 // IMPORTACOES: Trazendo componentes de formas geometricas
 import { Quadrado } from "./Quadrado";   // Named import: componente quadrado verde
-import QuadradoExemplo from "./Quadrado_Exemplo"; // Default import: componente quadrado azul de exemplo
+import QuadradoExemplo from "./QuadradoExemplo"; // Default import: componente quadrado azul de exemplo
 
-// COMPONENTE FORMULARIO_GEOMETRICO: Container que agrupa componentes de formas geometricas
+// COMPONENTE FormularioGeometrico: Container que agrupa componentes de formas geometricas
 // Proposito: Demonstrar como compor multiplos componentes em um componente pai
-export const Formulario_Geometrico = () => {
+export const FormularioGeometrico = () => {
     return (
         // Container com titulo e dois componentes de formas
         <div>

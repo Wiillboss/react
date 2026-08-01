@@ -11,17 +11,17 @@
 //
 // Essa convenção ajuda a organizar os imports e deixa a estrutura do projeto mais clara.
 
-import QuadradoExemplo from "./components/Quadrado_Exemplo";
+import QuadradoExemplo from "./components/QuadradoExemplo";
 import { Quadrado } from "./components/Quadrado";
-import { Formulario_Geometrico } from "./components/Formulario_Geometrico";
+import { FormularioGeometrico } from "./components/FormularioGeometrico";
 import { Pessoa, Pessoa2, Pessoa3 } from "./components/Pessoa";
 import { Card } from "./components/Card";
 import { Card2 } from "./components/Card_2";
-import { Card_2_sem_if_ternario } from "./components/Card_2_sem_if_ternario";
-import { Card_3 } from "./components/Card_3_and";
+import { Card2SemIfTernario } from "./components/Card2SemIfTernario";
+import { Card3And } from "./components/Card3And";
 import { listaPessoas } from "./data/lista_pessoas";
-import { Avaliacao_Emoji } from "./components/Avaliacao_Emoji";
-import { Tabela_Alunos } from "./components/Tabela_Alunos";
+import { AvaliacaoEmoji } from "./components/AvaliacaoEmoji";
+import { TabelaAlunos } from "./components/TabelaAlunos";
 import { estudantes } from "./data/estudantes";
 
 // -----------------------------------------------------------------------------
@@ -52,7 +52,7 @@ const Secao_Formulario_Geometrico = () => {
       <h2 className="text-4xl font-bold">Formulário Geométrico</h2>
       <p className="mb-6 text-slate-300">Exemplo de formulário dentro de um contêiner com borda.</p>
       <div className="rounded-3xl bg-white p-6 shadow-sm">
-        <Formulario_Geometrico />
+        <FormularioGeometrico />
       </div>
     </section>
   );
@@ -72,13 +72,13 @@ const Secao_Pessoas = () => {
       <div className="space-y-6 rounded-3xl bg-slate-950 p-6">
         <Pessoa
           nome="Willian"
-          avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
+          avatar="/assets/images/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
           esposa={{ nome: "Roberta", profissao: "Professora", ocupacoes: ["Dona de casa", "Mãe", "Esposa"] }}
         />
 
         <Pessoa2
           nome="Jose"
-          avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
+          avatar="/assets/images/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
           esposa={{ nome: "Elpidia", profissao: "Diarista", ocupacoes: ["Mãe", "Avó", "Diarista"] }}
         />
 
@@ -89,7 +89,7 @@ const Secao_Pessoas = () => {
 
         <Pessoa3
           nome="Edson"
-          avatar="/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
+          avatar="/assets/images/WhatsApp Image 2026-02-03 at 12.30.09.jpg"
           esposa={{ nome: "Amanda", profissao: "Protética", ocupacoes: ["Mãe", "Tia", "Doceira"] }}
         />
       </div>
@@ -119,11 +119,11 @@ const Secao_Cartoes = () => {
         <Card2 phrase="A vida é bela!" author="Pavel Nedved" />
         <Card2 phrase="O conhecimento é poder!" />
 
-        <Card_2_sem_if_ternario phrase="Argentina ... Argentina!" author="Gabriel Batistuta" />
-        <Card_2_sem_if_ternario phrase="O futebol é a paixão do povo!" />
+        <Card2SemIfTernario phrase="Argentina ... Argentina!" author="Gabriel Batistuta" />
+        <Card2SemIfTernario phrase="O futebol é a paixão do povo!" />
 
-        <Card_3 phrase="A vida é bela!" autor="Pavel Nedved" />
-        <Card_3 phrase="O conhecimento é poder!" />
+        <Card3And phrase="A vida é bela!" autor="Pavel Nedved" />
+        <Card3And phrase="O conhecimento é poder!" />
       </div>
     </section>
   );
@@ -240,7 +240,7 @@ const Secao_Rating_Emoji = () => {
       <h2 className="text-4xl font-bold">Avaliação Emoji</h2>
       <p className="mb-6 text-slate-300">Exemplo de avaliação usando componente de emoji.</p>
       <div className="rounded-3xl bg-slate-950 p-10 text-center text-white shadow-lg">
-        <Avaliacao_Emoji avaliacao={1} />
+        <AvaliacaoEmoji avaliacao={1} />
       </div>
     </section>
   );
@@ -256,7 +256,7 @@ const Secao_Tabela_de_Notas = () => {
       <h2 className="text-4xl font-bold">Lista de Estudantes</h2>
       <p className="mb-6 text-slate-300">Tabela de alunos usando dados importados e um componente de lista.</p>
       <div className="rounded-3xl bg-white p-6 text-slate-900 shadow-lg">
-        <Tabela_Alunos estudantes={estudantes} />
+        <TabelaAlunos estudantes={estudantes} />
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ type Props = {
     aoClicar?: () => void;
 };
 
-export const Foto_Item = ({ foto, aoClicar }: Props) => {
+export const FotoItem = ({ foto, aoClicar }: Props) => {
     return (
         <div
             className="w-full h-full flex justify-center items-center cursor-alias hover:opacity-80 transition-opacity"

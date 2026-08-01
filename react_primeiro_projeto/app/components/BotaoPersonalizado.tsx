@@ -12,7 +12,7 @@ type Props = {
     aoClicar?: () => void;
 };
 
-export const Botao_Personalizado = ({ rotulo, aoClicar }: Props) => {
+export const BotaoPersonalizado = ({ rotulo, aoClicar }: Props) => {
     return (
         <button
             onClick={aoClicar}

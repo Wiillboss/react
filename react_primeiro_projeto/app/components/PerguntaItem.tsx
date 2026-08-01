@@ -13,7 +13,7 @@ type Props = {
     aoResponder: (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => void;
 }
 
-export const Pergunta_Item = ({ pergunta, count, aoResponder }: Props) => {
+export const PerguntaItem = ({ pergunta, count, aoResponder }: Props) => {
     // Marca a opção selecionada ou mantém null quando ainda não houve escolha.
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
