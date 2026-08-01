@@ -1,11 +1,15 @@
 
 type Props = {
-    avaliacao: number; 
+    avaliacao: number;
 };
 
-//explicando detalhadamente o componente Avaliacao_Emoji:
-// O componente Avaliacao_Emoji é responsável por exibir uma avaliação em forma de emoji com base em uma nota numérica fornecida como prop. Ele recebe uma prop chamada "avaliacao", que é um número representando a avaliação do usuário, variando de 0 a 5. O componente calcula o valor seguro da avaliação, garantindo que esteja dentro do intervalo permitido, e determina o emoji correspondente com base na parte inteira da avaliação. Se houver uma parte decimal maior ou igual a 0.5, ele adiciona uma estrela ao lado do emoji. O resultado final é exibido em um layout flexível, mostrando a nota numérica e o emoji correspondente, proporcionando uma representação visual clara da avaliação do usuário.
-
+// Componente Avaliacao_Emoji:
+// Esse componente recebe a prop "avaliacao" com uma nota numérica.
+// A nota é normalizada para ficar entre 0 e 5, depois é convertida em:
+// - uma parte inteira para escolher o emoji
+// - uma parte decimal para decidir se deve aparecer uma estrela metade
+//
+// Esse exemplo ensina como transformar dados numéricos em feedback visual.
 export const Avaliacao_Emoji = ({ avaliacao }: Props) => {
     
     const safeRating = Math.max(0, Math.min(avaliacao, 5));

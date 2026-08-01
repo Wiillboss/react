@@ -1,11 +1,11 @@
 // estudantes.ts
-// Arquivo de dados com estudantes de exemplo para usar na tabela.
-
-//explicando detalhadamente o arquivo estudantes.ts:
-// Este arquivo contém um array de objetos do tipo Estudante, que é importado do arquivo types/Student.ts.
-// Cada objeto representa um estudante com propriedades como id, ativo, nome, email, avatar, nota1 e nota2.
-// O array estudantes é exportado para ser usado em outros componentes ou arquivos do projeto.
-
+// Arquivo de dados com estudantes de exemplo para uso em tabelas e listas.
+//
+// Esse arquivo exporta um array de objetos do tipo Estudante.
+// Cada item representa um aluno com nome, e-mail, avatar e duas notas.
+//
+// Esse exemplo ajuda a mostrar como componentes podem receber estruturas de dados
+// bem definidas e renderizá-las dinamicamente.
 import { Estudante } from "../types/Student";
 
 export const estudantes: Estudante[] = [

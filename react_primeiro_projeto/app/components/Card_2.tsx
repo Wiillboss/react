@@ -1,12 +1,16 @@
-//props são as propriedades que um componente pode receber para personalizar seu comportamento ou aparência. No caso do Card2, ele recebe uma frase e um autor, onde o autor é opcional. O componente renderiza a frase em destaque e o nome do autor, ou "Autor Desconecido" se o autor não for fornecido.
+// Componente Card2:
+// Esse componente recebe duas props:
+// - phrase: texto principal exibido no card
+// - author: autor opcional da frase
+//
+// O autor pode ser omitido. Nesse caso, usamos o operador ?? para mostrar
+// o texto padrão "Autor Desconhecido".
+//
+// Esse exemplo ensina como props podem controlar o conteúdo visual do componente.
 type Props = {
     phrase: string;
     author?: string;
-}
-
-// O componente Card2 é uma função que retorna um JSX.Element, que é a estrutura do card com estilo Tailwind (largura 200, altura 20, fundo vermelho e texto branco) e renderiza a frase e o autor passados como props. O autor é opcional, e se não for fornecido, exibe "Autor Desconecido".
-
-//explicando o que phase e author são e de onde elas vêm: phase e author são as props que o componente Card2 recebe. Elas são passadas para o componente quando ele é usado em outro lugar do código. Por exemplo, ao usar <Card2 phrase="Minha frase" author="Meu autor" />, a prop phrase recebe o valor "Minha frase" e a prop author recebe o valor "Meu autor". Se o author não for fornecido, ele será undefined, e o componente exibirá "Autor Desconecido".
+};
 
 export const Card2 = ({ phrase, author }: Props) => {
     return (

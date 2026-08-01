@@ -1,20 +1,14 @@
 // Emoji_Rating.tsx
 // Componente que exibe uma nota e um emoji de avaliação.
 
-//emplicando o que é PROPs: Props são as propriedades que um componente React recebe. Elas permitem que você passe dados para o componente, tornando-o mais flexível e reutilizável. No caso do Emoji_Rating, a prop "rating" é usada para determinar qual emoji exibir com base na nota fornecida.
-
+// Props do componente:
+// - rating: valor numérico da avaliação, geralmente entre 0 e 5
+//
+// Esse exemplo mostra como uma prop pode ser processada para gerar uma interface
+// visual interpretável pelo usuário.
 type Props = {
-    rating: number; // Nota de 0 a 5
+    rating: number;
 };
-
-//explicando todas as linhas abaixo:
-// - rating: nota de 0 a 5
-// - safeRating: nota limitada para o intervalo válido (0 a 5)
-// - rateInt: parte inteira da nota
-// - rateDecimal: parte decimal da nota
-// - emojis: array de emojis correspondentes às notas
-// - selectedEmoji: emoji selecionado com base na nota
-// - halfStar: estrela metade (se a parte decimal for >= 0.5)
 
 export const Emoji_Rating = ({ rating }: Props) => {
     // Limita a nota para o intervalo válido.

@@ -2,13 +2,15 @@
 
 import Image from 'next/image';
 
-//explicando a props do componente Modal: O componente Modal recebe duas props: "image", que é uma string representando a URL da imagem a ser exibida na modal, e "closeModal", que é uma função que será chamada quando o usuário clicar fora da imagem ou no botão de fechar. A prop "closeModal" permite que você defina um comportamento personalizado para fechar a modal, como atualizar o estado do componente pai para ocultar a modal.
+// Props do componente Modal:
+// - image: endereço da imagem exibida dentro da modal
+// - closeModal: função para fechar a modal quando o usuário clicar fora da imagem
+//
+// Esse exemplo mostra como um componente de overlay recebe comportamento do componente pai.
 type ModalProps = {
     image: string;
     closeModal: () => void;
 };
-
-//explicando o que o componente Modal faz: O componente Modal é uma função que recebe as props "image" e "closeModal" e retorna um JSX.Element. Ele cria uma modal estilizada com Tailwind CSS, exibindo a imagem fornecida e permitindo que o usuário feche a modal clicando fora da imagem ou no botão de fechar. A modal é posicionada de forma fixa na tela, cobrindo todo o conteúdo subjacente, proporcionando uma experiência de visualização de imagem em tela cheia.
 
 export const Modal = ({ image, closeModal }: ModalProps) => {
     return (
