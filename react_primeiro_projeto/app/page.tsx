@@ -1,75 +1,15 @@
 ﻿// app/page.tsx
-// Página principal de demonstração de componentes, renderização de listas e exemplos de UI.
+// Página principal usada para reunir exemplos de componentes, listas e seções de UI.
+//
+// Nesta página, o objetivo didático é mostrar como diferentes blocos de React
+// podem ser montados em uma mesma tela para estudar composição, reutilização e
+// renderização condicional.
 
-//explicando a difernça entre export default e export named:
-// export default: permite exportar um único valor padrão de um módulo, que pode ser importado sem chaves.
-// export named: permite exportar múltiplos valores nomeados de um módulo, que devem ser importados com chaves.
-
-//exemplo de export default:
-// export default function MeuComponente() { ... }
-// import MeuComponente from './MeuComponente';
-
-//exemplo de export named:
-// export function MeuComponente() { ... }
-// import { MeuComponente } from './MeuComponente';
-
-//explicando em quais situações usar export default e export named e dando exemplos de cada caso:
-// Use export default quando você deseja exportar um único valor principal de um módulo, como um componente React principal ou uma função utilitária. Isso facilita a importação sem chaves e é útil quando há apenas uma entidade principal no arquivo.
-// Exemplo:
-// // MeuComponente.tsx
-// export default function MeuComponente() { ... }
-// // OutroArquivo.tsx
-// import MeuComponente from './MeuComponente';
-
-// Use export named quando você deseja exportar múltiplos valores de um módulo, permitindo que outros arquivos escolham quais importar. Isso é útil para bibliotecas ou módulos que contêm várias funções ou componentes relacionados.
-// Exemplo:
-// // utils.ts
-// export function funcaoA() { ... }
-// export function funcaoB() { ... }
-// // OutroArquivo.tsx
-// import { funcaoA, funcaoB } from './utils';
-
-//Emplicando quando se cria um componente com outros componentes dentro, e quando se cria um componente com apenas um componente dentro:
-// Quando você cria um componente com outros componentes dentro, você está compondo uma interface mais complexa a partir de componentes menores e reutilizáveis. Isso é útil para criar layouts ou seções que combinam múltiplos elementos visuais e funcionais.
-// Exemplo:
-// function ComponentePai() {
-//   return (
-//     <div>
-//       <ComponenteFilho1 />
-//       <ComponenteFilho2 />
-//     </div>
-//   );
-// }
-
-// Quando você cria um componente com apenas um componente dentro, você está encapsulando um único elemento ou funcionalidade em um componente separado. Isso é útil para abstrair lógica ou estilo específico, tornando o código mais modular e fácil de manter.
-// Exemplo:
-// function ComponenteEncapsulado() {
-//   return <ComponenteUnico />;
-// }
-
-//explicando o que um fragmento faz dentro de um componente:
-// Um fragmento em React é usado para agrupar múltiplos elementos sem adicionar nós extras ao DOM. Ele permite que você retorne vários elementos de um componente sem envolver cada um deles em uma div ou outro contêiner, mantendo a estrutura do DOM mais limpa e evitando problemas de estilo ou layout.
-// Exemplo:
-// function MeuComponente() {
-//   return (
-//     <>
-//       <h1>Título</h1>
-//       <p>Parágrafo</p>
-//     </>
-//   );
-// }
-
-// explicando porque se usa o @ no caminho de importação de um arquivo:
-// O uso do "@" no caminho de importação de um arquivo é uma convenção que indica um alias para um diretório específico no projeto. Isso ajuda a simplificar os caminhos de importação, tornando-os mais legíveis e fáceis de manter, especialmente em projetos grandes com estruturas de diretórios complexas. Em vez de usar caminhos relativos longos, você pode configurar o alias "@" para apontar para a raiz do projeto ou outro diretório relevante, permitindo importações mais curtas e claras.
-// Exemplo:
-// // Configuração do alias no tsconfig.json ou jsconfig.json
-// {
-//   "compilerOptions": {
-//     "baseUrl": ".",
-//     "paths": {
-//       "@/*": ["src/*"]
-//     }
-//   }
+// Observação didática:
+// - export default: usado quando a página principal tem uma única exportação padrão
+// - export named: usado para exportar mais de um símbolo com nome explícito
+//
+// Essa convenção ajuda a organizar os imports e deixa a estrutura do projeto mais clara.
 
 import QuadradoExemplo from "./components/Quadrado_Exemplo";
 import { Quadrado } from "./components/Quadrado";
@@ -102,8 +42,9 @@ const Secao_Componente_Quadrado = () => {
   );
 };
 
-// explicando o secao_formulario_geometrico:
-// O componente Secao_Formulario_Geometrico é uma seção estilizada que demonstra o uso do componente Formulario_Geometrico para exibir um formulário dentro de um contêiner com borda. Ele inclui um título, uma descrição e um contêiner que agrupa o formulário com estilo visual. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente, com bordas arredondadas, fundo sombreado e espaçamento adequado. O componente Formulario_Geometrico é responsável por renderizar o formulário e gerenciar a entrada do usuário. 
+// Seção de formulário geométrico:
+// Essa seção mostra como um componente de formulário pode ser agrupado em um
+// bloco visual reutilizável, com título, descrição e container estilizado.
 
 const Secao_Formulario_Geometrico = () => {
   return (
@@ -117,9 +58,10 @@ const Secao_Formulario_Geometrico = () => {
   );
 };
 
-//explicando o que está acontecendo no componente Secao_Pessoas:
-// O componente Secao_Pessoas é uma seção estilizada que demonstra o uso de diferentes componentes de pessoa (Pessoa, Pessoa2, Pessoa3) para exibir informações pessoais. Ele inclui um título, uma descrição e um contêiner que agrupa os componentes de pessoa com espaçamento e estilo visual. Cada componente de pessoa recebe props específicas, como nome, avatar e informações sobre a esposa, para mostrar como os componentes podem ser reutilizados com diferentes dados. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente.
-// A seção também demonstra a capacidade de passar objetos como props, permitindo que informações complexas sejam encapsuladas e exibidas de maneira organizada.
+// Seção de pessoas:
+// Essa seção demonstra reutilização de componentes com props diferentes.
+// Cada item mostra como o mesmo padrão visual pode receber dados distintos,
+// como nome, avatar e informações da esposa.
 
 const Secao_Pessoas = () => {
   return (
@@ -155,8 +97,10 @@ const Secao_Pessoas = () => {
   );
 };
 
-//explicando o componente Secao_Cartoes:
-// O componente Secao_Cartoes é uma seção estilizada que demonstra o uso de diferentes componentes de cartão (Card, Card2, Card_2_sem_if_ternario, Card_3) para exibir conteúdo estilizado. Ele inclui um título, uma descrição e um contêiner que agrupa os cartões com espaçamento e estilo visual. Cada cartão recebe props específicas, como frases e autores, para mostrar como os componentes podem ser reutilizados com diferentes dados. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente.
+// Seção de cards:
+// Essa seção reúne exemplos de composição com diferentes componentes de cartão.
+// Cada card recebe conteúdo e estilo próprios, ilustrando como props e JSX
+// podem ser combinados para criar variações visuais sem duplicar código.
 
 const Secao_Cartoes = () => {
   return (
@@ -185,9 +129,10 @@ const Secao_Cartoes = () => {
   );
 };
 
-//abaixo está a seção de renderização de listas, onde filtramos a lista de pessoas por profissão e sexo, e exibimos os resultados usando map, ternário e operador lógico && para renderização condicional.
-
-// A seção de renderização de listas demonstra como filtrar e exibir dados usando métodos de array e renderização condicional em React. Ela exibe a lista completa de pessoas, bem como sublistas filtradas por profissão (programadores, protéticos) e sexo (mulheres, mulheres protéticas). O uso de map permite iterar sobre os arrays filtrados para criar elementos JSX, enquanto o ternário e o operador lógico && são usados para renderizar mensagens ou listas apenas quando há resultados a mostrar.
+// Seção de renderização de listas:
+// Aqui o objetivo é mostrar como filtrar e mapear arrays de dados.
+// A renderização condicional também aparece quando a lista é exibida só se houver
+// itens válidos para aquele critério.
 
 const Secao_Renderizando_Listas = () => {
   const programadores = listaPessoas.filter((pessoa) => pessoa.profissao === "Programador");
@@ -285,8 +230,9 @@ const Secao_Exercicio_Hora = () => {
   );
 };
 
-//explicando secao_ratin_emoji:
-// O componente Secao_Rating_Emoji é uma seção estilizada que demonstra o uso do componente Avaliacao_Emoji para exibir uma avaliação visual usando emojis. Ele inclui um título, uma descrição e um contêiner centralizado que contém o componente de avaliação. A seção utiliza classes Tailwind CSS para criar uma aparência consistente e atraente, com bordas arredondadas, fundo sombreado e espaçamento adequado. O componente Avaliacao_Emoji recebe uma prop chamada "avaliacao", que determina a quantidade de emojis exibidos para representar a avaliação.
+// Seção de avaliação com emoji:
+// Essa seção mostra como um valor numérico pode ser convertido em uma interface
+// visual amigável usando um componente específico para avaliação.
   
 const Secao_Rating_Emoji = () => {
   return (
@@ -300,8 +246,9 @@ const Secao_Rating_Emoji = () => {
   );
 };
 
-//explicando detalhadamente o componente Secao_Tabela_de_Notas:
-// O componente Secao_Tabela_de_Notas é uma seção estilizada que exibe uma tabela de estudantes usando o componente Tabela_Alunos. Ele importa os dados dos estudantes de um arquivo externo e os passa como props para o componente de tabela. A seção é estruturada com um título, uma descrição e um contêiner para a tabela, todos estilizados com classes Tailwind CSS para criar uma aparência visualmente atraente e organizada. O componente Tabela_Alunos é responsável por renderizar os dados dos estudantes em formato tabular, mostrando informações como nome, email, avatar e notas.
+// Seção de tabela de notas:
+// Essa seção mostra como dados externos podem ser enviados para um componente
+// de tabela, que passa a renderizar a estrutura de forma organizada.
 
 const Secao_Tabela_de_Notas = () => {
   return (
@@ -315,8 +262,10 @@ const Secao_Tabela_de_Notas = () => {
   );
 };
 
-//explicando detalhadamente o cost Pagina_Exercicios:
-// O componente Pagina_Exercicios é a página principal que reúne todas as seções de exercícios em um layout organizado. Ele utiliza uma estrutura de contêiner para centralizar o conteúdo e aplicar estilos de espaçamento e cores. Cada seção é representada por um componente separado, que é renderizado dentro de um contêiner com borda e fundo estilizado para criar uma aparência consistente e visualmente agradável. A página inclui um cabeçalho com título e descrição, seguido por uma série de seções que demonstram diferentes aspectos do React, como componentes, formulários, renderização de listas e avaliação com emojis.
+// Página de exercícios:
+// Essa página reúne diversas seções didáticas em um único layout.
+// Cada seção é um exemplo isolado, mas o conjunto mostra como a mesma base
+// pode ser organizada em uma interface de estudo e demonstração.
 
 const Pagina_Exercicios = () => {
   return (

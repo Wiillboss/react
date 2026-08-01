@@ -1,12 +1,8 @@
 // lista_fotos.ts
-// Dados de fotos usados na galeria de imagens.
-
-//explicando detalhadamente o arquivo lista_fotos.ts e por qual motivo ele foi criado:
-// Este arquivo contém um array de objetos do tipo Foto, que é importado do arquivo types/Photo.ts.
-// Cada objeto representa uma foto com propriedades como id e url.
-// O array listaFotos é exportado para ser usado em outros componentes ou arquivos do projeto, como a galeria de imagens.
-// Ele foi criado para fornecer dados de fotos de exemplo que podem ser exibidos na galeria de imagens do aplicativo.   
-
+// Arquivo de dados com imagens de exemplo para a galeria.
+//
+// Ele exporta um array de objetos do tipo Foto.
+// Cada item contém um id e uma URL para a imagem renderizada pelo componente de galeria.
 import { Foto } from "../types/Photo";
 
 export const listaFotos: Foto[] = [

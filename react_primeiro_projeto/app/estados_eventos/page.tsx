@@ -14,23 +14,13 @@ import { perguntas } from "../data/perguntas";
 import { Pergunta_Item } from "../components/Pergunta_Item";
 import { Resultados } from "../components/Resultados";
 
-//explicando secao de avisar:
-// A seção de avisar demonstra como reutilizar uma única função para exibir diferentes mensagens de alerta.
-// A função avisar recebe uma mensagem como argumento e exibe um alerta com essa mensagem.
-// Os botões chamam a função avisar com diferentes mensagens, mostrando como você pode criar manipuladores de eventos flexíveis e reutilizáveis em React.
-
-//explicando e dando exemplos de como usar PROPS para criar componentes reutilizáveis:
-// A seção de botões customizados demonstra como criar um componente reutilizável que recebe props para personalizar seu comportamento.
-// O componente Botao_Personalizado recebe duas props: rotulo, que define o texto exibido no botão, e aoClicar, que é uma função callback chamada quando o botão é clicado.
-// Cada instância do Botao_Personalizado é configurada com diferentes rótulos e funções de clique, mostrando como você pode criar componentes flexíveis e reutilizáveis em React.
-
-//explicando secao de eventos de clique:
-// A seção de eventos de clique demonstra diferentes maneiras de lidar com eventos em React.
-// Cada botão possui um manipulador de clique que exibe um alerta com uma mensagem específica.
-// A primeira função, clicar1, é definida fora do JSX e atribuída diretamente ao evento onClick do primeiro botão.
-// O segundo e terceiro botões usam funções anônimas diretamente no JSX para exibir alertas.
-// O quarto botão utiliza a função clicar2, que também é definida fora do JSX.
-// Essa abordagem mostra como você pode escolher entre definir funções separadas ou usar funções inline para lidar com eventos de clique em React.
+// Seções de eventos e reutilização:
+// Estas partes do arquivo ajudam a mostrar como:
+// - um evento de clique pode ser associado a funções diferentes;
+// - uma função pode ser reutilizada com mensagens distintas;
+// - um componente pode receber props para ficar mais flexível.
+//
+// O foco didático é entender a relação entre evento, callback e componente filho.
 
 const Secao_Eventos_Clique = () => {
   const clicar1 = () => alert("Botão clicado 1!");
@@ -98,10 +88,9 @@ const Secao_Avisar = () => {
   );
 };
 
-//explicando secao de botoes customizados:
-// A seção de botões customizados demonstra como criar um componente reutilizável que recebe props para personalizar seu comportamento.
-// O componente Botao_Personalizado recebe duas props: rotulo, que define o texto exibido no botão, e aoClicar, que é uma função callback chamada quando o botão é clicado.
-// Cada instância do Botao_Personalizado é configurada com diferentes rótulos e funções de clique, mostrando como você pode criar componentes flexíveis e reutilizáveis em React.
+// Seção de botões customizados:
+// Aqui o componente filho recebe texto e callback por props, permitindo que o
+// mesmo componente seja reaproveitado com conteúdos diferentes.
 
 const Secao_Botoes_Customizados = () => {
   const acao1 = () => alert("Botão 1 clicado !");
@@ -122,11 +111,9 @@ const Secao_Botoes_Customizados = () => {
   );
 };
 
-//explicando secao de formulario:
-// A seção de formulário demonstra como criar um formulário controlado em React.
-// O evento onSubmit do formulário é interceptado pela função aoEnviarFormulario, que chama event.preventDefault() para evitar o recarregamento da página.
-// Quando o formulário é enviado, um alerta é exibido indicando que o envio foi bem-sucedido.
-// O formulário contém um campo de entrada de texto e um botão de envio, ambos estilizados com Tailwind CSS.
+// Seção de formulário:
+// Esse exemplo mostra como capturar o evento de submit e impedir o comportamento
+// padrão do navegador, mantendo o controle do fluxo dentro da aplicação.
 
 const Secao_Formulario = () => {
   const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
@@ -149,11 +136,9 @@ const Secao_Formulario = () => {
   );
 };
 
-//explicando secao de estado basico:
-// A seção de estado básico demonstra o uso do hook useState para gerenciar o estado local do componente.
-// Ela inclui um contador que pode ser incrementado e uma área secreta que pode ser mostrada ou escondida.
-// O estado mostrarSegredo controla a visibilidade da área secreta, enquanto o estado contador mantém o valor atual do contador.
-// Os botões chamam funções que atualizam esses estados, e a renderização condicional é usada para exibir a área secreta apenas quando mostrarSegredo é verdadeiro.
+// Seção de estado básico:
+// Esse exemplo ensina o uso do hook useState para controlar valores simples e
+// também a renderização condicional baseada em estado.
 
 const Secao_Estado_Basico = () => {
   const [mostrarSegredo, setMostrarSegredo] = useState(false);
@@ -189,11 +174,9 @@ const Secao_Estado_Basico = () => {
   );
 };
 
-//explicando secao de campo de texto controlado:
-// A seção de campo de texto controlado demonstra como usar o estado para controlar o valor de um campo de entrada.
-// O estado entradaNome mantém o valor atual do campo de texto, e a função setEntradaNome é usada para atualizar esse valor quando o usuário digita.
-// O valor do campo de entrada é vinculado ao estado, tornando-o um componente controlado.
-// Um botão permite que o usuário veja o valor atual do campo em um alerta.
+// Seção de input controlado:
+// Aqui o valor do campo é sempre sincronizado com o estado do componente.
+// Isso permite reagir ao texto digitado em tempo real.
 
 const Secao_Campo_Texto = () => {
   const [entradaNome, setEntradaNome] = useState("");
@@ -223,10 +206,9 @@ const Secao_Campo_Texto = () => {
   );
 };
 
-//explicando secao de atualizacao sequencial:
-// A seção de atualização sequencial demonstra como atualizar o estado várias vezes em sequência usando a forma funcional do setState.
-// A função aumentarDeDois incrementa o contador em 2, três vezes, usando a forma funcional para garantir que cada atualização seja baseada no valor mais recente do estado.
-// Isso evita problemas de atualização incorreta que podem ocorrer quando se tenta atualizar o estado diretamente com base no valor anterior.
+// Seção de atualização sequencial:
+// Neste exemplo, o estado é atualizado três vezes de forma funcional para evitar
+// que as alterações conflitantes usem valores antigos.
 
 const Secao_Estado_Tempo = () => {
   const [contadorTempo, setContadorTempo] = useState(0);
@@ -255,11 +237,9 @@ const Secao_Estado_Tempo = () => {
   );
 };
 
-//explicando as funções dentro de secao objeto estado:
-// A função limpar redefine o estado nomeCompleto para um objeto vazio, limpando ambos os campos.
-// A função limparPrimeiro redefine apenas a propriedade primeiroNome para uma string vazia, mantendo o valor atual de ultimoNome.
-// A função limparSobrenome faz o mesmo para a propriedade ultimoNome, mantendo o valor atual de primeiroNome.
-// Essas funções demonstram como atualizar partes específicas de um objeto no estado sem perder outras informações.
+// Seção de atualização de objeto no estado:
+// Aqui o estado guarda um objeto com duas propriedades.
+// As funções mostram como atualizar apenas uma parte do objeto sem perder a outra.
 
 const Secao_Objeto_Estado = () => {
   const [nomeCompleto, setNomeCompleto] = useState<Pessoa_2>({
@@ -309,22 +289,9 @@ const Secao_Objeto_Estado = () => {
   );
 };
 
-//explicando secao de lista de tarefas:
-// A seção de lista de tarefas demonstra como gerenciar uma lista de itens com estado em React.
-// Ela permite adicionar novas tarefas, marcar tarefas como concluídas e deletar tarefas da lista.
-// O estado listaTarefas mantém a lista atual de tarefas, enquanto entradaTarefa mantém o valor do campo de entrada para adicionar novas tarefas.
-// Funções são definidas para adicionar, alternar o status e deletar tarefas, e a renderização condicional é usada para exibir a lista de tarefas com base no estado atual. 
-
-//explicando o setListaTarefas:
-// O setListaTarefas é a função fornecida pelo hook useState para atualizar o estado listaTarefas.
-// Quando você chama setListaTarefas com um novo array de tarefas, o React atualiza o estado e re-renderiza o componente com a nova lista.
-// Isso permite que a interface do usuário reflita imediatamente as mudanças na lista de tarefas, como adicionar, marcar ou deletar itens.  
-
-//explicando completamente o que é o return:
-// O return dentro do componente Secao_Lista_Tarefas retorna o JSX que define a estrutura e o conteúdo da seção de lista de tarefas.
-// Ele inclui um título, uma descrição, um campo de entrada para adicionar novas tarefas, um botão para adicionar a tarefa, e uma lista de tarefas renderizada dinamicamente.
-// Cada item da lista é exibido com um checkbox para marcar como concluído e um botão para deletar a tarefa.
-// O JSX retornado é o que será renderizado na tela quando o componente for usado em outro lugar no aplicativo.
+// Seção de lista de tarefas:
+// Este exemplo mostra como um estado pode guardar uma lista de itens e como a
+// interface pode refletir ações como adicionar, marcar e remover tarefas.
 
 const Secao_Lista_Tarefas = () => {
   const [entradaTarefa, setEntradaTarefa] = useState("");
@@ -400,11 +367,9 @@ const Secao_Lista_Tarefas = () => {
   );
 };
 
-//explicando secao de galeria de imagens:
-// A seção de galeria de imagens demonstra como exibir uma lista de imagens e abrir um modal ao clicar em uma delas.
-// O estado mostrarModal controla a visibilidade do modal, enquanto fotoSelecionada mantém a imagem atualmente selecionada.
-// A função abrirModal define a imagem selecionada e mostra o modal, enquanto fecharModal oculta o modal.
-// Cada imagem é renderizada usando o componente Foto_Item, que recebe a imagem e uma função de clique como props.
+// Seção de galeria de imagens:
+// Essa seção mostra como uma lista de itens pode gerar vários elementos visuais
+// e como um clique pode abrir um detalhe em modal.
 
 const Secao_Galeria_Imagens = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
@@ -433,12 +398,9 @@ const Secao_Galeria_Imagens = () => {
   );
 };
 
-//explicando secao de quiz interativo:
-// A seção de quiz interativo demonstra como criar um quiz com múltiplas perguntas e respostas.
-// O estado respostas mantém as respostas selecionadas pelo usuário, enquanto mostrarResultado controla a exibição dos resultados.
-// A função carregarProximaPergunta avança para a próxima pergunta ou mostra os resultados se todas as perguntas foram respondidas.
-// A função reiniciarQuiz redefine o estado para permitir que o usuário refaça o quiz.
-// A função processarResposta atualiza o estado das respostas com base na resposta selecionada pelo usuário e chama carregarProximaPergunta para avançar.
+// Seção de quiz interativo:
+// Essa seção combina estado, callback e renderização condicional para mostrar
+// uma sequência de perguntas e, ao fim, exibir um resumo de respostas.
 
 const Secao_Quiz = () => {
   const [respostas, setRespostas] = useState<number[]>(new Array(perguntas.length).fill(-1));
