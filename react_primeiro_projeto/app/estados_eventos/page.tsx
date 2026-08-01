@@ -55,11 +55,8 @@ const Secao_Eventos_Clique = () => {
   );
 };
 
-//explicando secao de avisar:
-// A seção de avisar demonstra como reutilizar uma única função para exibir diferentes mensagens de alerta.
-// A função avisar recebe uma mensagem como argumento e exibe um alerta com essa mensagem.
-// Os botões chamam a função avisar com diferentes mensagens, mostrando como você pode criar manipuladores de eventos flexíveis e reutilizáveis em React.
-
+// Seção de reutilização de função:
+// mostra como um único callback pode receber mensagens diferentes.
 const Secao_Avisar = () => {
   const avisar = (mensagem: string) => {
     alert(mensagem);
@@ -407,11 +404,8 @@ const Secao_Quiz = () => {
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [perguntaAtual, setPerguntaAtual] = useState(0);
 
-  //explicando a função carregarProximaPergunta:
-  // A função carregarProximaPergunta verifica se a pergunta atual é a última do quiz.
-  // Se não for, ela incrementa o índice da pergunta atual para avançar para a próxima pergunta.
-  // Se for a última pergunta, ela define mostrarResultado como true, indicando que o quiz foi concluído e os resultados devem ser exibidos.
-  
+  // Avança para a próxima pergunta.
+  // Se já estiver na última, mostra o bloco de resultados.
   const carregarProximaPergunta = () => {
     if (perguntaAtual < perguntas.length - 1) {
       setPerguntaAtual(perguntaAtual + 1);
@@ -420,21 +414,14 @@ const Secao_Quiz = () => {
     }
   };
 
-  //explicando a função reiniciarQuiz:
-  // A função reiniciarQuiz redefine o estado do quiz para permitir que o usuário refaça o quiz.
-  // Ela define perguntaAtual de volta para 0, reinicia o array de respostas para um novo array preenchido com -1 (indicando que nenhuma resposta foi selecionada) e define mostrarResultado como false.
-
+  // Reinicia o quiz para o estado inicial.
   const reiniciarQuiz = () => {
     setPerguntaAtual(0);
     setRespostas(new Array(perguntas.length).fill(-1));
     setMostrarResultado(false);
   };
 
-  //explicando a função processarResposta:
-  // A função processarResposta é chamada quando o usuário seleciona uma resposta para a pergunta atual.
-  // Ela recebe um payload contendo se a resposta está correta, a resposta selecionada e o índice da pergunta.
-  // A função atualiza o estado respostas com a resposta selecionada para a pergunta atual e chama carregarProximaPergunta para avançar para a próxima pergunta ou mostrar os resultados se todas as perguntas foram respondidas.
-
+  // Armazena a resposta escolhida e avança no fluxo do quiz.
   const processarResposta = (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => {
     setRespostas((anterior) => {
       const copia = [...anterior];
@@ -444,11 +431,8 @@ const Secao_Quiz = () => {
     carregarProximaPergunta();
   };
 
-  //explicando o return:
-  // O return dentro do componente Secao_Quiz retorna o JSX que define a estrutura e o conteúdo da seção de quiz interativo.
-  // Ele inclui um título, uma descrição, o componente Pergunta_Item para exibir a pergunta atual, e o componente Resultados para mostrar os resultados do quiz quando todas as perguntas forem respondidas.
-  // Também há botões para avançar para a próxima pergunta, ver os resultados e reiniciar o quiz, além de um indicador de progresso mostrando qual pergunta está sendo exibida atualmente.
-  
+  // JSX principal da seção:
+  // mostra a pergunta atual, o bloco de resultados e os botões de navegação.
   return (
     <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
       <h2 className="text-3xl font-bold mb-4">Quiz Interativo</h2>

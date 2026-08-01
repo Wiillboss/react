@@ -1,14 +1,4 @@
-//sempre eu criar um componente, é necessário criar APENAS um ELEMENTO ex: DIV, SECTION, ARTICLE, etc... e dentro desse elemento, eu posso colocar quantos outros elementos eu quiser, como por exemplo: H1, P, etc... e esses elementos podem ser estilizados usando classes do Tailwind CSS ou qualquer outra biblioteca de estilização que você esteja usando.
-
-//tag sem nomeada <>, ou seja, um componente que não tem um nome específico, e é exportado como padrão (default) do arquivo. Esse tipo de componente é útil quando você quer criar um componente simples e reutilizável, sem a necessidade de dar um nome específico para ele. Por exemplo:
-
-//quando usando tag sem nomeada, toda TAG que for aberta dentro dela, precisa ser obrigaoriamente fechada, ou seja, não pode ser uma tag auto fechada, como por exemplo: <img />, <input />, etc... pois isso causaria um erro de sintaxe. Por exemplo:
-
-//a tag img por natureza é uma tag auto fechada, ou seja, ela não tem um fechamento explícito, e isso causaria um erro de sintaxe se fosse usada dentro de uma tag sem nomeada. Para evitar esse erro, é necessário usar a tag img como uma tag normal, ou seja, com um fechamento explícito, como por exemplo: <img src="caminho/para/imagem.jpg" alt="Descrição da imagem"></img>.
-
-// FUNÇÃO AUXILIAR: Converte número do dia da semana para nome em português
-// Recebe: number (0-6, onde 0 é domingo)
-// Retorna: string com o nome do dia da semana
+// Helper usado para converter o número do dia da semana em texto em português.
 const getWeekDay = (day: number): string => {
     const weekDays: string[] = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
     return weekDays[day];
@@ -19,11 +9,8 @@ const getWeekDay = (day: number): string => {
 //      return new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(new Date());
 //  }
 
-// TIPO DE DADOS: Define a estrutura de props para os componentes Pessoa
-//Props são os dados que um componente recebe para renderizar informações dinâmicas. No caso do componente Pessoa, as props definem quais informações sobre a pessoa e sua esposa serão exibidas. O tipo PropsPessoa especifica que o componente espera receber um objeto com as seguintes propriedades:
-// - nome: nome da pessoa (obrigatório)
-// - avatar: caminho da imagem (opcional, com "?")
-// - esposa: objeto contendo dados da esposa com nome, profissão e array de ocupações
+// Tipo de props do componente Pessoa.
+// Ele recebe nome, avatar opcional e os dados da esposa.
 type PropsPessoa = {
     nome: string;
     avatar?: string;
@@ -36,12 +23,8 @@ type PropsPessoa = {
 
 import Image from 'next/image';
 
-// COMPONENTE PESSOA: Exibe informações da pessoa e sua esposa
-// Forma de recebimento de props: destructuring completo na função
-// O destructuring permite extrair diretamente as propriedades do objeto de props, facilitando o acesso aos dados dentro do componente. No caso do componente Pessoa, as props são desestruturadas para obter nome, avatar e esposa, que são usados para renderizar as informações na interface.
-
-//Sobre PROPS: é usada quando se quer passar dados de um componente pai para um componente filho. As props são imutáveis, ou seja, não podem ser alteradas pelo componente filho. Elas são passadas como atributos no JSX do componente pai e recebidas como parâmetros no componente filho. No caso do componente Pessoa, as props são usadas para exibir informações dinâmicas sobre a pessoa e sua esposa, permitindo que o mesmo componente seja reutilizado com diferentes dados.
-
+// Componente Pessoa:
+// Renderiza o nome, a imagem opcional e os dados da esposa usando props.
 export const Pessoa = (props: PropsPessoa) => {
 
     const { nome, avatar, esposa } = props;
@@ -66,8 +49,8 @@ export const Pessoa = (props: PropsPessoa) => {
     );
 }
 
-// COMPONENTE PERSON2: Versão melhorada do Person com avatar padrão
-// Forma de recebimento de props: desestruturação direta com valor padrão
+// Componente Pessoa2:
+// Versão com avatar padrão quando o valor não é informado.
 export const Pessoa2 = ({ 
     nome,
     // Avatar padrão: se não for fornecido, usa imagem genérica do pngtree
@@ -103,11 +86,8 @@ export const Pessoa2 = ({
     )
 }
 
-// COMPONENTE PERSON3: Versão customizada com dados hardcoded e estilos inline
-// Props são recebidas mas não são utilizadas (dados estão fixos no componente)
-//explicando detalhadamente o componente Pessoa3:
-// O componente Pessoa3 é uma versão customizada do componente Pessoa, onde os dados da pessoa e da esposa são hardcoded (fixos) dentro do componente. Ele recebe props opcionais, mas utiliza valores padrão caso não sejam fornecidos. O componente exibe o nome da pessoa, a data atual formatada com o dia da semana em português, informações sobre a esposa e suas ocupações. Além disso, ele utiliza o componente Image do Next.js para exibir o avatar da pessoa com estilos aplicados via Tailwind CSS. A função getWeekDay é usada para converter o número do dia da semana em seu nome correspondente em português.
-
+// Componente Pessoa3:
+// Exibe dados fixos com fallback de props e usa o helper do dia da semana.
 export const Pessoa3 = (props?: PropsPessoa) => {
     const defaultEsposa = {
         nome: "Roberta",
