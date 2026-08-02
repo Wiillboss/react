@@ -22,6 +22,10 @@ import { Resultados } from "../components/Resultados";
 //
 // O foco didático é entender a relação entre evento, callback e componente filho.
 
+//explicando detalhadamente e de forma didatica o que aconte na secao de eventos de clique, mostrando como cada botão tem uma função diferente associada ao evento onClick.
+
+//explicando o que está acontecendo dentro do return do componente Secao_Eventos_Clique, detalhando como cada botão é renderizado e como o evento onClick é tratado para cada um deles.
+
 const Secao_Eventos_Clique = () => {
   const clicar1 = () => alert("Botão clicado 1!");
   const clicar2 = () => alert("Botão clicado 4!");
