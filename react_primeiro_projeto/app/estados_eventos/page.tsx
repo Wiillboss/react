@@ -26,6 +26,8 @@ import { Resultados } from "../components/Resultados";
 
 //explicando o que está acontecendo dentro do return do componente Secao_Eventos_Clique, detalhando como cada botão é renderizado e como o evento onClick é tratado para cada um deles.
 
+//explicando e exemplificando a diferente entre arrow function e function declaration no contexto do React, mostrando como cada uma pode ser usada para definir funções de callback para eventos.
+
 const Secao_Eventos_Clique = () => {
   const clicar1 = () => alert("Botão clicado 1!");
   const clicar2 = () => alert("Botão clicado 4!");
