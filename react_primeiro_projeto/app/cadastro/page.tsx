@@ -17,14 +17,12 @@ const Page = () => {
             <button className="bg-white hover:bg-gray-500 text-blue-500 font-bold py-2 px-4 rounded" type="submit">
                 Entrar
             </button>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  ml-10 rounded" type="submit">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  ml-10 rounded " type="submit">
                 Cadastrar
             </button>
         </form>
     </div>
   );
 }
-
-
 
 export default Page;
