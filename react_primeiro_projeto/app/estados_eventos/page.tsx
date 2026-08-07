@@ -309,19 +309,24 @@ const Secao_Lista_Tarefas = () => {
       return;
     }
 
-    setListaTarefas([...listaTarefas, { id: Date.now(), rotulo: entradaTarefa, concluido: false }]);
+    setListaTarefas((tarefasAnteriores) => [
+      ...tarefasAnteriores,
+      { id: Date.now(), rotulo: entradaTarefa.trim(), concluido: false },
+    ]);
     setEntradaTarefa("");
   };
 
   const alternarItem = (index: number) => {
-    const novaLista = [...listaTarefas];
-    novaLista[index].concluido = !novaLista[index].concluido;
-    setListaTarefas(novaLista);
+    setListaTarefas((tarefasAnteriores) =>
+      tarefasAnteriores.map((item, itemIndex) =>
+        itemIndex === index ? { ...item, concluido: !item.concluido } : item
+      )
+    );
   };
 
   const deletarItem = (index: number) => {
     const tarefaRemovida = listaTarefas[index]?.rotulo;
-    setListaTarefas(listaTarefas.filter((_, i) => i !== index));
+    setListaTarefas((tarefasAnteriores) => tarefasAnteriores.filter((_, i) => i !== index));
     alert(`Item "${tarefaRemovida}" deletado!`);
   };
 
@@ -410,11 +415,13 @@ const Secao_Quiz = () => {
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [perguntaAtual, setPerguntaAtual] = useState(0);
 
-  // Avança para a próxima pergunta.
-  // Se já estiver na última, mostra o bloco de resultados.
+  // Avança para a próxima pergunta somente depois de responder a atual.
   const carregarProximaPergunta = () => {
+    if (mostrarResultado) return;
+    if (respostas[perguntaAtual] === -1) return;
+
     if (perguntaAtual < perguntas.length - 1) {
-      setPerguntaAtual(perguntaAtual + 1);
+      setPerguntaAtual((atual) => atual + 1);
     } else {
       setMostrarResultado(true);
     }
@@ -434,8 +441,15 @@ const Secao_Quiz = () => {
       copia[payload.indicePergunta] = payload.respostaSelecionada;
       return copia;
     });
-    carregarProximaPergunta();
+
+    if (payload.indicePergunta < perguntas.length - 1) {
+      setPerguntaAtual(payload.indicePergunta + 1);
+    } else {
+      setMostrarResultado(true);
+    }
   };
+
+  const perguntaRespondida = respostas[perguntaAtual] !== -1;
 
   // JSX principal da seção:
   // mostra a pergunta atual, o bloco de resultados e os botões de navegação.
@@ -458,13 +472,15 @@ const Secao_Quiz = () => {
         <div className="flex flex-wrap gap-3">
           <button
             onClick={carregarProximaPergunta}
-            className="rounded-md bg-slate-800 px-4 py-2 text-white hover:bg-slate-900"
+            disabled={!perguntaRespondida && !mostrarResultado}
+            className="rounded-md bg-slate-800 px-4 py-2 text-white hover:bg-slate-900 disabled:cursor-not-allowed disabled:bg-slate-300"
           >
             Próxima Pergunta
           </button>
           <button
             onClick={() => setMostrarResultado(true)}
-            className="rounded-md bg-gray-500 px-4 py-2 text-white hover:bg-gray-700"
+            disabled={perguntaAtual < perguntas.length - 1 || !perguntaRespondida}
+            className="rounded-md bg-gray-500 px-4 py-2 text-white hover:bg-gray-700 disabled:cursor-not-allowed disabled:bg-gray-300"
           >
             Ver Resultado
           </button>
