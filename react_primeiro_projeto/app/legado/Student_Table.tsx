@@ -1,4 +1,15 @@
-
+/**
+ * Arquivo: app/legado/Student_Table.tsx
+ * Nome: Student_Table.tsx
+ * Tipo: Arquivo legado
+ * Finalidade: Este arquivo foi mantido como referência histórica para comparar com as versões atuais do projeto.
+ * Como ler: Compare este arquivo com a versão atual para entender a evolução da solução e os padrões de estudo.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 import Image from 'next/image';
 import { Student } from "../types/Student";
 
@@ -50,3 +61,5 @@ export const Student_Table = ({ students }: Props) => {
         </table>
     );
 };
+
+

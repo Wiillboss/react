@@ -1,29 +1,24 @@
-//tsx é a extensão do typescript para arquivos que possuem código JSX
-//importação do React para usar JSX
-//jsx é uma extensão de sintaxe para JavaScript que permite escrever código HTML dentro do JavaScript, facilitando a criação de componentes de interface do usuário.
-
-// COMPONENTE QUADRADO_EXEMPLO: Renderiza um quadrado azul com texto
-// Componente simples sem props
+/**
+ * Arquivo: app/components/QuadradoExemplo.tsx
+ * Nome: QuadradoExemplo.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 const QuadradoExemplo = () => {
     return (
-        // Div com estilo Tailwind: largura 160, altura 16, fundo azul e texto branco
+        
         <div className="w-160 h-16 bg-blue-500 text-white border-4 border-white-500 flex items-center justify-center rounded-lg">
             Texto qualquer inspirador
         </div>
     );
 }
 
-// EXPORTAÇÃO: Existem duas formas de exportar componentes
-// Forma 1 (named export): export { Square }
-//   - Permite exportar múltiplos componentes do mesmo arquivo
-//   - Importação: import { Square } from "..."
-// Forma 2 (default export): export default Square
-//   - Permite apenas um componente por arquivo
-//   - Importação: import Square from "..."
-//
-// Este arquivo usa default export, então o componente é o valor padrão do módulo.
-// Importação deste componente:
-//   import QuadradoExemplo from "./components/Quadrado_Exemplo";
-
-// Usando a forma 2 (export default) para exportar este componente
 export default QuadradoExemplo;
+
+

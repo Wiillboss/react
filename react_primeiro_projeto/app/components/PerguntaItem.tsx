@@ -1,12 +1,20 @@
+/**
+ * Arquivo: app/components/PerguntaItem.tsx
+ * Nome: PerguntaItem.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 "use client";
 
 import { useState } from "react";
 import { Pergunta } from "../types/Pergunta";
 
-// Props do componente:
-// - pergunta: dados da pergunta
-// - count: número da pergunta
-// - aoResponder: callback com o resultado da resposta
 type Props = {
     pergunta: Pergunta;
     count: number;
@@ -14,25 +22,25 @@ type Props = {
 }
 
 export const PerguntaItem = ({ pergunta, count, aoResponder }: Props) => {
-    // Marca a opção selecionada ou mantém null quando ainda não houve escolha.
+    
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
-    // Recebe o índice da opção clicada e envia o resultado para o componente pai.
+    
     const checkAnswer = (index: number) => {
-        if (selectedOption !== null) return; // impede múltiplas respostas
+        if (selectedOption !== null) return; 
 
-        const isCorrect = index === pergunta.respostaCorreta; // compara índices
-        setSelectedOption(index); // marca a opção escolhida
+        const isCorrect = index === pergunta.respostaCorreta; 
+        setSelectedOption(index); 
  
         setTimeout(() => {
-            aoResponder({ correto: isCorrect, respostaSelecionada: index, indicePergunta: count - 1 }); // envia resultado para pai
-            setSelectedOption(null); // reseta seleção para próxima pergunta
-        }, 2000); // tempo para mostrar feedback antes de resetar
+            aoResponder({ correto: isCorrect, respostaSelecionada: index, indicePergunta: count - 1 }); 
+            setSelectedOption(null); 
+        }, 2000); 
     };
 
     return (
         <div>
-            {/* Título da pergunta com número e enunciado. */}
+            {}
             <div className="text-3xl font-bold mb-5">{count}.{pergunta.enunciado}</div>
             <div>
                 {pergunta.opcoes.map((opcao, index) => {
@@ -53,3 +61,5 @@ export const PerguntaItem = ({ pergunta, count, aoResponder }: Props) => {
         </div>
     );
 }
+
+

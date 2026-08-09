@@ -1,8 +1,18 @@
-﻿"use client";
+/**
+ * Arquivo: app/estados_eventos/page.tsx
+ * Nome: page.tsx
+ * Tipo: Página de estudo de eventos e estado
+ * Finalidade: esta página reúne exemplos práticos de clique, manipulação de estado, formulários, listas, imagens e quiz em uma única rota didática.
+ * Como funciona: cada seção demonstra um conceito diferente, como onClick, funções reutilizáveis, atualização de estado e renderização dinâmica com base em dados.
+ * Quando usar: use esta página como guia para entender como ações do usuário transformam a interface e como o estado é atualizado em tempo real.
+ *
+ * Observação didática:
+ * - os trechos de código foram organizados em blocos menores para facilitar a leitura e a comparação entre padrões;
+ * - esta explicação fica no topo para orientar a compreensão sem poluir a lógica da interface;
+ * - o foco desta página é mostrar a relação entre evento, usuário, estado e renderização.
+ */
+"use client";
 
-// page.tsx em estados_eventos
-// Esta página reúne exemplos claros de eventos, estado local, formulários,
-// listas, galeria e quiz em uma única rota organizada.
 import { useState, type FormEvent } from "react";
 import { BotaoPersonalizado } from "../components/BotaoPersonalizado";
 import { Pessoa_2 } from "../types/Person_2";
@@ -13,20 +23,6 @@ import { Modal } from "../components/Modal";
 import { perguntas } from "../data/perguntas";
 import { PerguntaItem } from "../components/PerguntaItem";
 import { Resultados } from "../components/Resultados";
-
-// Seções de eventos e reutilização:
-// Estas partes do arquivo ajudam a mostrar como:
-// - um evento de clique pode ser associado a funções diferentes;
-// - uma função pode ser reutilizada com mensagens distintas;
-// - um componente pode receber props para ficar mais flexível.
-//
-// O foco didático é entender a relação entre evento, callback e componente filho.
-
-//explicando detalhadamente e de forma didatica o que aconte na secao de eventos de clique, mostrando como cada botão tem uma função diferente associada ao evento onClick.
-
-//explicando o que está acontecendo dentro do return do componente Secao_Eventos_Clique, detalhando como cada botão é renderizado e como o evento onClick é tratado para cada um deles.
-
-//explicando e exemplificando a diferente entre arrow function e function declaration no contexto do React, mostrando como cada uma pode ser usada para definir funções de callback para eventos.
 
 const Secao_Eventos_Clique = () => {
   const clicar1 = () => alert("Botão clicado 1!");
@@ -61,8 +57,6 @@ const Secao_Eventos_Clique = () => {
   );
 };
 
-// Seção de reutilização de função:
-// mostra como um único callback pode receber mensagens diferentes.
 const Secao_Avisar = () => {
   const avisar = (mensagem: string) => {
     alert(mensagem);
@@ -91,10 +85,6 @@ const Secao_Avisar = () => {
   );
 };
 
-// Seção de botões customizados:
-// Aqui o componente filho recebe texto e callback por props, permitindo que o
-// mesmo componente seja reaproveitado com conteúdos diferentes.
-
 const Secao_Botoes_Customizados = () => {
   const acao1 = () => alert("Botão 1 clicado !");
   const acao2 = () => alert("Botão 2 clicado !");
@@ -113,10 +103,6 @@ const Secao_Botoes_Customizados = () => {
     </section>
   );
 };
-
-// Seção de formulário:
-// Esse exemplo mostra como capturar o evento de submit e impedir o comportamento
-// padrão do navegador, mantendo o controle do fluxo dentro da aplicação.
 
 const Secao_Formulario = () => {
   const aoEnviarFormulario = (event: FormEvent<HTMLFormElement>) => {
@@ -138,10 +124,6 @@ const Secao_Formulario = () => {
     </section>
   );
 };
-
-// Seção de estado básico:
-// Esse exemplo ensina o uso do hook useState para controlar valores simples e
-// também a renderização condicional baseada em estado.
 
 const Secao_Estado_Basico = () => {
   const [mostrarSegredo, setMostrarSegredo] = useState(false);
@@ -177,10 +159,6 @@ const Secao_Estado_Basico = () => {
   );
 };
 
-// Seção de input controlado:
-// Aqui o valor do campo é sempre sincronizado com o estado do componente.
-// Isso permite reagir ao texto digitado em tempo real.
-
 const Secao_Campo_Texto = () => {
   const [entradaNome, setEntradaNome] = useState("");
 
@@ -209,10 +187,6 @@ const Secao_Campo_Texto = () => {
   );
 };
 
-// Seção de atualização sequencial:
-// Neste exemplo, o estado é atualizado três vezes de forma funcional para evitar
-// que as alterações conflitantes usem valores antigos.
-
 const Secao_Estado_Tempo = () => {
   const [contadorTempo, setContadorTempo] = useState(0);
 
@@ -239,10 +213,6 @@ const Secao_Estado_Tempo = () => {
     </section>
   );
 };
-
-// Seção de atualização de objeto no estado:
-// Aqui o estado guarda um objeto com duas propriedades.
-// As funções mostram como atualizar apenas uma parte do objeto sem perder a outra.
 
 const Secao_Objeto_Estado = () => {
   const [nomeCompleto, setNomeCompleto] = useState<Pessoa_2>({
@@ -291,10 +261,6 @@ const Secao_Objeto_Estado = () => {
     </section>
   );
 };
-
-// Seção de lista de tarefas:
-// Este exemplo mostra como um estado pode guardar uma lista de itens e como a
-// interface pode refletir ações como adicionar, marcar e remover tarefas.
 
 const Secao_Lista_Tarefas = () => {
   const [entradaTarefa, setEntradaTarefa] = useState("");
@@ -375,10 +341,6 @@ const Secao_Lista_Tarefas = () => {
   );
 };
 
-// Seção de galeria de imagens:
-// Essa seção mostra como uma lista de itens pode gerar vários elementos visuais
-// e como um clique pode abrir um detalhe em modal.
-
 const Secao_Galeria_Imagens = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
   const [fotoSelecionada, setFotoSelecionada] = useState(listaFotos[0]);
@@ -406,16 +368,12 @@ const Secao_Galeria_Imagens = () => {
   );
 };
 
-// Seção de quiz interativo:
-// Essa seção combina estado, callback e renderização condicional para mostrar
-// uma sequência de perguntas e, ao fim, exibir um resumo de respostas.
-
 const Secao_Quiz = () => {
   const [respostas, setRespostas] = useState<number[]>(new Array(perguntas.length).fill(-1));
   const [mostrarResultado, setMostrarResultado] = useState(false);
   const [perguntaAtual, setPerguntaAtual] = useState(0);
 
-  // Avança para a próxima pergunta somente depois de responder a atual.
+  
   const carregarProximaPergunta = () => {
     if (mostrarResultado) return;
     if (respostas[perguntaAtual] === -1) return;
@@ -427,14 +385,14 @@ const Secao_Quiz = () => {
     }
   };
 
-  // Reinicia o quiz para o estado inicial.
+  
   const reiniciarQuiz = () => {
     setPerguntaAtual(0);
     setRespostas(new Array(perguntas.length).fill(-1));
     setMostrarResultado(false);
   };
 
-  // Armazena a resposta escolhida e avança no fluxo do quiz.
+  
   const processarResposta = (payload: { correto: boolean; respostaSelecionada: number; indicePergunta: number }) => {
     setRespostas((anterior) => {
       const copia = [...anterior];
@@ -451,8 +409,8 @@ const Secao_Quiz = () => {
 
   const perguntaRespondida = respostas[perguntaAtual] !== -1;
 
-  // JSX principal da seção:
-  // mostra a pergunta atual, o bloco de resultados e os botões de navegação.
+  
+  
   return (
     <section className="mb-10 rounded-lg border border-gray-300 bg-white p-6 shadow-sm">
       <h2 className="text-3xl font-bold mb-4">Quiz Interativo</h2>
@@ -526,3 +484,5 @@ const Pagina_Estados_Eventos = () => {
 };
 
 export default Pagina_Estados_Eventos;
+
+

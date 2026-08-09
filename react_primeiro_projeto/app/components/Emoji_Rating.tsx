@@ -1,17 +1,21 @@
-// Emoji_Rating.tsx
-// Componente que exibe uma nota e um emoji de avaliação.
-
-// Props do componente:
-// - rating: valor numérico da avaliação, geralmente entre 0 e 5
-//
-// Esse exemplo mostra como uma prop pode ser processada para gerar uma interface
-// visual interpretável pelo usuário.
+/**
+ * Arquivo: app/components/Emoji_Rating.tsx
+ * Nome: Emoji_Rating.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 type Props = {
     rating: number;
 };
 
 export const Emoji_Rating = ({ rating }: Props) => {
-    // Limita a nota para o intervalo válido.
+    
     const safeRating = Math.max(0, Math.min(rating, 5));
     const rateInt = Math.floor(safeRating);
     const rateDecimal = safeRating - rateInt;
@@ -22,10 +26,12 @@ export const Emoji_Rating = ({ rating }: Props) => {
 
     return (
         <div className="flex items-center text-6xl">
-            {/* Nota numérica formatada */}
+            {}
             <div className="bg-gray-700 p-2 rounded">{safeRating.toFixed(1)}</div>
-            {/* Emoji correspondente à nota */}
+            {}
             <div className="ml-3">{selectedEmoji}{halfStar}</div>
         </div>
     );
 };
+
+

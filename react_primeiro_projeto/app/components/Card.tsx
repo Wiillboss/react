@@ -1,10 +1,15 @@
-// Componente Card:
-// Esse componente recebe um conteúdo filho por meio da prop "children".
-// O tipo React.ReactNode permite passar qualquer coisa renderizável pelo React,
-// como texto, elementos JSX, números, listas e até valores vazios.
-//
-// Em aula, esse exemplo mostra o uso de composição: o pai entrega o conteúdo
-// e o componente Card apenas organiza a estrutura visual do container.
+/**
+ * Arquivo: app/components/Card.tsx
+ * Nome: Card.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 type Props = {
     children: React.ReactNode;
 };
@@ -16,3 +21,5 @@ export const Card = ({ children }: Props) => {
         </div>
     );
 }
+
+

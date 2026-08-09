@@ -1,12 +1,15 @@
-// Componente Card_2_sem_if_ternario:
-// Esse componente recebe duas props:
-// - phrase: frase a ser exibida
-// - author: autor opcional da frase
-//
-// A diferença aqui é que a lógica de exibição do autor é feita com if/else,
-// em vez de usar operador ternário ou coalescência nula.
-//
-// Esse exemplo ajuda a comparar formas diferentes de controlar renderização condicional.
+/**
+ * Arquivo: app/components/Card2SemIfTernario.tsx
+ * Nome: Card2SemIfTernario.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 type Props = {
     phrase: string;
     author?: string;
@@ -29,3 +32,5 @@ export const Card2SemIfTernario = ({ phrase, author }: Props) => {
         );
     }
 }
+
+

@@ -1,14 +1,17 @@
-// Tabela_Alunos.tsx
-// Componente que renderiza uma tabela de estudantes.
-
+/**
+ * Arquivo: app/components/TabelaAlunos.tsx
+ * Nome: TabelaAlunos.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 import Image from 'next/image';
 import { Estudante } from "../types/Student";
-
-// Componente Tabela_Alunos:
-// Recebe a prop "estudantes", que é uma lista de objetos com informações de cada aluno.
-//
-// O componente usa o método map para gerar uma linha da tabela para cada item.
-// Cada linha mostra nome, status, notas e média, usando o avatar com Image do Next.
 
 type Props = {
     estudantes: Estudante[];
@@ -58,3 +61,5 @@ export const TabelaAlunos = ({ estudantes }: Props) => {
         </table>
     );
 };
+
+

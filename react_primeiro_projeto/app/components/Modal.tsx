@@ -1,12 +1,19 @@
+/**
+ * Arquivo: app/components/Modal.tsx
+ * Nome: Modal.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 "use client";
 
 import Image from 'next/image';
 
-// Props do componente Modal:
-// - image: endereço da imagem exibida dentro da modal
-// - closeModal: função para fechar a modal quando o usuário clicar fora da imagem
-//
-// Esse exemplo mostra como um componente de overlay recebe comportamento do componente pai.
 type ModalProps = {
     image: string;
     closeModal: () => void;
@@ -32,3 +39,5 @@ export const Modal = ({ image, closeModal }: ModalProps) => {
         </>
     );
 };
+
+

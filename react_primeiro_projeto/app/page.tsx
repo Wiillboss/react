@@ -1,16 +1,16 @@
-﻿// app/page.tsx
-// Página principal usada para reunir exemplos de componentes, listas e seções de UI.
-//
-// Nesta página, o objetivo didático é mostrar como diferentes blocos de React
-// podem ser montados em uma mesma tela para estudar composição, reutilização e
-// renderização condicional.
-
-// Observação didática:
-// - export default: usado quando a página principal tem uma única exportação padrão
-// - export named: usado para exportar mais de um símbolo com nome explícito
-//
-// Essa convenção ajuda a organizar os imports e deixa a estrutura do projeto mais clara.
-
+/**
+ * Arquivo: app/page.tsx
+ * Nome: page.tsx
+ * Tipo: Página de estudo e demonstração
+ * Finalidade: esta página reúne várias seções que mostram conceitos de React, composição de componentes, props, listas e renderização condicional em uma única tela.
+ * Como funciona: cada seção é um bloco independente; os componentes importados são exibidos em sequência para facilitar a comparação entre diferentes padrões de uso.
+ * Quando usar: use esta página como referência visual para entender como montar telas com componentes pequenos, reutilizáveis e organizados.
+ *
+ * Observação didática:
+ * - as seções ajudam a visualizar o relacionamento entre dados, componentes e interface;
+ * - esta documentação fica no topo do arquivo para orientar a leitura sem misturar com a lógica de execução;
+ * - as funções e componentes internos continuam sem comentários, preservando o código limpo e focado.
+ */
 import QuadradoExemplo from "./components/QuadradoExemplo";
 import { Quadrado } from "./components/Quadrado";
 import { FormularioGeometrico } from "./components/FormularioGeometrico";
@@ -23,11 +23,6 @@ import { listaPessoas } from "./data/lista_pessoas";
 import { AvaliacaoEmoji } from "./components/AvaliacaoEmoji";
 import { TabelaAlunos } from "./components/TabelaAlunos";
 import { estudantes } from "./data/estudantes";
-
-// -----------------------------------------------------------------------------
-// Componente principal exibido na rota `/`.
-// Atualmente a página de estudantes está definida como exportação padrão.
-// -----------------------------------------------------------------------------
 
 const Secao_Componente_Quadrado = () => {
   return (
@@ -42,10 +37,6 @@ const Secao_Componente_Quadrado = () => {
   );
 };
 
-// Seção de formulário geométrico:
-// Essa seção mostra como um componente de formulário pode ser agrupado em um
-// bloco visual reutilizável, com título, descrição e container estilizado.
-
 const Secao_Formulario_Geometrico = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
@@ -57,11 +48,6 @@ const Secao_Formulario_Geometrico = () => {
     </section>
   );
 };
-
-// Seção de pessoas:
-// Essa seção demonstra reutilização de componentes com props diferentes.
-// Cada item mostra como o mesmo padrão visual pode receber dados distintos,
-// como nome, avatar e informações da esposa.
 
 const Secao_Pessoas = () => {
   return (
@@ -97,11 +83,6 @@ const Secao_Pessoas = () => {
   );
 };
 
-// Seção de cards:
-// Essa seção reúne exemplos de composição com diferentes componentes de cartão.
-// Cada card recebe conteúdo e estilo próprios, ilustrando como props e JSX
-// podem ser combinados para criar variações visuais sem duplicar código.
-
 const Secao_Cartoes = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
@@ -128,11 +109,6 @@ const Secao_Cartoes = () => {
     </section>
   );
 };
-
-// Seção de renderização de listas:
-// Aqui o objetivo é mostrar como filtrar e mapear arrays de dados.
-// A renderização condicional também aparece quando a lista é exibida só se houver
-// itens válidos para aquele critério.
 
 const Secao_Renderizando_Listas = () => {
   const programadores = listaPessoas.filter((pessoa) => pessoa.profissao === "Programador");
@@ -207,12 +183,10 @@ const Secao_Renderizando_Listas = () => {
 
 const Secao_Exercicio_Hora = () => {
 
-  //a primeira linha abaixo está obtendo a hora atual formatada como string usando o método toLocaleTimeString() do objeto Date. A segunda linha está obtendo apenas a hora (número inteiro) usando o método getHours() do mesmo objeto Date. Essas informações são usadas para exibir a hora atual e determinar a mensagem de saudação apropriada (bom dia, boa tarde, boa noite) com base no horário do dia.
+  
 
   const horarioAtual = new Date().toLocaleTimeString();
   const hora = new Date().getHours();
-
-//abaixo está a seção de exercício de hora, que exibe a hora atual e uma mensagem de saudação dependendo do período do dia. A hora é obtida usando o objeto Date do JavaScript, e a mensagem é determinada por meio de condições que verificam o valor da hora para exibir "Bom dia!", "Boa tarde!" ou "Boa noite!" conforme apropriado.
 
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
@@ -230,9 +204,6 @@ const Secao_Exercicio_Hora = () => {
   );
 };
 
-// Seção de avaliação com emoji:
-// Essa seção mostra como um valor numérico pode ser convertido em uma interface
-// visual amigável usando um componente específico para avaliação.
   
 const Secao_Rating_Emoji = () => {
   return (
@@ -246,10 +217,6 @@ const Secao_Rating_Emoji = () => {
   );
 };
 
-// Seção de tabela de notas:
-// Essa seção mostra como dados externos podem ser enviados para um componente
-// de tabela, que passa a renderizar a estrutura de forma organizada.
-
 const Secao_Tabela_de_Notas = () => {
   return (
     <section className="rounded-3xl border border-slate-700 bg-slate-900/80 p-8 shadow-xl">
@@ -261,11 +228,6 @@ const Secao_Tabela_de_Notas = () => {
     </section>
   );
 };
-
-// Página de exercícios:
-// Essa página reúne diversas seções didáticas em um único layout.
-// Cada seção é um exemplo isolado, mas o conjunto mostra como a mesma base
-// pode ser organizada em uma interface de estudo e demonstração.
 
 const Pagina_Exercicios = () => {
   return (
@@ -293,7 +255,6 @@ const Pagina_Exercicios = () => {
   );
 };
 
-// EXPORTAÇÃO DEFAULT: páginas do Next.js normalmente exportam um único componente como padrão.
-// Isso permite importar sem chaves em outros arquivos, por exemplo:
-//   import Pagina_Exercicios from "./page";
 export default Pagina_Exercicios;
+
+

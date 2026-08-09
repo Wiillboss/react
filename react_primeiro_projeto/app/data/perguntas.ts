@@ -1,13 +1,15 @@
-// perguntas.ts
-// Arquivo de dados com perguntas de exemplo para o quiz.
-//
-// Esse arquivo exporta um array de objetos do tipo Pergunta.
-// Cada item representa uma pergunta com:
-// - enunciado: texto da pergunta
-// - opcoes: alternativas possíveis
-// - respostaCorreta: índice da alternativa correta
-//
-// Esse exemplo serve como fonte de dados para o componente de quiz.
+/**
+ * Arquivo: app/data/perguntas.ts
+ * Nome: perguntas.ts
+ * Tipo: Arquivo de dados
+ * Finalidade: Este arquivo mantém listas e objetos estáticos usados para alimentar telas, tabelas e exemplos.
+ * Como ler: Consulte este módulo para entender os valores iniciais usados pelo projeto e como eles são exibidos.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 import { Pergunta } from "../types/Pergunta";
 
 export const perguntas: Pergunta[] = [
@@ -27,3 +29,5 @@ export const perguntas: Pergunta[] = [
         respostaCorreta: 1,
     },
 ];
+
+

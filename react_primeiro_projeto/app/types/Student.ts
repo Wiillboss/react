@@ -1,17 +1,15 @@
-// Arquivo de tipo: Student.ts
-// Esse arquivo define dois formatos de dados para estudantes:
-// - Estudante: versão em português, usada no projeto principal
-// - Student: versão em inglês, mantida para compatibilidade com exemplos antigos
-//
-// As propriedades representam:
-// - id: identificador único
-// - ativo/active: estado do estudante
-// - nome/name: nome da pessoa
-// - email: endereço eletrônico
-// - avatar: URL da imagem de perfil
-// - nota1/grade1 e nota2/grade2: notas do estudante
-//
-// Essa divisão ajuda a mostrar como types podem ser reutilizados em diferentes contextos.
+/**
+ * Arquivo: app/types/Student.ts
+ * Nome: Student.ts
+ * Tipo: Definição de tipos
+ * Finalidade: Este arquivo descreve a estrutura dos dados do TypeScript para manter o código previsível e seguro.
+ * Como ler: Use estes tipos como referência para saber quais propriedades cada objeto deve possuir antes de manipular os dados.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 export type Estudante = {
     id: number;
     ativo: boolean;
@@ -31,3 +29,5 @@ export type Student = {
     grade1: number;
     grade2: number;
 };
+
+

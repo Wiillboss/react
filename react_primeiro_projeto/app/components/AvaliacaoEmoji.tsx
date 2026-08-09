@@ -1,15 +1,19 @@
-
+/**
+ * Arquivo: app/components/AvaliacaoEmoji.tsx
+ * Nome: AvaliacaoEmoji.tsx
+ * Tipo: Componente React
+ * Finalidade: Este componente gera parte da interface e recebe dados por meio de props para ser reutilizado.
+ * Como ler: Importe este componente em outra tela e passe valores para personalizar texto, imagem, estilo ou comportamento.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 type Props = {
     avaliacao: number;
 };
 
-// Componente AvaliacaoEmoji:
-// Esse componente recebe a prop "avaliacao" com uma nota numérica.
-// A nota é normalizada para ficar entre 0 e 5, depois é convertida em:
-// - uma parte inteira para escolher o emoji
-// - uma parte decimal para decidir se deve aparecer uma estrela metade
-//
-// Esse exemplo ensina como transformar dados numéricos em feedback visual.
 export const AvaliacaoEmoji = ({ avaliacao }: Props) => {
     
     const safeRating = Math.max(0, Math.min(avaliacao, 5));
@@ -20,10 +24,10 @@ export const AvaliacaoEmoji = ({ avaliacao }: Props) => {
     const selectedEmoji = emojis[rateInt - 1] || emojis[0];
     const halfStar = rateDecimal >= 0.5 ? "⭐" : "";
 
-    // JSX final do componente:
-    // - exibe a nota formatada
-    // - mostra o emoji correspondente
-    // - inclui uma estrela opcional quando a avaliação é meia nota
+    
+    
+    
+    
     return (
         <div className="flex items-center text-6xl">
             {}
@@ -33,3 +37,5 @@ export const AvaliacaoEmoji = ({ avaliacao }: Props) => {
         </div>
     );
 };
+
+

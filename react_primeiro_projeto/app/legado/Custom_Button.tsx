@@ -1,13 +1,20 @@
-// Custom_Button.tsx (legado)
-// Arquivo legado de botão. Mantido para referência, mas o componente principal em português é Botao_Personalizado.
-
+/**
+ * Arquivo: app/legado/Custom_Button.tsx
+ * Nome: Custom_Button.tsx
+ * Tipo: Arquivo legado
+ * Finalidade: Este arquivo foi mantido como referência histórica para comparar com as versões atuais do projeto.
+ * Como ler: Compare este arquivo com a versão atual para entender a evolução da solução e os padrões de estudo.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 type Props = {
-    rotulo: string; // Texto exibido no botão
-    aoClicar?: () => void; // Função executada ao clicar
+    rotulo: string; 
+    aoClicar?: () => void; 
 };
 
-// Arquivo legado com o componente Custom_Button.
-// Mantido apenas como referência histórica; o componente principal em português é Botao_Personalizado.
 export const Custom_Button = ({ rotulo, aoClicar }: Props) => {
     return (
         <button
@@ -18,3 +25,5 @@ export const Custom_Button = ({ rotulo, aoClicar }: Props) => {
         </button>
     );
 };
+
+

@@ -1,13 +1,19 @@
-// Arquivo de tipo: Questions.ts
-// Esse tipo representa uma pergunta em inglês, com:
-// - questions: texto da pergunta
-// - options: conjunto de alternativas
-// - answer: índice da resposta correta
-//
-// Esse formato é útil em exercícios que demonstram estruturas de dados em
-// outros idiomas para comparação com a versão em português.
+/**
+ * Arquivo: app/types/Questions.ts
+ * Nome: Questions.ts
+ * Tipo: Definição de tipos
+ * Finalidade: Este arquivo descreve a estrutura dos dados do TypeScript para manter o código previsível e seguro.
+ * Como ler: Use estes tipos como referência para saber quais propriedades cada objeto deve possuir antes de manipular os dados.
+ *
+ * Observação didática:
+ * - este arquivo funciona como referência do papel da parte do projeto;
+ * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
+ * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
+ */
 export type Question = {
     questions: string;
     options: string[];
     answer: number;
 };
+
+
