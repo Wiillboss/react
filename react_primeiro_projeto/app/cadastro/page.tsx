@@ -35,7 +35,7 @@ const Page = () => {
                 action="/api/cadastro"
                 method="POST"
                 onSubmit={handleSubmit}>
-                <label htmlFor="nome">Nome:</label>
+                <label htmlFor="nome" className="font-bold">Nome:</label>
                 <input
                     className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-2 w-68"
                     type="text"
@@ -46,7 +46,7 @@ const Page = () => {
                     required
                 />
                 <br />
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email" className="font-bold">Email:</label>
                 <input
                     className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-3 w-68"
                     type="email"
@@ -57,7 +57,7 @@ const Page = () => {
                     required
                 />
                 <br />
-                <label htmlFor="senha">Senha:</label>
+                <label htmlFor="senha" className="font-bold">Senha:</label>
                 <input
                     className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-1 w-68"
                     type="password"
