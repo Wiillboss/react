@@ -35,6 +35,7 @@ const Page = () => {
                 action="/api/cadastro"
                 method="POST"
                 onSubmit={handleSubmit}>
+                    
                 <label htmlFor="nome" className="font-bold">Nome:</label>
                 <input
                     className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-2 w-68"
@@ -45,7 +46,9 @@ const Page = () => {
                     onChange={(e) => setNome(e.target.value)}
                     required
                 />
+
                 <br />
+
                 <label htmlFor="email" className="font-bold">Email:</label>
                 <input
                     className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-3 w-68"
@@ -56,7 +59,9 @@ const Page = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
+
                 <br />
+
                 <label htmlFor="senha" className="font-bold">Senha:</label>
                 <input
                     className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-1 w-68"
@@ -68,18 +73,19 @@ const Page = () => {
                     onChange={(e) => setSenha(e.target.value)}
                     required
                 />
+
                 <br />
+
                 {error && <p className="text-red-400 mb-3">{error}</p>}
+                
                 <button
                     className="bg-white hover:bg-gray-500 text-blue-500 font-bold py-2 px-4 rounded"
-                    type="submit"
-                >
+                    type="submit">
                     Entrar
                 </button>
                 <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-10 rounded"
-                    type="submit"
-                >
+                    type="submit">
                     Cadastrar
                 </button>
             </form>
