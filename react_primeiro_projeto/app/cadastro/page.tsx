@@ -16,6 +16,9 @@
 
 import { useState } from "react";
 
+//Dicas: nunca tenha dois botóes de submit no mesmo formulário, pois o navegador não sabe qual botão foi clicado. Use um botão de submit e outro de reset ou apenas um botão de submit.
+
+
 const Page = () => {
     // Estado para armazenar os valores dos campos do formulário
     const [nome, setNome] = useState("");
@@ -85,8 +88,14 @@ const Page = () => {
                     type="submit">
                     Entrar
                 </button>
+
+                <br/>
+
+                <label htmlFor="nome" className="font-bold">Não possui conta?</label>
+                
+                <br/>
                 <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-10 rounded"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                     type="submit">
                     Cadastrar
                 </button>
