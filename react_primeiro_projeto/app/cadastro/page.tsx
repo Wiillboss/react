@@ -10,12 +10,14 @@
  * - mantenha explicações apenas no início do arquivo e fora de funções e componentes;
  * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
  */
+
+
 "use client";
 
 import { useState } from "react";
 
 const Page = () => {
-    
+    // Estado para armazenar os valores dos campos do formulário
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
