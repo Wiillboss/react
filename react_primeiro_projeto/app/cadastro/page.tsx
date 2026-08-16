@@ -83,17 +83,14 @@ const Page = () => {
 
                 {error && <p className="text-red-400 mb-3">{error}</p>}
                 
-                <button
-                    className="bg-white hover:bg-gray-500 text-blue-500 font-bold py-2 px-4 rounded"
-                    type="submit">
-                    Entrar
-                </button>
-                
-                <button
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    type="submit">
-                    Cadastrar Usuário 
-                </button>
+                <div className="flex justify-between">
+                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" >
+                        Entrar
+                    </button>
+                    <button className="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" >
+                        Cadastrar Usuário
+                    </button>
+                </div>
             </form>
         </div>
     );
