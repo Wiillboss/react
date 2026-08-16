@@ -43,7 +43,7 @@ const Page = () => {
                     
                 <label htmlFor="nome" className="font-bold">Nome:</label>
                 <input
-                    className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-2 w-68"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-68"
                     type="text"
                     id="nome"
                     name="nome"
@@ -56,7 +56,7 @@ const Page = () => {
 
                 <label htmlFor="email" className="font-bold">Email:</label>
                 <input
-                    className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-3 w-68"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-68"
                     type="email"
                     id="email"
                     name="email"
@@ -69,7 +69,7 @@ const Page = () => {
 
                 <label htmlFor="senha" className="font-bold">Senha:</label>
                 <input
-                    className="bg-white text-gray-800 rounded px-3 py-2 mb-4 ml-1 w-68"
+                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-68"
                     type="password"
                     id="senha"
                     name="senha"
@@ -87,7 +87,7 @@ const Page = () => {
                     <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" >
                         Entrar
                     </button>
-                    <button className="bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" >
+                    <button className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded" >
                         Cadastrar Usuário
                     </button>
                 </div>
