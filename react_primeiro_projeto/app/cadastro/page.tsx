@@ -26,11 +26,13 @@ const Page = () => {
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
     
+    
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError("");
     };
 
+    //explicando o return
     return (
         
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
