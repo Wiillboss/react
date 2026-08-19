@@ -90,7 +90,7 @@ const Page = () => {
                         Entrar
                     </button>
                     <button className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded" >
-                        Cadastrar Usuário
+                        Cadastrar Novo Usuário
                     </button>
                 </div>
             </form>
