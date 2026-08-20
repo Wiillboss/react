@@ -1,21 +1,20 @@
-
-import { useState } from "react";
+"use client";
+import { useState, type FormEvent } from "react";
 //sempre deixar um componente com letra maiuscula no incio
 
 export const Tela_Login = () => {
     // Estado para armazenar os valores dos campos do formulário
+    // Explicando o uso do useState: useState é um hook do React que permite adicionar estado a componentes funcionais. Ele retorna um par: o valor atual do estado e uma função para atualizá-lo. No caso, estamos usando useState para armazenar os valores dos campos de nome, email e senha, bem como para gerenciar mensagens de erro.
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
-    
-    
-    const handleSubmit = async (e: React.FormEvent) => {
+    // Explicando o handleSubmit: Esta função é chamada quando o formulário é enviado. Ela previne o comportamento padrão do formulário (que recarregaria a página) e limpa qualquer mensagem de erro existente. No futuro, você pode adicionar lógica para validar os dados do formulário ou enviar os dados para um servidor.    
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setError("");
     };
 
-    //explicando o return
     return (
         
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">

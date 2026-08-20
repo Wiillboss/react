@@ -14,7 +14,7 @@
 
 
 "use client";
-import { Tela_Login } from "../components/cadastro";
+import { Tela_Login } from "../components/Cadastro";
 
 //Dicas: nunca tenha dois botóes de submit no mesmo formulário, pois o navegador não sabe qual botão foi clicado. Use um botão de submit e outro de reset ou apenas um botão de submit.
 
