@@ -29,7 +29,7 @@ export const Formulario_Pessoa_Cadastro = () => {
                         id="sobrenome"
                         name="sobrenome"
                         type="text"
-                        placeholder="SobreNome"
+                        placeholder="Sobrenome"
                     />
                 </div>
                 <div className="mb-4 flex justify-between">
@@ -78,6 +78,30 @@ export const Formulario_Pessoa_Cadastro = () => {
                         name="dataNascimento"
                         type="date"
                         placeholder="Data de nascimento"
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="endereco">
+                        Endereço
+                    </label>
+                    <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                        id="endereco"
+                        name="endereco"
+                        type="text"
+                        placeholder="Endereço"
+                    />
+                </div>
+                <div className="mb-4">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="numero">
+                        Número
+                    </label>
+                    <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                        id="numero"
+                        name="numero"
+                        type="number"
+                        placeholder="Número"
                     />
                 </div>
                 <button
