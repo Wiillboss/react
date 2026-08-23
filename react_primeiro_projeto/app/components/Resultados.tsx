@@ -22,14 +22,8 @@ export const Resultados = ({ respostas, perguntas }: Props) => {
         <div className="p-5 text-center">
             {perguntas.map((pergunta, index) => {
                 
-                
-                
                 const estaCorreta = pergunta.respostaCorreta === respostas[index];
 
-                
-                
-                
-                
                 const respostaSelecionada = pergunta.opcoes[respostas[index]] || "Sem resposta";
 
                 return (

@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 export const Tela_Login = () => {
     // Estado para armazenar os valores dos campos do formulário
     // Explicando o uso do useState: useState é um hook do React que permite adicionar estado a componentes funcionais. Ele retorna um par: o valor atual do estado e uma função para atualizá-lo. No caso, estamos usando useState para armazenar os valores dos campos de nome, email e senha, bem como para gerenciar mensagens de erro.
-    const [nome, setNome] = useState("");
+    const [login, setLogin] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [error, setError] = useState("");
@@ -25,14 +25,14 @@ export const Tela_Login = () => {
                 method="POST"
                 onSubmit={handleSubmit}>
                     
-                <label htmlFor="nome" className="font-bold">Nome:</label>
+                <label htmlFor="login" className="font-bold">Login:</label>
                 <input
                     className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-68"
                     type="text"
-                    id="nome"
-                    name="nome"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
+                    id="login"
+                    name="login"
+                    value={login}
+                    onChange={(e) => setLogin(e.target.value)}
                     required
                 />
 

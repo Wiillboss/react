@@ -32,29 +32,30 @@ export const Formulario_Pessoa_Cadastro = () => {
                         placeholder="Sobrenome"
                     />
                 </div>
-                <div className="mb-4 flex justify-between">
+                <div >
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="sexo">
                         Sexo
                     </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                            type="radio"
-                            name="sexo"
-                            value="masculino"
-                            className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span>Masculino</span>
-                        </label>
-
-                        <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                            type="radio"
-                            name="sexo"
-                            value="feminino"
-                            className="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span>Feminino</span>
-                        </label>
+                        <div className="mb-4 flex justify-between shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline">
+                            <label className="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="sexo"
+                                value="masculino"
+                                className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                            />
+                            <span>Masculino</span>
+                            </label>
+                            <label className="flex items-center gap-2 cursor-pointer">
+                            <input
+                                type="radio"
+                                name="sexo"
+                                value="feminino"
+                                className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                            />
+                            <span>Feminino</span>
+                            </label>
+                        </div>
                 </div>
                 <div className="mb-4">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
@@ -111,7 +112,7 @@ export const Formulario_Pessoa_Cadastro = () => {
                             Registrar
                         </button>
                         <button
-                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="bg-blue-500 hover:bg-blue-950 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit">
                             Sair
                         </button>
