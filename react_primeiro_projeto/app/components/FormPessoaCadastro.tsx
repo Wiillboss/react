@@ -21,6 +21,42 @@ export const Formulario_Pessoa_Cadastro = () => {
                     />
                 </div>
                 <div className="mb-4">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="sobrenome">
+                        Sobrenome
+                    </label>
+                    <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                        id="sobrenome"
+                        name="sobrenome"
+                        type="text"
+                        placeholder="SobreNome"
+                    />
+                </div>
+                <div className="mb-4 flex justify-between">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="sexo">
+                        Sexo
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                            type="radio"
+                            name="sexo"
+                            value="masculino"
+                            className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                        />
+                        <span>Masculino</span>
+                        </label>
+
+                        <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                            type="radio"
+                            name="sexo"
+                            value="feminino"
+                            className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                        />
+                        <span>Feminino</span>
+                        </label>
+                </div>
+                <div className="mb-4">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
                         E-mail
                     </label>
