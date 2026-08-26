@@ -3,7 +3,7 @@
 export const Formulario_Pessoa_Cadastro = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white ">
-            <h1 className="text-3xl font-bold mb-4">Pessoa</h1>
+            <h1 className="text-3xl font-bold mb-4">Dados</h1>
             <form
                 className="bg-gray-700 p-6 rounded shadow-md w-96"
                 action="/api/cadastro"
