@@ -1,4 +1,4 @@
-
+// não adicionar "use client" no início do arquivo, pois isso fará com que o formulário seja renderizado no lado do cliente, o que não é desejado neste caso. O formulário deve ser renderizado no lado do servidor para garantir a segurança e a integridade dos dados enviados.
 
 export const Formulario_Pessoa_Cadastro = () => {
     return (
