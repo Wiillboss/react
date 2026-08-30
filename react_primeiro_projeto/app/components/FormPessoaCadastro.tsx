@@ -1,5 +1,7 @@
 // não adicionar "use client" no início do arquivo, pois isso fará com que o formulário seja renderizado no lado do cliente, o que não é desejado neste caso. O formulário deve ser renderizado no lado do servidor para garantir a segurança e a integridade dos dados enviados.
 
+//explicando o const formulario_Pessoa_Cadastro: O código define um componente funcional React chamado Formulario_Pessoa_Cadastro. Este componente renderiza um formulário de cadastro de pessoa com campos para nome, sobrenome, sexo, e-mail, data de nascimento, endereço, número e cidade. O formulário é estilizado usando classes do Tailwind CSS e envia os dados para a rota "/api/cadastro" via método POST quando o botão "Registrar" é clicado. Além disso, há um botão "Sair" que também está presente no formulário, mas não possui uma ação definida.
+
 export const Formulario_Pessoa_Cadastro = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white ">
