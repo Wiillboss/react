@@ -2,12 +2,14 @@
 
 //explicando o const formulario_Pessoa_Cadastro: O código define um componente funcional React chamado Formulario_Pessoa_Cadastro. Este componente renderiza um formulário de cadastro de pessoa com campos para nome, sobrenome, sexo, e-mail, data de nascimento, endereço, número e cidade. O formulário é estilizado usando classes do Tailwind CSS e envia os dados para a rota "/api/cadastro" via método POST quando o botão "Registrar" é clicado. Além disso, há um botão "Sair" que também está presente no formulário, mas não possui uma ação definida.
 
+//para adicionar espaçoas especificos no tailwind é só usar [] e colocar o valor dentro, por exemplo: mt-[10px] para adicionar uma margem superior de 10px. Isso permite maior flexibilidade na personalização do layout, especialmente quando os valores padrão do Tailwind não atendem às necessidades específicas do design.
+
 export const Formulario_Pessoa_Cadastro = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white ">
             <h1 className="text-3xl font-bold mb-4">Dados</h1>
             <form
-                className="bg-gray-700 p-6 rounded shadow-md w-96"
+                className="bg-gray-700 p-6 rounded shadow-md w-lg"
                 action="/api/cadastro"
                 method="POST">
                 <div className="mb-4">
