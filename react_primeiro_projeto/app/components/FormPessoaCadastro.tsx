@@ -4,6 +4,8 @@
 
 //para adicionar espaçoas especificos no tailwind é só usar [] e colocar o valor dentro, por exemplo: mt-[10px] para adicionar uma margem superior de 10px. Isso permite maior flexibilidade na personalização do layout, especialmente quando os valores padrão do Tailwind não atendem às necessidades específicas do design.
 
+//dicas importantes sobre posicionamento de DIVs e botões em tailwind 
+
 export const Formulario_Pessoa_Cadastro = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white ">

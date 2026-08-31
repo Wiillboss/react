@@ -20,14 +20,14 @@ export const Tela_Login = () => {
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
             <h1 className="text-3xl font-bold mb-4">Seja bem vindo</h1>
             <form
-                className="bg-gray-700 p-6 rounded shadow-md w-96"
+                className="bg-gray-700 p-6 rounded shadow-md w-lg"
                 action="/api/cadastro"
                 method="POST"
                 onSubmit={handleSubmit}>
                     
                 <label htmlFor="login" className="font-bold">Login:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-68"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-96"
                     type="text"
                     id="login"
                     name="login"
@@ -40,7 +40,7 @@ export const Tela_Login = () => {
 
                 <label htmlFor="email" className="font-bold">Email:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-68"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-96"
                     type="email"
                     id="email"
                     name="email"
@@ -53,7 +53,7 @@ export const Tela_Login = () => {
 
                 <label htmlFor="senha" className="font-bold">Senha:</label>
                 <input
-                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-68"
+                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-96"
                     type="password"
                     id="senha"
                     name="senha"
@@ -97,14 +97,14 @@ export const Tela_Novo_usuário = () =>{
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
             <h1 className="text-3xl font-bold mb-4">Novo Cadastro</h1>
             <form
-                className="bg-gray-700 p-6 rounded shadow-md w-96"
+                className="bg-gray-700 p-6 rounded shadow-md w-lg"
                 action="/api/cadastro"
                 method="POST"
                 onSubmit={handleSubmit}>
                     
                 <label htmlFor="novo_login" className="font-bold">Login:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-68"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-96"
                     type="text"
                     id="novo_login"
                     name="novo_login"
@@ -117,7 +117,7 @@ export const Tela_Novo_usuário = () =>{
 
                 <label htmlFor="novo_email" className="font-bold">Email:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-68"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-96"
                     type="novo_email"
                     id="novo_email"
                     name="novo_email"
@@ -130,7 +130,7 @@ export const Tela_Novo_usuário = () =>{
 
                 <label htmlFor="novo_senha" className="font-bold">Senha:</label>
                 <input
-                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-68"
+                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-96"
                     type="novo_password"
                     id="novo_senha"
                     name="novo_senha"
