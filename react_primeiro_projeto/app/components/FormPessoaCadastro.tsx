@@ -4,7 +4,7 @@
 
 //para adicionar espaçoas especificos no tailwind é só usar [] e colocar o valor dentro, por exemplo: mt-[10px] para adicionar uma margem superior de 10px. Isso permite maior flexibilidade na personalização do layout, especialmente quando os valores padrão do Tailwind não atendem às necessidades específicas do design.
 
-//dicas importantes sobre posicionamento de DIVs e botões em tailwind 
+//posicionamentos em tailwind: Para centralizar elementos, você pode usar classes como flex, items-center e justify-center. Para definir a altura mínima da tela, use min-h-screen. Para adicionar preenchimento, use py-2 ou outras classes de espaçamento. Para definir cores de fundo e texto, use bg-gray-800 e text-white, respectivamente. Essas classes ajudam a criar layouts responsivos e visualmente atraentes.
 
 export const Formulario_Pessoa_Cadastro = () => {
     return (
