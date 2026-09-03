@@ -40,7 +40,7 @@ export const Tela_Login = () => {
 
                 <label htmlFor="email" className="font-bold">Email:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-101.25"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-100.25"
                     type="email"
                     id="email"
                     name="email"
