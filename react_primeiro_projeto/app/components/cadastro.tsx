@@ -27,7 +27,7 @@ export const Tela_Login = () => {
                     
                 <label htmlFor="login" className="font-bold">Login:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-[405px]"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
                     type="text"
                     id="login"
                     name="login"
@@ -40,7 +40,7 @@ export const Tela_Login = () => {
 
                 <label htmlFor="email" className="font-bold">Email:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-[402px]"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-101.25"
                     type="email"
                     id="email"
                     name="email"
@@ -53,7 +53,7 @@ export const Tela_Login = () => {
 
                 <label htmlFor="senha" className="font-bold">Senha:</label>
                 <input
-                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-[405px]"
+                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-101.25"
                     type="password"
                     id="senha"
                     name="senha"
