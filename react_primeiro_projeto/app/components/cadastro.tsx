@@ -68,10 +68,10 @@ export const Tela_Login = () => {
                 {error && <p className="text-red-400 mb-3">{error}</p>}
                 
                 <div className="flex justify-between">
-                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" >
+                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer" >
                         Entrar
                     </button>
-                    <button className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded" >
+                    <button className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded cursor-pointer" >
                         Cadastrar Novo Usuário
                     </button>
                 </div>
@@ -145,10 +145,10 @@ export const Tela_Novo_usuário = () =>{
                 {novo_error && <p className="text-red-400 mb-3">{novo_error}</p>}
                 
                 <div className="flex justify-between">
-                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" >
+                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer" >
                         Cadastrar
                     </button>
-                    <button className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded" >
+                    <button className="bg-blue-200 hover:bg-blue-400 text-black font-bold py-2 px-4 rounded cursor-pointer" >
                         Voltar
                     </button>
                 </div>
