@@ -104,7 +104,7 @@ export const Tela_Novo_usuário = () =>{
                     
                 <label htmlFor="novo_login" className="font-bold">Login:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-96"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
                     type="text"
                     id="novo_login"
                     name="novo_login"
@@ -117,7 +117,7 @@ export const Tela_Novo_usuário = () =>{
 
                 <label htmlFor="novo_email" className="font-bold">Email:</label>
                 <input
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-96"
+                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-3 w-100.25"
                     type="novo_email"
                     id="novo_email"
                     name="novo_email"
@@ -130,7 +130,7 @@ export const Tela_Novo_usuário = () =>{
 
                 <label htmlFor="novo_senha" className="font-bold">Senha:</label>
                 <input
-                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-96"
+                    className="bg-white text-gray-800  hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-1 w-101.25"
                     type="novo_password"
                     id="novo_senha"
                     name="novo_senha"
