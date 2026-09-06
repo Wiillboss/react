@@ -15,6 +15,7 @@ export const Tela_Login = () => {
         setError("");
     };
 
+    //explicando o return: O return é usado para renderizar o JSX (uma sintaxe que permite escrever HTML dentro do JavaScript) que define a estrutura visual do componente. Ele retorna um formulário de login estilizado com Tailwind CSS, contendo campos para login, email e senha, além de botões para enviar o formulário ou cadastrar um novo usuário. Se houver algum erro, ele será exibido abaixo dos campos do formulário.
     return (
         
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
