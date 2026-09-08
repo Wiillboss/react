@@ -1,3 +1,11 @@
+//explicando sobre os tipos de display existentes no tailwindcss: 
+// - block: faz o elemento ocupar toda a largura disponível
+// - inline: faz o elemento ocupar apenas a largura necessária
+// - inline-block: combina as características dos dois anteriores
+// - flex: habilita o layout flexível
+// - grid: habilita o layout em grade
+
+//explicando que com a responsividade do tailwindcss, podemos usar classes como "sm:", "md:", "lg:", "xl:" e "2xl:" para aplicar estilos diferentes em diferentes tamanhos de tela. Por exemplo, "sm:w-full" aplicaria a largura completa em telas pequenas, enquanto "md:w-1/2" aplicaria metade da largura em telas médias.
 
 export const Tela_login_melhorada = () => {
     return (
