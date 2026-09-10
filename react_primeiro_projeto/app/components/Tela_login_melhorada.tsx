@@ -9,6 +9,8 @@
 
 //explicando como colocar outro componente como endereço de destino após clicar em um botão, podemos usar a tag <a> com o atributo href, ou podemos usar o componente Link do Next.js para navegação interna. Por exemplo, <Link href="/cadastro">Cadastre-se</Link>.
 
+//explicando sobre o flexbox do tailwindcss, podemos usar classes como "flex", "flex-row", "flex-col", "justify-center", "items-center" e "gap-4" para controlar a direção, alinhamento e espaçamento dos elementos dentro de um contêiner flexível. Por exemplo, "flex flex-col items-center gap-4" criaria uma coluna de elementos centralizados com espaçamento entre eles.
+
 import Link from "next/link";
 
 export const Tela_login_melhorada = () => {
