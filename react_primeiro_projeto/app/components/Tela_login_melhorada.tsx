@@ -33,7 +33,7 @@ export const Tela_login_melhorada = () => {
             </div>
             
             <div className="my-6 text-center">
-                <button className=" w-lg p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold">Entrar</button>
+                <button className=" w-lg p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer">Entrar</button>
             </div>
         </div>
         

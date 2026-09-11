@@ -15,7 +15,9 @@
 
 "use client";
 import { Tela_Login, Tela_Novo_usuário } from "../components/Cadastro";
+import { Consulta_Horas } from "../components/Consulta_Horas";
 import { Formulario_Pessoa_Cadastro } from "../components/FormPessoaCadastro";
+import { Inserindo_Horas } from "../components/Inserindo_Horas";
 import { Tela_login_melhorada } from "../components/Tela_login_melhorada";
 
 //Dicas: nunca tenha dois botóes de submit no mesmo formulário, pois o navegador não sabe qual botão foi clicado. Use um botão de submit e outro de reset ou apenas um botão de submit.
@@ -30,6 +32,8 @@ const Page = () => {
             <Tela_Login/>
             <Tela_Novo_usuário/>
             <Formulario_Pessoa_Cadastro/>
+            <Consulta_Horas/>
+            <Inserindo_Horas/>
         </div>    
     );
 }
