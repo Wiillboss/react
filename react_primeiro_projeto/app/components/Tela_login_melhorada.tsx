@@ -11,6 +11,9 @@
 
 //explicando sobre o flexbox do tailwindcss, podemos usar classes como "flex", "flex-row", "flex-col", "justify-center", "items-center" e "gap-4" para controlar a direção, alinhamento e espaçamento dos elementos dentro de um contêiner flexível. Por exemplo, "flex flex-col items-center gap-4" criaria uma coluna de elementos centralizados com espaçamento entre eles.
 
+//explicando sobre aling-items e justify-content do flexbox, podemos usar classes como "items-start", "items-center", "items-end", "justify-start", "justify-center" e "justify-end" para controlar o alinhamento dos elementos dentro de um contêiner flexível. Por exemplo, "flex items-center justify-center" centralizaria os elementos tanto vertical quanto horizontalmente.
+
+
 import Link from "next/link";
 
 export const Tela_login_melhorada = () => {
