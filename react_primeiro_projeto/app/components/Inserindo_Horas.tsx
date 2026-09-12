@@ -18,6 +18,17 @@ export const Inserindo_Horas = () => {
                     />
                 </div>
                 <div className="mb-4">
+                    <label className="block text-lg mb-2" htmlFor="data">
+                        Data
+                    </label>
+                    <input
+                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
+                        type="date"
+                        id="data"
+                        placeholder="Digite a data"
+                    />
+                </div>
+                <div className="mb-4">
                     <label className="block text-lg mb-2" htmlFor="entrada">
                         Entrada
                     </label>
