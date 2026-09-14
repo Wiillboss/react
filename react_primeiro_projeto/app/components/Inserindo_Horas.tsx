@@ -80,6 +80,7 @@ export const Inserindo_Horas = () => {
                         Inserir Horas
                     </button>
                     <button
+                        onClick={() => alert("Hora fora do horário inserida!")}
                         className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer"
                         type="submit"
                     >
