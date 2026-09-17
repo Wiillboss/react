@@ -1,3 +1,4 @@
+//explicando o grid responsivo do tailwindcss
 
 export const Grid_Responsivo = () => {
     return (

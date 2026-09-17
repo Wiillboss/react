@@ -1,0 +1,57 @@
+[
+  {
+    "route": "/estados_eventos",
+    "firstLoadUncompressedJsBytes": 544413,
+    "firstLoadChunkPaths": [
+      ".next-local\\static\\chunks\\01xlw8hd842-c.js",
+      ".next-local\\static\\chunks\\0d3shmwh5_nmn.js",
+      ".next-local\\static\\chunks\\0al8_hto5ylad.js",
+      ".next-local\\static\\chunks\\0gxwci3e5-ykx.js",
+      ".next-local\\static\\chunks\\0dgq26a5_oy.a.js",
+      ".next-local\\static\\chunks\\10~x95jhs6ns3.js",
+      ".next-local\\static\\chunks\\062hzijh369a_.js",
+      ".next-local\\static\\chunks\\turbopack-0.t2y2p4y05zz.js"
+    ]
+  },
+  {
+    "route": "/cadastro",
+    "firstLoadUncompressedJsBytes": 533931,
+    "firstLoadChunkPaths": [
+      ".next-local\\static\\chunks\\01xlw8hd842-c.js",
+      ".next-local\\static\\chunks\\0d3shmwh5_nmn.js",
+      ".next-local\\static\\chunks\\06173~x9~u_ff.js",
+      ".next-local\\static\\chunks\\0gxwci3e5-ykx.js",
+      ".next-local\\static\\chunks\\0dgq26a5_oy.a.js",
+      ".next-local\\static\\chunks\\10~x95jhs6ns3.js",
+      ".next-local\\static\\chunks\\062hzijh369a_.js",
+      ".next-local\\static\\chunks\\turbopack-0.t2y2p4y05zz.js"
+    ]
+  },
+  {
+    "route": "/",
+    "firstLoadUncompressedJsBytes": 529089,
+    "firstLoadChunkPaths": [
+      ".next-local\\static\\chunks\\01xlw8hd842-c.js",
+      ".next-local\\static\\chunks\\0d3shmwh5_nmn.js",
+      ".next-local\\static\\chunks\\0_g~~t~avjmph.js",
+      ".next-local\\static\\chunks\\0gxwci3e5-ykx.js",
+      ".next-local\\static\\chunks\\0dgq26a5_oy.a.js",
+      ".next-local\\static\\chunks\\10~x95jhs6ns3.js",
+      ".next-local\\static\\chunks\\062hzijh369a_.js",
+      ".next-local\\static\\chunks\\turbopack-0.t2y2p4y05zz.js"
+    ]
+  },
+  {
+    "route": "/_not-found",
+    "firstLoadUncompressedJsBytes": 513849,
+    "firstLoadChunkPaths": [
+      ".next-local\\static\\chunks\\01xlw8hd842-c.js",
+      ".next-local\\static\\chunks\\0d3shmwh5_nmn.js",
+      ".next-local\\static\\chunks\\0gxwci3e5-ykx.js",
+      ".next-local\\static\\chunks\\0dgq26a5_oy.a.js",
+      ".next-local\\static\\chunks\\10~x95jhs6ns3.js",
+      ".next-local\\static\\chunks\\062hzijh369a_.js",
+      ".next-local\\static\\chunks\\turbopack-0.t2y2p4y05zz.js"
+    ]
+  }
+]
