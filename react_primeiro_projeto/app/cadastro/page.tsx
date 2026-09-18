@@ -17,7 +17,6 @@
 import { Tela_Login, Tela_Novo_usuário } from "../components/Cadastro";
 import { Consulta_Horas } from "../components/Consulta_Horas";
 import { Formulario_Pessoa_Cadastro } from "../components/FormPessoaCadastro";
-import { Grid_Responsivo } from "../components/Grid_Responsivo";
 import { Inserindo_Horas } from "../components/Inserindo_Horas";
 import { Tela_login_melhorada } from "../components/Tela_login_melhorada";
 
@@ -35,7 +34,6 @@ const Page = () => {
             <Formulario_Pessoa_Cadastro/>
             <Consulta_Horas/>
             <Inserindo_Horas/>
-            <Grid_Responsivo/>
         </div>    
     );
 }
