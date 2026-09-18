@@ -15,11 +15,11 @@
   },
   {
     "route": "/cadastro",
-    "firstLoadUncompressedJsBytes": 533931,
+    "firstLoadUncompressedJsBytes": 533223,
     "firstLoadChunkPaths": [
       ".next-local\\static\\chunks\\01xlw8hd842-c.js",
       ".next-local\\static\\chunks\\0d3shmwh5_nmn.js",
-      ".next-local\\static\\chunks\\06173~x9~u_ff.js",
+      ".next-local\\static\\chunks\\0a1jg9mhlokjw.js",
       ".next-local\\static\\chunks\\0gxwci3e5-ykx.js",
       ".next-local\\static\\chunks\\0dgq26a5_oy.a.js",
       ".next-local\\static\\chunks\\10~x95jhs6ns3.js",
