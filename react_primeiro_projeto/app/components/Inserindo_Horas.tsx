@@ -115,7 +115,7 @@ export const Inserindo_Horas = () => {
                         className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer"
                         type="button"
                     >
-                        Horas Fora do Horário
+                        Hora Fora do Horário
                     </button>
 
                 </div>

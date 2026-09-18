@@ -1042,7 +1042,7 @@ const Inserindo_Horas = ()=>{
                                 onClick: ()=>setMostrarHorasFora(!mostrarHorasFora),
                                 className: "w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer",
                                 type: "button",
-                                children: "Horas Fora do Horário"
+                                children: "Hora Fora do Horário"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Inserindo_Horas.tsx",
                                 lineNumber: 113,
