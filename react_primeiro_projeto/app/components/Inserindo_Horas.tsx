@@ -100,7 +100,9 @@ export const Inserindo_Horas = () => {
                     </div>
                 )}
 
-                {/*Explicando a div abaixo:  */}
+                {/*Explicando a div abaixo:  temos um botão que permite exibir o campo de horas fora do horário */}
+                {/*Explicando como funciona a função dentro do onClick: ela alterna o valor da variável mostrarHorasFora, exibindo ou ocultando o campo de horas fora do horário */}
+
                 <div className="flex gap-4 justify-around mb-4">
 
                     <button
