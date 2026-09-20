@@ -9,6 +9,9 @@ import { useState } from "react";
 
 //4. O botão "Horas Fora do Horário" alterna a exibição do campo correspondente, permitindo que o usuário insira informações adicionais se necessário.
 export const Inserindo_Horas = () => {
+    {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
+    {/* Explicando a função useState: ela é um hook do React que permite adicionar estado a componentes funcionais. */}
+    {/* Explicando o que acontece dentro do colchete: ela define a variável de estado e a função para atualizá-la */}
     const [mostrarHorasFora, setMostrarHorasFora] = useState(false);
 
     return (
@@ -112,7 +115,9 @@ export const Inserindo_Horas = () => {
                     >
                         Inserir Horas
                     </button>
-
+                
+                {/*Explicando de forma didatica o funcionamento da função: ela alterna o valor da variável mostrarHorasFora, exibindo ou ocultando o campo de horas fora do horário */}
+                {/*Explicando o funcionamento da variável mostrarHorasFora: ela controla a exibição do campo de horas fora do horário */}
                     <button
                         onClick={() => setMostrarHorasFora(!mostrarHorasFora)}
                         className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer"
