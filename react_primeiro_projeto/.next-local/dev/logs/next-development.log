@@ -1,13 +1,10 @@
-{"timestamp":"00:01:26.008","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 385ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:01:56.378","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:01:56.482","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:01:56.486","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:01:56.497","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:11:54.233","source":"Server","level":"ERROR","message":"⨯ \"upstream image response failed for\" \"https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-black-default-avatar-image_2237212.jpg\" 403"}
-{"timestamp":"00:11:58.242","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:11:59.128","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:11:59.265","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:14:12.471","source":"Server","level":"LOG","message":"✓ Compiled in 323ms"}
-{"timestamp":"00:14:14.792","source":"Server","level":"LOG","message":"✓ Compiled in 183ms"}
-{"timestamp":"00:15:37.321","source":"Server","level":"LOG","message":"✓ Compiled in 108ms"}
-{"timestamp":"00:15:40.226","source":"Server","level":"LOG","message":"✓ Compiled in 403ms"}
+{"timestamp":"00:01:00.121","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 539ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
+{"timestamp":"00:01:28.529","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:01:28.667","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:01:28.685","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:01:28.811","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:06:41.048","source":"Server","level":"ERROR","message":"⨯ \"upstream image response failed for\" \"https://png.pngtree.com/element_our/20200610/ourlarge/pngtree-black-default-avatar-image_2237212.jpg\" 403"}
+{"timestamp":"00:06:41.681","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:06:43.750","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:06:44.166","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:10:38.995","source":"Server","level":"LOG","message":"✓ Compiled in 11.2s"}

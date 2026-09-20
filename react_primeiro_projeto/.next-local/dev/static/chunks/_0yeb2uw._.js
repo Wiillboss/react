@@ -1034,7 +1034,7 @@ const Inserindo_Horas = ()=>{
                                 children: "Horas Fora do Horário"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Inserindo_Horas.tsx",
-                                lineNumber: 90,
+                                lineNumber: 91,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1044,13 +1044,13 @@ const Inserindo_Horas = ()=>{
                                 placeholder: "Digite as horas"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Inserindo_Horas.tsx",
-                                lineNumber: 94,
+                                lineNumber: 95,
                                 columnNumber: 25
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Inserindo_Horas.tsx",
-                        lineNumber: 89,
+                        lineNumber: 90,
                         columnNumber: 21
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1062,7 +1062,7 @@ const Inserindo_Horas = ()=>{
                                 children: "Inserir Horas"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Inserindo_Horas.tsx",
-                                lineNumber: 108,
+                                lineNumber: 109,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1072,13 +1072,13 @@ const Inserindo_Horas = ()=>{
                                 children: "Hora Fora do Horário"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Inserindo_Horas.tsx",
-                                lineNumber: 115,
+                                lineNumber: 116,
                                 columnNumber: 21
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Inserindo_Horas.tsx",
-                        lineNumber: 106,
+                        lineNumber: 107,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 ]

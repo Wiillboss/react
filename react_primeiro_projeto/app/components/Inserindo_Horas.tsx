@@ -85,6 +85,7 @@ export const Inserindo_Horas = () => {
                 </div>
 
                 {/* Input que aparece ao clicar no botão */}
+                {/* Explicando o que a função mostrarHorasFora faz: ela alterna o valor da variável mostrarHorasFora, exibindo ou ocultando o campo de horas fora do horário */}
                 {mostrarHorasFora && (
                     <div className="mb-4">
                         <label className="block text-lg mb-2" htmlFor="horasFora">
