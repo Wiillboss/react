@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 //explicando de forma didatica o componente acima:
 //1. O componente Inserindo_Horas é um componente funcional do React que permite aos usuários inserir informações de horas trabalhadas.
 //2. Ele utiliza o hook useState para gerenciar o estado da exibição do campo "Horas Fora do Horário".
@@ -8,6 +7,9 @@ import { useState } from "react";
 //3. O componente retorna um formulário estilizado com Tailwind CSS, contendo campos para inserir o ID do funcionário, data, horários de entrada e saída, e um campo opcional para "Horas Fora do Horário".
 
 //4. O botão "Horas Fora do Horário" alterna a exibição do campo correspondente, permitindo que o usuário insira informações adicionais se necessário.
+
+// Explicando como uma arrow function funciona: uma arrow function é uma forma concisa de escrever funções em JavaScript. Ela não possui seu próprio contexto de "this", o que significa que ela herda o valor de "this" do escopo em que foi definida. No caso do componente Inserindo_Horas, a arrow function é usada para definir o componente funcional, tornando o código mais limpo e legível.
+
 export const Inserindo_Horas = () => {
     {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
     {/* Explicando a função useState: ela é um hook do React que permite adicionar estado a componentes funcionais. */}
