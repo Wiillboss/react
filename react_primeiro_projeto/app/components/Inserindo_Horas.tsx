@@ -10,6 +10,11 @@ import { useState } from "react";
 
 // Explicando como uma arrow function funciona: uma arrow function é uma forma concisa de escrever funções em JavaScript. Ela não possui seu próprio contexto de "this", o que significa que ela herda o valor de "this" do escopo em que foi definida. No caso do componente Inserindo_Horas, a arrow function é usada para definir o componente funcional, tornando o código mais limpo e legível.
 
+//explicando holver em estados de botões: o hover é um efeito visual que ocorre quando o usuário passa o cursor do mouse sobre um elemento interativo, como um botão. No caso do componente Inserindo_Horas, o hover é aplicado aos botões "Inserir Horas" e "Hora Fora do Horário", alterando a cor de fundo para indicar que eles são clicáveis. Isso melhora a experiência do usuário, fornecendo feedback visual sobre a interatividade dos elementos na interface.
+
+//explicando md com holver: o md é uma classe do Tailwind CSS que aplica estilos responsivos a elementos com base no tamanho da tela. No caso do componente Inserindo_Horas, a classe md é usada para definir estilos específicos para os botões quando a tela atinge um determinado tamanho, garantindo que a interface seja adaptável e funcione bem em diferentes dispositivos. O hover continua funcionando normalmente, independentemente do tamanho da tela, proporcionando uma experiência consistente para o usuário.
+
+
 export const Inserindo_Horas = () => {
     {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
     {/* Explicando a função useState: ela é um hook do React que permite adicionar estado a componentes funcionais. */}
