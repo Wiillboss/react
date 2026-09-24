@@ -14,6 +14,9 @@ import { useState } from "react";
 
 //explicando md com holver: o md é uma classe do Tailwind CSS que aplica estilos responsivos a elementos com base no tamanho da tela. No caso do componente Inserindo_Horas, a classe md é usada para definir estilos específicos para os botões quando a tela atinge um determinado tamanho, garantindo que a interface seja adaptável e funcione bem em diferentes dispositivos. O hover continua funcionando normalmente, independentemente do tamanho da tela, proporcionando uma experiência consistente para o usuário.
 
+//explicando justify-around: a classe justify-around do Tailwind CSS é usada para distribuir o espaço entre os elementos filhos de um contêiner flexível. No caso do componente Inserindo_Horas, ela é aplicada à div que contém os botões "Inserir Horas" e "Hora Fora do Horário". Isso garante que os botões sejam espaçados uniformemente, proporcionando uma aparência equilibrada e organizada na interface do usuário.
+
+//explicando gap-4: a classe gap-4 do Tailwind CSS é usada para definir o espaçamento entre os elementos filhos de um contêiner flexível. No caso do componente Inserindo_Horas, ela é aplicada à div que contém os botões "Inserir Horas" e "Hora Fora do Horário". Isso garante que haja um espaço consistente entre os botões, melhorando a legibilidade e a estética da interface do usuário.
 
 export const Inserindo_Horas = () => {
     {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
