@@ -24,6 +24,8 @@ import { useState } from "react";
 
 //explicando como padronizar layouts no tailwind: para padronizar layouts no Tailwind CSS, você pode criar componentes reutilizáveis que encapsulam estilos comuns e aplicá-los em diferentes partes da sua aplicação. No caso do componente Inserindo_Horas, você pode criar um layout padrão para formulários, botões e campos de entrada, garantindo consistência visual em toda a aplicação. Além disso, você pode utilizar classes utilitárias do Tailwind para definir espaçamento, cores e tipografia de forma consistente, facilitando a manutenção e a escalabilidade do seu projeto.
 
+//explicando como padronizar no global.css: para padronizar estilos no arquivo global.css, você pode definir regras de estilo globais que se aplicam a toda a aplicação. Isso inclui definir cores, fontes, tamanhos de texto e espaçamento padrão. No caso do componente Inserindo_Horas, você pode utilizar o global.css para garantir que todos os elementos da interface sigam um padrão visual consistente, independentemente de onde eles estejam na aplicação. Além disso, você pode combinar o uso do global.css com as classes do Tailwind para obter uma abordagem híbrida de estilização, aproveitando o melhor dos dois mundos.
+
 export const Inserindo_Horas = () => {
     {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
     {/* Explicando a função useState: ela é um hook do React que permite adicionar estado a componentes funcionais. */}
