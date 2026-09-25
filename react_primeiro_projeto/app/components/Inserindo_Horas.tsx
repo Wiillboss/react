@@ -26,6 +26,8 @@ import { useState } from "react";
 
 //explicando como padronizar no global.css: para padronizar estilos no arquivo global.css, você pode definir regras de estilo globais que se aplicam a toda a aplicação. Isso inclui definir cores, fontes, tamanhos de texto e espaçamento padrão. No caso do componente Inserindo_Horas, você pode utilizar o global.css para garantir que todos os elementos da interface sigam um padrão visual consistente, independentemente de onde eles estejam na aplicação. Além disso, você pode combinar o uso do global.css com as classes do Tailwind para obter uma abordagem híbrida de estilização, aproveitando o melhor dos dois mundos.
 
+//explicando para que serve usar o prefix no tailwind: o prefix no Tailwind CSS é usado para adicionar um prefixo personalizado às classes geradas pelo Tailwind. Isso é útil para evitar conflitos de nomes de classes com outras bibliotecas ou estilos existentes em seu projeto. No caso do componente Inserindo_Horas, você pode usar o prefix para garantir que as classes do Tailwind não entrem em conflito com outras classes definidas no global.css ou em outros arquivos de estilo, mantendo a consistência e a integridade visual da sua aplicação.
+
 export const Inserindo_Horas = () => {
     {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
     {/* Explicando a função useState: ela é um hook do React que permite adicionar estado a componentes funcionais. */}
