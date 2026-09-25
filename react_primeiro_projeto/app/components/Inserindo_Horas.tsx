@@ -18,11 +18,11 @@ import { useState } from "react";
 
 //explicando gap-4: a classe gap-4 do Tailwind CSS é usada para definir o espaçamento entre os elementos filhos de um contêiner flexível. No caso do componente Inserindo_Horas, ela é aplicada à div que contém os botões "Inserir Horas" e "Hora Fora do Horário". Isso garante que haja um espaço consistente entre os botões, melhorando a legibilidade e a estética da interface do usuário.
 
-
 //explicando como utilizar pagina externa no tailwind: para utilizar uma página externa no Tailwind CSS, você pode importar o arquivo CSS do Tailwind em seu projeto e aplicar as classes do Tailwind aos elementos HTML. No caso do componente Inserindo_Horas, as classes do Tailwind são aplicadas diretamente aos elementos JSX, permitindo que você estilize a interface de forma rápida e eficiente. Além disso, você pode personalizar as classes do Tailwind conforme necessário para atender às necessidades específicas do seu projeto.
 
 //explicando como utilizar o global.css no tailwind: para utilizar o arquivo global.css no Tailwind CSS, você pode importar o arquivo CSS em seu projeto e aplicar as classes do Tailwind aos elementos HTML. No caso do componente Inserindo_Horas, as classes do Tailwind são aplicadas diretamente aos elementos JSX, permitindo que você estilize a interface de forma rápida e eficiente. Além disso, você pode personalizar as classes do Tailwind conforme necessário para atender às necessidades específicas do seu projeto. O arquivo global.css pode conter estilos adicionais que não estão cobertos pelas classes do Tailwind, permitindo que você tenha mais controle sobre a aparência da sua aplicação.
 
+//explicando como padronizar layouts no tailwind: para padronizar layouts no Tailwind CSS, você pode criar componentes reutilizáveis que encapsulam estilos comuns e aplicá-los em diferentes partes da sua aplicação. No caso do componente Inserindo_Horas, você pode criar um layout padrão para formulários, botões e campos de entrada, garantindo consistência visual em toda a aplicação. Além disso, você pode utilizar classes utilitárias do Tailwind para definir espaçamento, cores e tipografia de forma consistente, facilitando a manutenção e a escalabilidade do seu projeto.
 
 export const Inserindo_Horas = () => {
     {/* Explicando a linha abaixo: ela inicializa o estado da exibição do campo "Horas Fora do Horário" como falso.*/}
