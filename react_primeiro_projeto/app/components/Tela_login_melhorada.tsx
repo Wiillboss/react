@@ -13,6 +13,7 @@
 
 //explicando sobre aling-items e justify-content do flexbox, podemos usar classes como "items-start", "items-center", "items-end", "justify-start", "justify-center" e "justify-end" para controlar o alinhamento dos elementos dentro de um contêiner flexível. Por exemplo, "flex items-center justify-center" centralizaria os elementos tanto vertical quanto horizontalmente.
 
+//explicando como pode ser feita a validação do login e senha, podemos usar o estado do React para armazenar os valores dos campos de entrada e verificar se eles correspondem a um conjunto de credenciais válidas. Por exemplo, podemos usar useState para criar estados para email e senha, e uma função handleLogin para verificar se os valores correspondem a um usuário válido. Se forem válidos, podemos redirecionar o usuário para outra página usando o router do Next.js.
 
 import Link from "next/link";
 
