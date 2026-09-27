@@ -15,6 +15,8 @@
 
 //explicando como pode ser feita a validação do login e senha, podemos usar o estado do React para armazenar os valores dos campos de entrada e verificar se eles correspondem a um conjunto de credenciais válidas. Por exemplo, podemos usar useState para criar estados para email e senha, e uma função handleLogin para verificar se os valores correspondem a um usuário válido. Se forem válidos, podemos redirecionar o usuário para outra página usando o router do Next.js.
 
+//ecplicando de forma pratica as estrututas de controle de fluxo do React, podemos usar condicionais para renderizar diferentes componentes com base no estado do aplicativo. Por exemplo, podemos usar uma variável de estado chamada "isLoggedIn" para determinar se o usuário está logado ou não. Se "isLoggedIn" for verdadeiro, podemos renderizar um componente de boas-vindas; caso contrário, podemos renderizar o formulário de login. Além disso, podemos usar loops para renderizar listas de elementos dinamicamente com base em dados recebidos de uma API ou de um array local.
+
 import Link from "next/link";
 
 export const Tela_login_melhorada = () => {
