@@ -1,5 +1,8 @@
-{"timestamp":"00:00:52.575","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 393ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:01:08.626","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:15:51.801","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:15:53.005","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:15:53.223","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:34.774","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 528ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
+{"timestamp":"00:00:51.522","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:51.646","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:51.677","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:51.737","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:04:24.782","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization."}
+{"timestamp":"00:04:24.825","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization."}
+{"timestamp":"00:04:24.826","source":"Browser","level":"ERROR","message":"uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization."}

@@ -21,6 +21,8 @@
 
 //explicando JSX, variaveis e funções, podemos usar JSX para escrever a estrutura do nosso componente de forma semelhante ao HTML. Podemos declarar variáveis usando "const" ou "let" e usá-las dentro do JSX para exibir valores dinâmicos. Além disso, podemos definir funções dentro do componente para lidar com eventos, como cliques em botões ou mudanças em campos de entrada. Por exemplo, podemos criar uma função "handleInputChange" para atualizar o estado do email e senha conforme o usuário digita.
 
+//explicando as props, podemos passar dados de um componente pai para um componente filho usando props. As props são como parâmetros que permitem que o componente filho receba informações do componente pai. Por exemplo, podemos ter um componente "Botao" que recebe uma prop "texto" para definir o texto exibido no botão. No componente pai, podemos usar <Botao texto="Entrar" /> para passar o valor da prop.
+
 import Link from "next/link";
 
 export const Tela_login_melhorada = () => {
