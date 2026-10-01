@@ -23,6 +23,8 @@
 
 //explicando as props, podemos passar dados de um componente pai para um componente filho usando props. As props são como parâmetros que permitem que o componente filho receba informações do componente pai. Por exemplo, podemos ter um componente "Botao" que recebe uma prop "texto" para definir o texto exibido no botão. No componente pai, podemos usar <Botao texto="Entrar" /> para passar o valor da prop.
 
+//explicando um padrão de props, podemos definir um padrão de props para nossos componentes usando TypeScript. Isso nos permite especificar os tipos de dados esperados para cada prop, garantindo que o componente seja usado corretamente. Por exemplo, podemos definir uma interface "BotaoProps" com uma propriedade "texto" do tipo string, e usar essa interface como tipo para as props do componente Botao. Isso ajuda a evitar erros e melhora a autocompletação no editor de código.
+
 import Link from "next/link";
 
 export const Tela_login_melhorada = () => {
