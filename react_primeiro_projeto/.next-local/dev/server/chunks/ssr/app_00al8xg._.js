@@ -1094,6 +1094,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 //explicando sobre a importância de separar os componentes em arquivos diferentes, podemos criar uma estrutura de pastas organizada, onde cada componente tem seu próprio arquivo. Isso facilita a manutenção do código, permite a reutilização de componentes e melhora a legibilidade do projeto. Por exemplo, podemos ter uma pasta "components" onde colocamos todos os nossos componentes React, como Tela_login_melhorada.tsx, FormPessoaCadastro.tsx, etc.
 //explicando JSX, variaveis e funções, podemos usar JSX para escrever a estrutura do nosso componente de forma semelhante ao HTML. Podemos declarar variáveis usando "const" ou "let" e usá-las dentro do JSX para exibir valores dinâmicos. Além disso, podemos definir funções dentro do componente para lidar com eventos, como cliques em botões ou mudanças em campos de entrada. Por exemplo, podemos criar uma função "handleInputChange" para atualizar o estado do email e senha conforme o usuário digita.
 //explicando as props, podemos passar dados de um componente pai para um componente filho usando props. As props são como parâmetros que permitem que o componente filho receba informações do componente pai. Por exemplo, podemos ter um componente "Botao" que recebe uma prop "texto" para definir o texto exibido no botão. No componente pai, podemos usar <Botao texto="Entrar" /> para passar o valor da prop.
+//explicando um padrão de props, podemos definir um padrão de props para nossos componentes usando TypeScript. Isso nos permite especificar os tipos de dados esperados para cada prop, garantindo que o componente seja usado corretamente. Por exemplo, podemos definir uma interface "BotaoProps" com uma propriedade "texto" do tipo string, e usar essa interface como tipo para as props do componente Botao. Isso ajuda a evitar erros e melhora a autocompletação no editor de código.
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 ;
 ;
@@ -1109,7 +1110,7 @@ const Tela_login_melhorada = ()=>{
                         children: "Sistema de login"
                     }, void 0, false, {
                         fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                        lineNumber: 32,
+                        lineNumber: 34,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1121,7 +1122,7 @@ const Tela_login_melhorada = ()=>{
                                 children: "Endereço de e-mail"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                                lineNumber: 35,
+                                lineNumber: 37,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1131,13 +1132,13 @@ const Tela_login_melhorada = ()=>{
                                 placeholder: "Digite seu e-mail"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                                lineNumber: 36,
+                                lineNumber: 38,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                        lineNumber: 34,
+                        lineNumber: 36,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1149,7 +1150,7 @@ const Tela_login_melhorada = ()=>{
                                 children: "Senha"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                                lineNumber: 40,
+                                lineNumber: 42,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1159,13 +1160,13 @@ const Tela_login_melhorada = ()=>{
                                 placeholder: "Digite sua senha"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                                lineNumber: 41,
+                                lineNumber: 43,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                        lineNumber: 39,
+                        lineNumber: 41,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1175,18 +1176,18 @@ const Tela_login_melhorada = ()=>{
                             children: "Entrar"
                         }, void 0, false, {
                             fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                            lineNumber: 45,
+                            lineNumber: 47,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                        lineNumber: 44,
+                        lineNumber: 46,
                         columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                lineNumber: 31,
+                lineNumber: 33,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1199,19 +1200,19 @@ const Tela_login_melhorada = ()=>{
                         children: "Cadastre-se"
                     }, void 0, false, {
                         fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                        lineNumber: 50,
+                        lineNumber: 52,
                         columnNumber: 27
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-                lineNumber: 49,
+                lineNumber: 51,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/Tela_login_melhorada.tsx",
-        lineNumber: 30,
+        lineNumber: 32,
         columnNumber: 7
     }, ("TURBOPACK compile-time value", void 0));
 };
