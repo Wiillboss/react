@@ -25,6 +25,10 @@
 
 //explicando um padrão de props, podemos definir um padrão de props para nossos componentes usando TypeScript. Isso nos permite especificar os tipos de dados esperados para cada prop, garantindo que o componente seja usado corretamente. Por exemplo, podemos definir uma interface "BotaoProps" com uma propriedade "texto" do tipo string, e usar essa interface como tipo para as props do componente Botao. Isso ajuda a evitar erros e melhora a autocompletação no editor de código.
 
+//explicando o que é children, podemos usar a prop especial "children" para permitir que um componente React receba elementos filhos. Isso é útil quando queremos criar componentes que envolvem outros elementos, como um componente de layout ou um botão personalizado. Por exemplo, podemos ter um componente "Card" que recebe "children" e renderiza o conteúdo dentro de um contêiner estilizado. No JSX, podemos usar <Card><p>Conteúdo do card</p></Card> para passar o conteúdo como filhos do componente Card.
+
+//explicando como permiter qualquer tipo dentro de um children, podemos usar o tipo "React.ReactNode" para permitir que qualquer tipo de elemento seja passado como filhos de um componente. Isso inclui elementos JSX, strings, números, arrays e até mesmo outros componentes. Por exemplo, podemos definir a prop "children" como "children: React.ReactNode" em um componente Card, permitindo que ele aceite qualquer conteúdo como filhos.
+
 import Link from "next/link";
 
 export const Tela_login_melhorada = () => {

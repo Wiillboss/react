@@ -1,10 +1,2 @@
-{"timestamp":"00:00:44.296","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 817ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:01:09.394","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:01:09.531","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:21.683","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:38.679","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:40.334","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:42.996","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:09:56.628","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:10:25.578","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
-{"timestamp":"00:20:24.599","source":"Server","level":"LOG","message":"✓ Compiled in 28.2s"}
+{"timestamp":"00:00:41.945","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 246ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
+{"timestamp":"00:00:52.407","source":"Server","level":"LOG","message":""}
