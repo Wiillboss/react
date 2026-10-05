@@ -1,4 +1,5 @@
 ﻿from pathlib import Path
+import sys
 files = {
 "app/layout.tsx": '''import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -1278,6 +1279,10 @@ export type TodoItem = {
 };
 ''',
 }
+
+if "--apply" not in sys.argv:
+    print("Nenhum arquivo foi alterado. Revise o script e execute novamente com --apply para confirmar.", file=sys.stderr)
+    raise SystemExit(2)
 
 for relative_path, content in files.items():
     path = Path(relative_path)

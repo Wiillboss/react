@@ -159,5 +159,10 @@ function walk(dir) {
   }
 }
 
+if (!process.argv.includes('--apply')) {
+  console.error('Nenhum arquivo foi alterado. Revise o script e execute novamente com --apply para confirmar.');
+  process.exit(2);
+}
+
 walk(appRoot);
 console.log('Arquivos da pasta app padronizados com comentários externos em português do Brasil e sem caracteres corrompidos.');

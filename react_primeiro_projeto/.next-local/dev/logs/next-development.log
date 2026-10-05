@@ -1,2 +1,0 @@
-{"timestamp":"00:00:55.684","source":"Server","level":"WARN","message":"⚠ Slow filesystem detected. The benchmark took 335ms. If D:\\OneDrive\\Will\\Cursos e Projetos\\react\\react_primeiro_projeto\\.next-local/dev is a network drive, consider moving it to a local folder.\nSee more: https://nextjs.org/docs/app/guides/local-development"}
-{"timestamp":"00:01:32.527","source":"Server","level":"LOG","message":""}

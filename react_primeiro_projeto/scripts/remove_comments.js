@@ -141,5 +141,10 @@ function walk(dir) {
   }
 }
 
+if (!process.argv.includes('--apply')) {
+  console.error('Nenhum arquivo foi alterado. Revise o script e execute novamente com --apply para confirmar.');
+  process.exit(2);
+}
+
 walk(root);
 console.log('Comment cleanup finished.');
