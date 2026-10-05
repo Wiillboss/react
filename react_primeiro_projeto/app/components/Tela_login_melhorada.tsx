@@ -32,6 +32,8 @@
 //   disabled?: boolean;
 // }
 
+//explicando props em ternos didaticos, podemos usar props para passar informações de um componente pai para um componente filho. Por exemplo, podemos ter um componente "Botao" que recebe uma prop "texto" para definir o texto exibido no botão. No componente pai, podemos usar <Botao texto="Entrar" /> para passar o valor da prop. Além disso, podemos usar props para passar funções como callbacks, permitindo que o componente filho execute ações definidas pelo componente pai.
+
 //explicando o que é children, podemos usar a prop especial "children" para permitir que um componente React receba elementos filhos. Isso é útil quando queremos criar componentes que envolvem outros elementos, como um componente de layout ou um botão personalizado. Por exemplo, podemos ter um componente "Card" que recebe "children" e renderiza o conteúdo dentro de um contêiner estilizado. No JSX, podemos usar <Card><p>Conteúdo do card</p></Card> para passar o conteúdo como filhos do componente Card.
 
 //Segue um exemplo de como podemos usar o children em um componente Card:
