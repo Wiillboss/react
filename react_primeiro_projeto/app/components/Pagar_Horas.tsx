@@ -6,13 +6,13 @@ export const Pagar_Horas = () => {
                 <h1 className="text-3xl font-bold text-center">Sistema de Pagamento de Horas</h1>
                 <form className="bg-gray-700 p-6 rounded shadow-md w-lg mt-5">
                     <div className="mb-4">
-                        <label className="block text-lg mb-2" htmlFor="employeeId">
+                        <label className="block text-lg mb-2 sr-only" htmlFor="employeeId">
                             ID do Funcionário
                         </label>
                         <input
                             type="text"
                             id="employeeId"
-                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
+                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500 sr-only"
                             placeholder="Digite o ID do funcionário"
                         />
                         <label className="block text-lg mb-2 mt-4" htmlFor="hoursWorked">
