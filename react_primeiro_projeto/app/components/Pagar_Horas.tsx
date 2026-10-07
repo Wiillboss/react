@@ -12,7 +12,7 @@ export const Pagar_Horas = () => {
                         <input
                             type="text"
                             id="employeeId"
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
+                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
                             placeholder="Digite o ID do funcionário"
                         />
                         <label className="block text-lg mb-2 mt-4" htmlFor="hoursWorked">
@@ -21,7 +21,7 @@ export const Pagar_Horas = () => {
                         <input
                             type="datetime-local"
                             id="hoursWorked"
-                    className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
+                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
                         />
                         <label className="block text-lg mb-2 mt-4" htmlFor="hoursToPay">
                             Quantidade total de banco de horas positiva.
@@ -29,7 +29,7 @@ export const Pagar_Horas = () => {
                         <input
                             type="text"
                             id="hoursToPay"
-                            className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
+                            className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
                             placeholder="Digite a quantidade de horas a pagar"
                         />
                         <label className="block text-lg mb-2 mt-4" htmlFor="paymentDate">
@@ -38,7 +38,7 @@ export const Pagar_Horas = () => {
                         <input
                             type="datetime-local"
                             id="paymentDate"
-                            className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
+                            className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
                         />
                         <label className="block text-lg mb-2 mt-4" htmlFor="paymentMethod">
                             Quantidade total do banco após horas pagas.
@@ -46,7 +46,7 @@ export const Pagar_Horas = () => {
                         <input
                             type="text"
                             id="paymentMethod"
-                            className="bg-white text-gray-800 hover:bg-amber-100 rounded px-3 py-2 mb-4 ml-2 w-101.25"
+                            className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
                             placeholder="Digite o método de pagamento"
                         />
                     </div>
