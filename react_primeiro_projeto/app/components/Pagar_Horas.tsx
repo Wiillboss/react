@@ -44,10 +44,9 @@ export const Pagar_Horas = () => {
                             Quantidade total do banco após horas pagas.
                         </label>
                         <input
-                            type="text"
+                            type="time"
                             id="paymentMethod"
                             className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
-                            placeholder="Digite o método de pagamento"
                         />
                     </div>
                 </form>
