@@ -8,11 +8,11 @@ export const Consulta_Horas = () => {
                 className="bg-gray-700 p-6 rounded shadow-md w-lg"
             >
                 <div className="mb-4">
-                    <label className="block text-lg mb-2" htmlFor="employeeId">
+                    <label className="block text-lg mb-2 sr-only" htmlFor="employeeId">
                         ID do Funcionário
                     </label>
                     <input
-                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500"
+                        className="w-full p-2 rounded-md text-lg bg-gray-600 border border-gray-500 outline-blue-500 sr-only"
                         type="text"
                         id="employeeId"
                         placeholder="Digite o ID do funcionário"
