@@ -1,4 +1,5 @@
- 
+//explicando as estruturas de repetição, como for, while, do while, for in, for of e foreach.
+//dando exemplos de cada uma delas, mostrando como elas funcionam e quando é apropriado usá-las. 
 export const Pagar_Horas = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
