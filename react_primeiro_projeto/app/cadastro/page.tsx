@@ -18,6 +18,7 @@ import { Tela_Login, Tela_Novo_usuário } from "../components/Cadastro";
 import { Consulta_Horas } from "../components/Consulta_Horas";
 import { Formulario_Pessoa_Cadastro } from "../components/FormPessoaCadastro";
 import { Inserindo_Horas } from "../components/Inserindo_Horas";
+import { Menu_Principal } from "../components/Menu_Principal";
 import { Pagar_Horas } from "../components/Pagar_Horas";
 import { Tela_login_melhorada } from "../components/Tela_login_melhorada";
 
@@ -30,6 +31,7 @@ const Page = () => {
     return (
         <div>
             <Tela_login_melhorada/>
+            <Menu_Principal/>
             <Tela_Login/>
             <Tela_Novo_usuário/>
             <Formulario_Pessoa_Cadastro/>

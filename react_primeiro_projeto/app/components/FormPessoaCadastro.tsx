@@ -15,6 +15,30 @@ export const Formulario_Pessoa_Cadastro = () => {
                 action="/api/cadastro"
                 method="POST">
                 <div className="mb-4">
+                    <div className="mb-4">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
+                        E-mail
+                    </label>
+                    <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="E-mail"
+                    />
+                    </div>    
+                    <div className="mb-4">
+                    <label className="block text-white text-sm font-bold mb-2" htmlFor="senha">
+                        Senha
+                    </label>
+                    <input
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                        id="senha"
+                        name="senha"
+                        type="password"
+                        placeholder="Senha"
+                    />
+                    </div>    
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="nome">
                         Nome
                     </label>
@@ -62,18 +86,6 @@ export const Formulario_Pessoa_Cadastro = () => {
                             <span>Feminino</span>
                             </label>
                         </div>
-                </div>
-                <div className="mb-4">
-                    <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
-                        E-mail
-                    </label>
-                    <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="E-mail"
-                    />
                 </div>
                 <div className="mb-4">
                     <label className="block text-white text-sm font-bold mb-2" htmlFor="idade">
