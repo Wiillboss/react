@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState } from "react";
@@ -12,10 +14,13 @@ export const Menu_Principal = () => {
                 <h1 className="text-3xl font-bold text-center">Menu Principal</h1>
                     <div className="bg-gray-700 p-6 rounded shadow-md w-lg">
                         <div className="my-6 text-center">
-                            <button className=" w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer
-                                ">
+                            <button
+                                onClick={() => setMostrarFormulario(true)}
+                                className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer"
+                            >
                                 Alterar Cadastro
                             </button>
+                            {mostrarFormulario && <Formulario_Pessoa_Cadastro />}
                         </div>
                         <div className="my-6 text-center">
                             <button className=" w-full p-2 bg-blue-500 text-white rounded-md hover:bg-red-700 font-bold cursor-pointer">
