@@ -18,7 +18,7 @@ export const Menu_Principal = () => {
                             </button>
                         </div>
                         <div className="my-6 text-center">
-                            <button className=" w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-bold cursor-pointer">
+                            <button className=" w-full p-2 bg-blue-500 text-white rounded-md hover:bg-red-700 font-bold cursor-pointer">
                                 Inserir horas de trabalho
                             </button>
                         </div>
