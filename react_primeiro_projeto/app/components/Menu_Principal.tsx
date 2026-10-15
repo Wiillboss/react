@@ -1,4 +1,4 @@
-
+//o exemplo feito para aparecer o componente de cadastro não foi o que queria.
 
 "use client";
 
