@@ -1,5 +1,7 @@
 //o exemplo feito para aparecer o componente de cadastro não foi o que queria.
 
+//explicando como usar props padrão
+
 "use client";
 
 import { useState } from "react";
