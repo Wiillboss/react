@@ -2,6 +2,8 @@
 
 //explicando o import formulario_pessoa_cadastro, ele é um componente que foi criado para ser chamado dentro do menu principal, e quando o botão de alterar cadastro for clicado, ele vai mostrar o formulário de cadastro.
 
+//explicando o onclick, ele é um evento que é chamado quando o botão é clicado, e ele vai mudar o estado de mostrarFormulario para true, e assim vai mostrar o formulário de cadastro.
+
 "use client";
 
 import { useState } from "react";
