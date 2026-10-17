@@ -1,6 +1,6 @@
 //o exemplo feito para aparecer o componente de cadastro não foi o que queria.
 
-//explicando como usar props padrão
+//explicando o import formulario_pessoa_cadastro, ele é um componente que foi criado para ser chamado dentro do menu principal, e quando o botão de alterar cadastro for clicado, ele vai mostrar o formulário de cadastro.
 
 "use client";
 
