@@ -4,6 +4,9 @@
 
 //explicando o onclick, ele é um evento que é chamado quando o botão é clicado, e ele vai mudar o estado de mostrarFormulario para true, e assim vai mostrar o formulário de cadastro.
 
+
+// explicando o useState, ele é um hook do react que é usado para criar estados dentro de um componente funcional, e ele recebe um valor inicial, e retorna um array com dois valores, o primeiro é o valor do estado, e o segundo é uma função que é usada para mudar o valor do estado.
+
 "use client";
 
 import { useState } from "react";
