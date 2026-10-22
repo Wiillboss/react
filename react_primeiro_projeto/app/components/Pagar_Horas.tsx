@@ -1,6 +1,8 @@
 //explicando as estruturas de repetição, como for, while, do while, for in, for of e foreach.
-//dando exemplos de cada uma delas, mostrando como elas funcionam e quando é apropriado usá-las.
-//for loop
+//explicando as estruturas de decisão, como if, else if, else, switch e ternário.
+//explicando as funções, como function, arrow function, function expression e function declaration.
+//explicando as funções de array, como map, filter, reduce, find, some, every e sort.
+//explicando as funções de string, como split, join, replace, toUpperCase, toLowerCase e trim.
 export const Pagar_Horas = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
