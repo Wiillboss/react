@@ -15,6 +15,7 @@
 
 "use client";
 
+import { Tela_Login, Tela_Novo_usuário } from "../components/cadastro";
 import { Consulta_Horas } from "../components/Consulta_Horas";
 import { Formulario_Pessoa_Cadastro } from "../components/FormPessoaCadastro";
 import { Inserindo_Horas } from "../components/Inserindo_Horas";
@@ -32,7 +33,8 @@ const Page = () => {
         <div>
             <Tela_login_melhorada/>
             <Menu_Principal/>
-            
+            <Tela_Login/>
+            <Tela_Novo_usuário/>
             <Formulario_Pessoa_Cadastro/>
             <Inserindo_Horas/>
             <Consulta_Horas/>
