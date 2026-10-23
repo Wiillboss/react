@@ -3,6 +3,7 @@
 //explicando as funções, como function, arrow function, function expression e function declaration.
 //explicando as funções de array, como map, filter, reduce, find, some, every e sort.
 //explicando as funções de string, como split, join, replace, toUpperCase, toLowerCase e trim.
+//explicando pagar horas, como criar um formulário para registrar o pagamento de horas trabalhadas, incluindo campos para ID do funcionário, data e hora devedora, quantidade total de banco de horas positiva, data de pagamento e quantidade total do banco após horas pagas.
 export const Pagar_Horas = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
