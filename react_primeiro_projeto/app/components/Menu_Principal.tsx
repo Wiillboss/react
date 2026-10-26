@@ -8,6 +8,8 @@
 
 //explicando o use client, ele é usado para indicar que o componente é um componente de cliente, e não um componente de servidor, e assim ele vai ser renderizado no lado do cliente, e não no lado do servidor.
 
+//explicando o return, ele é usado para retornar o JSX do componente, e assim ele vai ser renderizado na tela, e dentro do return tem o JSX que é a estrutura do componente, e dentro do JSX tem os elementos HTML que são usados para criar a interface do usuário.
+
 "use client";
 
 import { useState } from "react";
