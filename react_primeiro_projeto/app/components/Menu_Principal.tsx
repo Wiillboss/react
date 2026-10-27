@@ -19,7 +19,7 @@ export const Menu_Principal = () => {
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-800 text-white">
+        <div className="flex flex-col items-center justify-center w-full py-2 bg-gray-800 text-white">
             <div className="mt-5">
                 <h1 className="text-3xl font-bold text-center">Menu Principal</h1>
                     <div className="bg-gray-700 p-6 rounded shadow-md w-lg">
