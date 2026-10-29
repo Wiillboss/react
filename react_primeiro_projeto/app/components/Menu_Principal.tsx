@@ -11,6 +11,8 @@
 //explicando o return, ele é usado para retornar o JSX do componente, e assim ele vai ser renderizado na tela, e dentro do return tem o JSX que é a estrutura do componente, e dentro do JSX tem os elementos HTML que são usados para criar a interface do usuário.
 
 //explicando children, eles são os elementos filhos de um componente, e eles são passados como props para o componente, e assim eles podem ser renderizados dentro do componente, e no caso do formulário de cadastro, ele é renderizado dentro do menu principal quando o botão de alterar cadastro é clicado.
+
+//explicando como usar o children, eles são passados como props para o componente, e assim eles podem ser renderizados dentro do componente, e no caso do formulário de cadastro, ele é renderizado dentro do menu principal quando o botão de alterar cadastro é clicado.
 "use client";
 
 import { useState } from "react";
