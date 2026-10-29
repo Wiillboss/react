@@ -13,6 +13,10 @@
 //explicando children, eles são os elementos filhos de um componente, e eles são passados como props para o componente, e assim eles podem ser renderizados dentro do componente, e no caso do formulário de cadastro, ele é renderizado dentro do menu principal quando o botão de alterar cadastro é clicado.
 
 //explicando como usar o children, eles são passados como props para o componente, e assim eles podem ser renderizados dentro do componente, e no caso do formulário de cadastro, ele é renderizado dentro do menu principal quando o botão de alterar cadastro é clicado.
+
+//explicando os tipos de props, eles são usados para definir os tipos das props que são passadas para o componente, e assim eles podem ser usados para validar as props que são passadas para o componente, e no caso do formulário de cadastro, ele não tem props, mas se tivesse, eles poderiam ser validados usando os tipos de props.
+
+//explicando os tipos de children, eles são usados para definir os tipos dos elementos filhos que são passados para o componente, e assim eles podem ser usados para validar os elementos filhos que são passados para o componente, e no caso do formulário de cadastro, ele não tem elementos filhos, mas se tivesse, eles poderiam ser validados usando os tipos de children.
 "use client";
 
 import { useState } from "react";
