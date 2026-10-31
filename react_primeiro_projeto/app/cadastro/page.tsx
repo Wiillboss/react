@@ -11,7 +11,7 @@
  * - o texto deve estar em português do Brasil e ajudar a entender a estrutura e a finalidade.
  */
 
-
+//explicando os imports: os imports são usados para trazer funcionalidades de outros arquivos ou bibliotecas para este arquivo. Por exemplo, estamos importando componentes como Tela_Login, Tela_Novo_usuário, Consulta_Horas, Formulario_Pessoa_Cadastro, Inserindo_Horas, Menu_Principal, Pagar_Horas e Tela_login_melhorada de seus respectivos arquivos dentro da pasta components. Isso nos permite usar esses componentes dentro desta página.
 
 "use client";
 
