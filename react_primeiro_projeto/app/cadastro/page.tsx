@@ -13,6 +13,14 @@
 
 //explicando os imports: os imports são usados para trazer funcionalidades de outros arquivos ou bibliotecas para este arquivo. Por exemplo, estamos importando componentes como Tela_Login, Tela_Novo_usuário, Consulta_Horas, Formulario_Pessoa_Cadastro, Inserindo_Horas, Menu_Principal, Pagar_Horas e Tela_login_melhorada de seus respectivos arquivos dentro da pasta components. Isso nos permite usar esses componentes dentro desta página.
 
+//Mostrando exemplos de como usar um if: 
+//exemplo de if simples
+//if (condição) {
+//    // código a ser executado se a condição for verdadeira
+//} else {
+//    // código a ser executado se a condição for falsa
+//}
+
 "use client";
 
 import { Tela_Login, Tela_Novo_usuário } from "../components/cadastro";
